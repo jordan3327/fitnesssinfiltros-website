@@ -1,0 +1,118 @@
+/* ==========================================================================
+   variables.css — Paleta, tipografías y tokens de diseño
+   Fitness Sin Filtros
+   ========================================================================== */
+
+:root {
+  /* --- Marca: anclas obligatorias del cliente ------------------------ */
+  --brand-rose: #d23c58;           /* rosa principal de marca */
+  --brand-black: #000001;          /* negro principal de marca */
+  --brand-salmon: #d07a75;         /* salmón de acompañamiento */
+
+  /* --- Colores principales : rosa y fucsia ---------------------------- */
+  --color-fuchsia: var(--brand-rose); /* color principal de marca */
+  --color-fuchsia-dark: #a52640;   /* hover / botones (rosa oscuro) */
+  --color-fuchsia-deep: #7d1d32;   /* acentos oscuros */
+  --color-pink: #ec6fa0;
+  --color-pink-soft: #f6c4da;
+  --color-pink-light: #fbe3ef;     /* fondos muy suaves */
+  --color-blush: #fff0f5;          /* fondo rosa clarísimo */
+  --color-cream: #fff8f4;          /* fondo crema */
+  --color-white: #ffffff;
+  --color-salmon: var(--brand-salmon); /* acento de marca */
+  --color-salmon-soft: #fbeae7;      /* lavado salmón para superficies */
+
+  /* --- Texto --------------------------------------------------------- */
+  --color-ink: var(--brand-black); /* negro principal */
+  --color-ink-soft: #5d4a55;       /* texto secundario */
+  --color-text-muted-accessible: #6b5a66; /* texto terciario / leyendas (contraste AA) */
+  --color-ink-muted: var(--color-text-muted-accessible); /* alias accesible */
+
+  /* --- Colores de apoyo ---------------------------------------------- */
+  --color-whatsapp: #25d366;       /* verde oficial de WhatsApp */
+  --color-whatsapp-dark: #1fbb5a;  /* hover del botón de WhatsApp */
+  --color-whatsapp-text: #000001;  /* texto sobre verde WhatsApp (contraste AA) */
+  --color-error: #c0392b;          /* errores de formulario */
+
+  /* --- Footer (sobre fondo oscuro) ----------------------------------- */
+  --color-footer-text: #efe3ea;           /* texto principal del footer */
+  --color-footer-link: #d9c6d0;           /* enlaces del footer */
+  --color-footer-text-muted: #a895a0;     /* texto secundario del footer */
+  --color-footer-border: rgba(255, 255, 255, 0.12); /* divisor */
+  --color-footer-border-strong: rgba(255, 255, 255, 0.2); /* borde de iconos */
+
+  /* --- Bordes -------------------------------------------------------- */
+  --color-border: #f1dbe7;
+  --color-border-strong: #e6c3d6;
+
+  /* --- Tipografías --------------------------------------------------- */
+  --font-heading: "Fraunces", "Georgia", serif;
+  --font-body: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+
+  /* --- Tamaños de fuente -------------------------------------------- */
+  --fs-hero: clamp(2.5rem, 6vw + 1rem, 4.25rem);
+  --fs-h2: clamp(1.9rem, 3.2vw + 0.75rem, 2.75rem);
+  --fs-h3: 1.25rem;
+  --fs-h4: 1.05rem;
+  --fs-body-lg: clamp(1.05rem, 1vw + 0.6rem, 1.25rem);
+  --fs-body: 1rem;
+  --fs-small: 0.9rem;
+  --fs-tiny: 0.8rem;
+
+  /* --- Espaciado ----------------------------------------------------- */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4rem;
+  --space-7: 6rem;
+
+  /* --- Layout -------------------------------------------------------- */
+  --container: 74rem;
+  --container-narrow: 52rem;
+  --header-height: 4.25rem;
+
+  /* --- Bordes redondeados ------------------------------------------- */
+  --radius-sm: 0.75rem;
+  --radius-md: 1.25rem;
+  --radius-lg: 2rem;
+  --radius-full: 999px;
+
+  /* --- Sombras ------------------------------------------------------- */
+  --shadow-sm: 0 1px 2px rgba(38, 20, 31, 0.06);
+  --shadow-md: 0 10px 24px -12px rgba(210, 60, 88, 0.28);
+  --shadow-card: 0 18px 40px -20px rgba(38, 20, 31, 0.18);
+
+  /* --- Transiciones -------------------------------------------------- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 0.18s;
+  --duration: 0.32s;
+
+  /* --- Motion (pulido premium, Etapa 2) ------------------------------ */
+  --motion-hover: 0.2s;
+  --motion-reveal: 0.4s;
+  --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* --- Botones (sistema aprobado en docs/UIVERSE_BUTTON_PATTERNS.md) -- */
+  --btn-min-height: 3rem;
+  --btn-pad-x: 1.5rem;
+  --btn-radius: var(--radius-full);
+  --btn-ring: var(--focus-ring);
+  --btn-lift: -2px;
+  --btn-duration: var(--duration-fast);
+  --btn-ease: cubic-bezier(0.2, 0.7, 0.3, 1);
+  --btn-shadow-primary: 0 10px 24px -12px rgba(210, 60, 88, 0.5);
+  --btn-shadow-primary-hover: 0 16px 32px -14px rgba(210, 60, 88, 0.55);
+  --btn-outline-border: var(--brand-rose);
+  --btn-outline-text: var(--color-fuchsia-dark);
+  --btn-outline-hover-bg: #fce7e8;
+  --btn-outline-active-bg: #f5cfd1;
+  --btn-shadow-whatsapp: 0 12px 24px -12px rgba(37, 211, 102, 0.45);
+  --text-link-color: var(--color-fuchsia-dark);
+  --text-link-underline: var(--brand-rose);
+  --text-link-thickness: 2px;
+
+  /* --- Foco accesible ------------------------------------------------ */
+  --focus-ring: 3px solid rgba(210, 60, 88, 0.5);
+}

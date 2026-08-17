@@ -1,0 +1,152 @@
+/* ==========================================================================
+   responsive.css — Ajustes de tablet y escritorio (mobile-first)
+   ========================================================================== */
+
+/* --- Tablet (≥ 640px) ----------------------------------------------------- */
+
+@media (min-width: 640px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-channels {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* --- Escritorio (≥ 1024px) ------------------------------------------------- */
+
+@media (min-width: 1024px) {
+  .container {
+    width: min(100% - 4rem, var(--container));
+  }
+
+  .container-narrow {
+    width: min(100% - 4rem, var(--container-narrow));
+  }
+
+  .section {
+    padding-block: var(--space-7);
+  }
+
+  /* Header */
+  .main-nav {
+    display: block;
+  }
+
+  .nav-cta {
+    display: inline-flex;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .header-inner {
+    gap: var(--space-3);
+  }
+
+  /* Hero */
+  .hero {
+    min-height: auto;
+    padding-block: var(--space-7);
+  }
+
+  .hero-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: var(--space-6);
+  }
+
+  /* Sobre la marca */
+  .about-grid {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: var(--space-6);
+  }
+
+  /* Servicios */
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Proceso */
+  .process-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Beneficios */
+  .benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: var(--space-5);
+  }
+
+  /* Contacto */
+  .contact-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: var(--space-6);
+  }
+}
+
+/* --- Pantallas muy grandes -------------------------------------------------- */
+
+@media (min-width: 1280px) {
+  body {
+    font-size: 1.03rem;
+  }
+
+  .hero {
+    max-height: none;
+  }
+}
+
+/* --- Impresión -------------------------------------------------------------- */
+
+@media print {
+  .site-header,
+  .mobile-menu,
+  .back-to-top,
+  .hero-actions,
+  .cta-final .btn,
+  .site-footer .footer-col:not(.footer-brand),
+  .menu-toggle {
+    display: none !important;
+  }
+
+  body {
+    background: var(--color-white);
+  }
+
+  .section {
+    padding-block: var(--space-2);
+  }
+
+  a {
+    color: var(--color-ink) !important;
+  }
+}
