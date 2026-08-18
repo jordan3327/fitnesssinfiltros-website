@@ -29,6 +29,8 @@ window.CONFIG = {
   // Vacíos = se ocultan en el sitio.
   instagramUrl: "",
   facebookUrl: "",
+  tiktokUrl: "",
+  youtubeUrl: "",
 
   // PENDIENTE_CLIENTE: ciudad o zona de atención (se usa en "location").
   location: "",
@@ -51,12 +53,12 @@ window.CONFIG = {
   services: [
     {
       id: "entrenamiento-1-1",
-      name: "Entrenamiento personal 1:1",
+      name: "Entrenamiento personal conmigo 1:1",
       price: "$50",
       priceNote: "por sesión",
       // REEMPLAZAR: mensaje enviado por WhatsApp al pulsar "Me interesa"
       whatsappMessage:
-        "Hola, me interesa el servicio de Entrenamiento personal 1:1. Quiero conocer más información.",
+        "Hola, me interesa el servicio de Entrenamiento personal conmigo 1:1. Quiero conocer más información.",
     },
     {
       id: "rutina-pdf-sin-seguimiento",
@@ -76,11 +78,11 @@ window.CONFIG = {
     },
     {
       id: "plan-alimentacion-seguimiento",
-      name: "Plan de alimentación con seguimiento personalizado",
+      name: "Plan de alimentación + seguimiento personalizado",
       price: "$250",
       priceNote: "pago único",
       whatsappMessage:
-        "Hola, me interesa el Plan de alimentación con seguimiento personalizado. Quiero conocer más información.",
+        "Hola, me interesa el Plan de alimentación + seguimiento personalizado. Quiero conocer más información.",
     },
     {
       id: "plan-alimentacion-sin-seguimiento",
@@ -92,11 +94,11 @@ window.CONFIG = {
     },
     {
       id: "asesoria-personalizada",
-      name: "Asesoría personalizada de una hora",
+      name: "Asesoría personalizada de 1 hora",
       price: "$50",
       priceNote: "por sesión",
       whatsappMessage:
-        "Hola, me interesa la Asesoría personalizada de una hora. Quiero conocer más información.",
+        "Hola, me interesa la Asesoría personalizada de 1 hora. Quiero conocer más información.",
     },
   ],
 

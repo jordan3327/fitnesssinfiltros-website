@@ -220,6 +220,11 @@
       el.hidden = true;
       return;
     }
+    document
+      .querySelectorAll('[data-social-pending="' + network + '"]')
+      .forEach(function (pendingIcon) {
+        pendingIcon.hidden = true;
+      });
     if (link) {
       link.setAttribute("href", url);
       link.setAttribute("target", "_blank");
@@ -263,6 +268,23 @@
       textEl.textContent = modality;
     }
   });
+
+  /* Resplandor direccional para tarjetas en dispositivos con ratÃ³n. */
+  var supportsFinePointer =
+    window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  if (supportsFinePointer && !prefersReducedMotion()) {
+    document
+      .querySelectorAll(".service-card, .benefit-card, .process-card")
+      .forEach(function (card) {
+        card.classList.add("has-spotlight");
+        card.addEventListener("pointermove", function (event) {
+          var rect = card.getBoundingClientRect();
+          card.style.setProperty("--pointer-x", event.clientX - rect.left + "px");
+          card.style.setProperty("--pointer-y", event.clientY - rect.top + "px");
+        });
+      });
+  }
 
   /* ------------------------------------------------------------------
    * Animaciones de aparición (IntersectionObserver)

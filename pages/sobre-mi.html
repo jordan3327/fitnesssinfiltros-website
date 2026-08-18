@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/components.css" />
     <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../css/editorial-overhaul.css" />
   </head>
 
   <body>
@@ -209,10 +210,10 @@
             <svg class="icon" aria-hidden="true"><use href="#icon-heart"></use></svg>
             Sobre mí
           </p>
-          <h1 id="sobre-titulo">Un acompañamiento que se adapta a ti</h1>
+          <h1 id="sobre-titulo">Conoce el enfoque de Fitness Sin Filtros</h1>
           <p>
-            Creo en planes personalizados, en la constancia y en el acompañamiento real. Sin mitos,
-            sin extremos y sin fórmulas que no te conocen.
+            Planes personalizados, constancia y una guía clara para avanzar sin mitos, sin extremos
+            y sin fórmulas generales.
           </p>
         </div>
       </section>
@@ -220,39 +221,32 @@
       <section class="section" aria-label="Mi historia y enfoque">
         <div class="container about-grid">
           <div class="about-media reveal">
-            <!-- REEMPLAZAR: fotografía profesional de la entrenadora.
-                 Placeholder actual: fotografía de Unsplash. -->
-            <img
-              src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=900&h=900&auto=format&fit=crop"
-              alt="Entrenadora guiando a una mujer en su sesión de ejercicio"
-              loading="lazy"
-              width="900"
-              height="900"
-            />
+            <div class="about-media__placeholder" role="img" aria-label="Fotografía profesional de la entrenadora pendiente de autorización">
+              <p><strong>Fotografía profesional pendiente</strong>Se incorporará cuando la entrenadora entregue una imagen autorizada.</p>
+            </div>
           </div>
           <div class="about-copy reveal">
-            <h2>Lo que sí funciona, hecho para ti</h2>
+            <h2>Un enfoque pensado para tu realidad</h2>
             <p class="lead">
-              Cada persona es diferente, y por eso cada plan comienza por conocerte. Tu historia,
-              tus hábitos, tu ritmo y tus metas son el punto de partida de un acompañamiento real.
+              Cada persona es diferente. Por eso el punto de partida son tus objetivos, hábitos,
+              necesidades y estilo de vida.
             </p>
             <p>
-              El objetivo no es perseguir extremos ni castigarte: es construir un proceso claro,
-              sostenible y con resultados que se quedan. Cuando entiendes tu cuerpo y tus
-              necesidades, avanzar deja de ser una lucha.
+              La intención es orientar un proceso claro y sostenible, sin soluciones generales ni
+              promesas rápidas.
             </p>
             <ul class="check-list">
               <li>
                 <svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>
-                <span>Evaluación individual antes de cada plan.</span>
+                <span>Evaluación individual para orientar el plan.</span>
               </li>
               <li>
                 <svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>
-                <span>Acompañamiento cercano, con respuestas reales.</span>
+                <span>Acompañamiento según el servicio y el alcance acordado.</span>
               </li>
               <li>
                 <svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>
-                <span>Planes flexibles que se adaptan a tu vida.</span>
+                <span>Planes personalizados según la información compartida.</span>
               </li>
               <li>
                 <svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>
@@ -320,10 +314,13 @@
           <svg class="icon" aria-hidden="true"><use href="#icon-heart"></use></svg>
           <h2 id="cta-titulo">Tú eres tu mejor proyecto.</h2>
           <p>Empecemos por conocernos y definir el plan que realmente se adapte a ti.</p>
-          <a class="btn btn-whatsapp btn-lg" data-whatsapp href="#">
-            Hablar por WhatsApp
-            <svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
-          </a>
+          <div class="cta-final__whatsapp-wrap">
+            <a class="btn btn-whatsapp btn-lg cta-final__whatsapp" data-whatsapp href="#">
+              <span class="cta-final__whatsapp-icon" aria-hidden="true"><svg class="icon"><use href="#icon-whatsapp"></use></svg></span>
+              <span class="cta-final__whatsapp-copy"><span class="cta-final__whatsapp-title">WhatsApp</span><span class="cta-final__whatsapp-subtitle">Hablemos de tu objetivo</span></span>
+              <span class="cta-final__whatsapp-arrow" aria-hidden="true"><svg><use href="#icon-arrow-right"></use></svg></span>
+            </a>
+          </div>
         </div>
       </section>
     </main>

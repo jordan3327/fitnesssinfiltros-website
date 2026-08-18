@@ -14,6 +14,7 @@ body {
   font-size: var(--fs-body);
   color: var(--color-ink);
   background-color: var(--color-cream);
+  overflow-x: clip;
   transition: background-color 0.3s var(--ease);
 }
 
@@ -82,7 +83,7 @@ strong {
 /* --- Utilidades -------------------------------------------------------- */
 
 .container {
-  width: min(100% - 2.5rem, var(--container));
+  width: min(calc(100% - 2.5rem), var(--container));
   margin-inline: auto;
 }
 
@@ -94,7 +95,7 @@ strong {
 }
 
 .container-narrow {
-  width: min(100% - 2.5rem, var(--container-narrow));
+  width: min(calc(100% - 2.5rem), var(--container-narrow));
   margin-inline: auto;
 }
 
@@ -464,7 +465,7 @@ strong {
 /* --- Menú móvil -------------------------------------------------------- */
 
 .mobile-menu {
-  display: block;
+  display: none;
   position: fixed;
   inset: var(--header-height) 0 0 0;
   background: var(--color-cream);
@@ -477,6 +478,7 @@ strong {
 }
 
 .mobile-menu.is-open {
+  display: block;
   transform: translateX(0);
   visibility: visible;
 }
@@ -680,6 +682,25 @@ strong {
   box-shadow: var(--shadow-card);
 }
 
+.about-media__placeholder {
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  padding: var(--space-4);
+  text-align: center;
+  background: linear-gradient(145deg, var(--color-blush), var(--color-salmon-soft));
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  color: var(--color-ink-soft);
+}
+
+.about-media__placeholder strong {
+  display: block;
+  margin-bottom: var(--space-1);
+  color: var(--color-ink);
+}
+
 .about-copy .lead {
   font-size: var(--fs-body-lg);
   margin-bottom: var(--space-4);
@@ -722,6 +743,10 @@ strong {
   gap: var(--space-3);
 }
 
+.services-grid > * {
+  min-width: 0;
+}
+
 .service-card {
   position: relative;
   display: flex;
@@ -751,6 +776,7 @@ strong {
   justify-content: space-between;
   align-items: flex-start;
   gap: var(--space-2);
+  min-width: 0;
 }
 
 .service-icon {
@@ -782,7 +808,8 @@ strong {
   border: 1px solid var(--color-border-strong);
   padding: 0.3rem 0.7rem;
   border-radius: var(--radius-full);
-  white-space: nowrap;
+  min-width: 0;
+  text-align: right;
 }
 
 .flag--featured {
@@ -939,6 +966,10 @@ strong {
   gap: var(--space-3);
 }
 
+.testimonials-grid > * {
+  min-width: 0;
+}
+
 .testimonial-card {
   position: relative;
   background: var(--color-blush);
@@ -969,6 +1000,10 @@ strong {
   margin-top: auto;
 }
 
+.testimonial-card__author > div {
+  min-width: 0;
+}
+
 .testimonial-card__avatar {
   width: 2.6rem;
   height: 2.6rem;
@@ -987,6 +1022,7 @@ strong {
 .testimonial-card__author strong {
   display: block;
   font-size: var(--fs-small);
+  overflow-wrap: anywhere;
 }
 
 .testimonial-card__author span {

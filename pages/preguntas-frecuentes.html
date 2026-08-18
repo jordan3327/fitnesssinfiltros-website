@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/components.css" />
     <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../css/editorial-overhaul.css" />
   </head>
 
   <body>
@@ -247,9 +248,8 @@
               </h3>
               <div class="faq-answer" id="faq-answer-2">
                 <p>
-                  El seguimiento varía según el servicio, pero en general incluye revisión de tu
-                  progreso, resolución de dudas y ajustes cuando sea necesario, para que avances con
-                  constancia y seguridad.
+                  El alcance del seguimiento depende del servicio contratado.
+                  [PENDIENTE_CLIENTE: definir frecuencia, canal, duración y tipo de revisión].
                 </p>
                 <p><em>Dato a confirmar con la propietaria: duración y canales del seguimiento.</em></p>
               </div>
@@ -264,9 +264,8 @@
               </h3>
               <div class="faq-answer" id="faq-answer-3">
                 <p>
-                  El pago se coordina directamente por WhatsApp antes de iniciar el servicio.
+                  [PENDIENTE_CLIENTE: métodos de pago aprobados].
                 </p>
-                <p><em>Dato a confirmar con la propietaria: métodos de pago disponibles.</em></p>
               </div>
             </div>
 
@@ -368,10 +367,13 @@
           <svg class="icon" aria-hidden="true"><use href="#icon-heart"></use></svg>
           <h2 id="cta-titulo">¿Lista para comenzar?</h2>
           <p>Cuéntame tu objetivo y encontremos el plan ideal para ti.</p>
-          <a class="btn btn-whatsapp btn-lg" data-whatsapp href="#">
-            Hablar por WhatsApp
-            <svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
-          </a>
+          <div class="cta-final__whatsapp-wrap">
+            <a class="btn btn-whatsapp btn-lg cta-final__whatsapp" data-whatsapp href="#">
+              <span class="cta-final__whatsapp-icon" aria-hidden="true"><svg class="icon"><use href="#icon-whatsapp"></use></svg></span>
+              <span class="cta-final__whatsapp-copy"><span class="cta-final__whatsapp-title">WhatsApp</span><span class="cta-final__whatsapp-subtitle">Hablemos de tu objetivo</span></span>
+              <span class="cta-final__whatsapp-arrow" aria-hidden="true"><svg><use href="#icon-arrow-right"></use></svg></span>
+            </a>
+          </div>
         </div>
       </section>
     </main>

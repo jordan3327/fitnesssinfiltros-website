@@ -36,11 +36,11 @@
 
 @media (min-width: 1024px) {
   .container {
-    width: min(100% - 4rem, var(--container));
+    width: min(calc(100% - 4rem), var(--container));
   }
 
   .container-narrow {
-    width: min(100% - 4rem, var(--container-narrow));
+    width: min(calc(100% - 4rem), var(--container-narrow));
   }
 
   .section {
