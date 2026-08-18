@@ -56,9 +56,9 @@ window.CONFIG = {
       name: "Entrenamiento personal conmigo 1:1",
       price: "$50",
       priceNote: "por sesión",
-      // REEMPLAZAR: mensaje enviado por WhatsApp al pulsar "Me interesa"
+      // Mensaje enviado por WhatsApp al consultar un servicio.
       whatsappMessage:
-        "Hola, me interesa el servicio de Entrenamiento personal conmigo 1:1. Quiero conocer más información.",
+        "Hola, quiero saber si el servicio de Entrenamiento personal conmigo 1:1 es adecuado para mi objetivo.",
     },
     {
       id: "rutina-pdf-sin-seguimiento",
@@ -66,7 +66,7 @@ window.CONFIG = {
       price: "$200",
       priceNote: "pago único",
       whatsappMessage:
-        "Hola, me interesa la Rutina PDF sin seguimiento. Quiero conocer más información.",
+        "Hola, quiero saber si la Rutina PDF sin seguimiento es adecuada para mi objetivo.",
     },
     {
       id: "rutina-pdf-seguimiento",
@@ -74,7 +74,7 @@ window.CONFIG = {
       price: "$250",
       priceNote: "pago único",
       whatsappMessage:
-        "Hola, me interesa la Rutina PDF con seguimiento. Quiero conocer más información.",
+        "Hola, quiero saber si la Rutina PDF con seguimiento es adecuada para mi objetivo.",
     },
     {
       id: "plan-alimentacion-seguimiento",
@@ -82,7 +82,7 @@ window.CONFIG = {
       price: "$250",
       priceNote: "pago único",
       whatsappMessage:
-        "Hola, me interesa el Plan de alimentación + seguimiento personalizado. Quiero conocer más información.",
+        "Hola, quiero saber si el Plan de alimentación + seguimiento personalizado es adecuado para mi objetivo.",
     },
     {
       id: "plan-alimentacion-sin-seguimiento",
@@ -90,7 +90,7 @@ window.CONFIG = {
       price: "$200",
       priceNote: "pago único",
       whatsappMessage:
-        "Hola, me interesa el Plan de alimentación sin seguimiento. Quiero conocer más información.",
+        "Hola, quiero saber si el Plan de alimentación sin seguimiento es adecuado para mi objetivo.",
     },
     {
       id: "asesoria-personalizada",
@@ -98,7 +98,7 @@ window.CONFIG = {
       price: "$50",
       priceNote: "por sesión",
       whatsappMessage:
-        "Hola, me interesa la Asesoría personalizada de 1 hora. Quiero conocer más información.",
+        "Hola, quiero saber si la Asesoría personalizada de 1 hora es adecuada para mi objetivo.",
     },
   ],
 

@@ -135,7 +135,11 @@ body::selection { background: var(--brand-rose); color: #fff; }
 }
 .hero .lead { max-width: 37rem; color: #554a50; font-size: clamp(1rem, 1.3vw, 1.25rem); }
 .hero-actions { gap: .75rem; }
-.hero-trust { gap: .5rem; }
+.hero-trust {
+  gap: .5rem;
+  margin-top: clamp(2rem, 3.5vw, 2.75rem);
+  padding-top: clamp(1.15rem, 2vw, 1.6rem);
+}
 .hero-trust-item {
   border: 1px solid var(--line-strong);
   border-radius: 999px;
