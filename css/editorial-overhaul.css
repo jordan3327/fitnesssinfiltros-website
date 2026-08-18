@@ -223,9 +223,23 @@ body::selection { background: var(--brand-rose); color: #fff; }
 
 #beneficios { background: var(--paper-deep); }
 .benefits-grid { gap: 1rem; }
-.benefit-card { position: relative; border-radius: 1rem; border: 1px solid transparent; background: transparent; box-shadow: none; padding: 1.4rem .35rem; }
+.benefit-card {
+  position: relative;
+  border-radius: 1rem;
+  border: 1px solid transparent;
+  background: transparent;
+  box-shadow: none;
+  padding: 1.4rem 1.2rem;
+  transition: border-color .28s var(--ease), background-color .28s var(--ease), box-shadow .28s var(--ease), backdrop-filter .28s var(--ease);
+}
 .benefit-card::before { border-radius: 1rem; }
-.benefit-card:hover { transform: none; box-shadow: none; border-color: var(--line-strong); background: rgba(255,255,255,.58); padding-inline: 1.2rem; }
+.benefit-card:hover {
+  transform: none;
+  border-color: rgba(208,60,87,.2);
+  background: rgba(255,255,255,.58);
+  box-shadow: 0 .75rem 1.8rem rgba(52,27,35,.07), inset 0 1px 0 rgba(255,255,255,.72);
+  backdrop-filter: blur(7px);
+}
 .benefit-card .icon { width: 1.9rem; height: 1.9rem; color: var(--brand-rose); }
 .benefit-card h3 { font-size: 1rem; letter-spacing: -.02em; }
 
