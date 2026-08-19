@@ -257,6 +257,111 @@
   pointer-events: none;
 }
 
+/* --- Modal de documentos legales (glass) ------------------------------ */
+
+.modal--legal {
+  background: rgba(38, 20, 31, 0.42);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.modal--legal .modal__dialog {
+  width: min(100%, 46rem);
+  max-height: min(88vh, 46rem);
+  background: rgba(255, 253, 251, 0.88);
+  -webkit-backdrop-filter: blur(24px) saturate(1.15);
+  backdrop-filter: blur(24px) saturate(1.15);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 30px 80px -24px rgba(38, 20, 31, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  padding: var(--space-4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal--legal .legal article {
+  max-width: none;
+}
+
+.modal--legal .modal__legal-body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1 1 auto;
+  padding-right: var(--space-2);
+  margin-top: var(--space-2);
+  min-height: 0;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(210, 60, 88, 0.45) transparent;
+}
+
+.modal--legal .modal__legal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal--legal .modal__legal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal--legal .modal__legal-body::-webkit-scrollbar-thumb {
+  background: rgba(210, 60, 88, 0.4);
+  border-radius: var(--radius-full);
+}
+
+.modal--legal .modal__legal-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(210, 60, 88, 0.6);
+}
+
+/* --- Aviso de servicio no disponible (glass) ---------------------------- */
+
+.whop-toast {
+  position: fixed;
+  left: 50%;
+  bottom: var(--space-4);
+  z-index: 1400;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  max-width: min(92vw, 22rem);
+  padding: 0.9rem 1.25rem;
+  background: rgba(255, 253, 251, 0.9);
+  -webkit-backdrop-filter: blur(20px) saturate(1.15);
+  backdrop-filter: blur(20px) saturate(1.15);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: var(--radius-md);
+  box-shadow: 0 24px 60px -20px rgba(38, 20, 31, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  transform: translate(-50%, 1rem);
+  visibility: hidden;
+  transition: opacity 0.28s var(--ease), transform 0.28s var(--ease), visibility 0.28s;
+  pointer-events: none;
+}
+
+.whop-toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  visibility: visible;
+}
+
+.whop-toast .icon {
+  flex-shrink: 0;
+  width: 1.15rem;
+  height: 1.15rem;
+  color: var(--color-fuchsia);
+}
+
+.whop-toast__text {
+  font-size: var(--fs-small);
+  line-height: 1.45;
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whop-toast {
+    transition: none;
+  }
+}
+
 /* --- Utilidades de la página de contacto -------------------------------- */
 
 .contact-grid {

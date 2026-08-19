@@ -401,12 +401,17 @@ body::selection { background: var(--brand-rose); color: #fff; }
 .footer-brand .brand-mark { background: #fff; }
 .footer-brand .brand {
   width: 100%;
-  height: clamp(7.75rem, 10vw, 9.3rem);
+  height: clamp(5.9rem, 7vw, 7.4rem);
+  align-items: flex-start;
   justify-content: center;
   overflow: hidden;
-  margin-bottom: -1.2rem;
+  margin-bottom: .15rem;
 }
-.footer-brand .brand-logo { width: clamp(11rem, 18vw, 15rem); }
+.footer-brand .brand-logo {
+  width: clamp(12rem, 18vw, 15.5rem);
+  transform: translateY(-28%);
+  transform-origin: center top;
+}
 .footer-bottom { margin-top: 3.5rem; }
 .back-to-top { right: 1rem; bottom: 1rem; background: var(--brand-black); border: 1px solid rgba(255,255,255,.6); }
 .back-to-top:hover { background: var(--brand-rose); }
@@ -441,13 +446,13 @@ body::selection { background: var(--brand-rose); color: #fff; }
 .contact-channels > .channel-card:first-child {
   display: grid;
   grid-column: 1 / -1;
-  grid-template-columns: 3.5rem minmax(220px, 1fr) 15rem;
+  grid-template-columns: 3.5rem minmax(220px, 1fr) clamp(13.5rem, 17vw, 16rem);
   align-items: start;
   column-gap: 1.5rem;
-  width: min(100%, 900px);
+  width: min(100%, 1024px);
   min-width: 0;
   margin-inline: auto;
-  padding: 2.5rem 3rem;
+  padding: 2.5rem 3.5rem 2.5rem 3rem;
   background: #fff;
   border: 1px solid rgba(208, 60, 87, 0.22);
   border-radius: 1.5rem;
@@ -497,12 +502,13 @@ body::selection { background: var(--brand-rose); color: #fff; }
   grid-column: 3;
   grid-row: 1;
   align-self: center;
+  justify-self: end;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  width: 15rem;
-  min-width: 15rem;
+  width: 100%;
+  min-width: 0;
   min-height: 8.5rem;
   margin: 0;
   padding: 1.25rem 1.5rem;
@@ -539,7 +545,7 @@ body::selection { background: var(--brand-rose); color: #fff; }
 
 @media (min-width: 1000px) {
   .contact-channels > .channel-card:first-child {
-    grid-template-columns: 3.5rem minmax(240px, 1fr) 15rem;
+    grid-template-columns: 3.5rem minmax(240px, 1fr) clamp(13.5rem, 17vw, 16rem);
   }
 }
 
@@ -604,5 +610,159 @@ body::selection { background: var(--brand-rose); color: #fff; }
     width: 100%;
     min-height: 5.5rem;
     font-size: 0.82rem;
+  }
+}
+
+/* Reconstrucción de la tarjeta principal de WhatsApp */
+.contact-channels > .channel-card.channel-card--whatsapp {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+    "icon body"
+    "action action";
+  align-items: start;
+  gap: 1.25rem 1.5rem;
+  width: min(100%, 74rem);
+  min-width: 0;
+  margin-inline: auto;
+  padding: clamp(1.5rem, 2.8vw, 2.5rem);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.92)),
+    var(--color-white);
+  border: 1px solid rgba(208, 60, 87, 0.18);
+  border-radius: 1.75rem;
+  box-shadow: 0 12px 30px rgba(208, 60, 87, 0.08);
+  overflow: hidden;
+  position: relative;
+}
+
+.contact-channels > .channel-card.channel-card--whatsapp::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(480px circle at 18% 20%, rgba(208, 60, 87, .08), transparent 52%);
+  pointer-events: none;
+}
+
+.contact-channels > .channel-card.channel-card--whatsapp > .icon {
+  grid-area: icon;
+  width: clamp(3rem, 4vw, 3.8rem);
+  height: clamp(3rem, 4vw, 3.8rem);
+  margin-top: 0;
+  color: var(--brand-rose, #d03c57);
+  position: relative;
+  z-index: 1;
+}
+
+.contact-channels > .channel-card.channel-card--whatsapp .channel-card__body {
+  grid-area: body;
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-channels > .channel-card.channel-card--whatsapp strong {
+  display: block;
+  margin: 0 0 0.85rem;
+  color: #050505;
+  font-size: clamp(1.6rem, 2.6vw, 2.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.contact-channels > .channel-card.channel-card--whatsapp p {
+  display: block;
+  width: min(100%, 25rem);
+  margin: 0;
+  color: #5e555a;
+  font-size: clamp(1.02rem, 1.35vw, 1.25rem);
+  line-height: 1.55;
+}
+
+.contact-channels > .channel-card.channel-card--whatsapp .channel-card__action {
+  grid-area: action;
+  justify-self: start;
+  align-self: start;
+  min-width: 0;
+  width: min(100%, 16rem);
+  position: relative;
+  z-index: 1;
+  margin-left: calc(clamp(3rem, 4vw, 3.8rem) + 1.5rem);
+}
+
+.contact-channels > .channel-card.channel-card--whatsapp .channel-card__action .btn {
+  width: 100%;
+  min-height: 4.8rem;
+  padding: 1rem 1.25rem;
+  border-width: 2px;
+  border-color: rgba(112, 105, 110, 0.55);
+  border-radius: 999px;
+  background: rgba(255,255,255,.72);
+  color: #6b6166;
+  font-size: 0.98rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-align: left;
+  text-transform: uppercase;
+  box-shadow: 0 8px 20px rgba(38, 20, 31, 0.06);
+}
+
+.contact-channels > .channel-card.channel-card--whatsapp .channel-card__action .btn:hover {
+  background: rgba(37, 211, 102, 0.14);
+  border-color: var(--color-whatsapp);
+}
+
+.contact-channels > .channel-card.channel-card--whatsapp .channel-card__action .btn .icon {
+  margin-left: auto;
+  width: 2rem;
+  height: 2rem;
+}
+
+@media (max-width: 999px) {
+  .contact-channels > .channel-card.channel-card--whatsapp {
+    grid-template-columns: 3rem minmax(0, 1fr);
+    grid-template-areas:
+      "icon body"
+      "action action";
+    gap: 1rem;
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .contact-channels > .channel-card.channel-card--whatsapp .channel-card__action {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .contact-channels > .channel-card.channel-card--whatsapp .channel-card__action .btn {
+    min-height: 5.2rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-channels > .channel-card.channel-card--whatsapp {
+    grid-template-columns: 2.6rem minmax(0, 1fr);
+    padding: 1.25rem;
+    border-radius: 1.25rem;
+  }
+
+  .contact-channels > .channel-card.channel-card--whatsapp > .icon {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  .contact-channels > .channel-card.channel-card--whatsapp strong {
+    font-size: 1.35rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .contact-channels > .channel-card.channel-card--whatsapp p {
+    font-size: 0.98rem;
+  }
+
+  .contact-channels > .channel-card.channel-card--whatsapp .channel-card__action .btn {
+    min-height: 5rem;
+    font-size: 0.8rem;
   }
 }

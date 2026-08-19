@@ -124,6 +124,27 @@
    * Scroll suave para enlaces internos (#ancla)
    * ------------------------------------------------------------------ */
 
+  function scrollToAnchor(target) {
+    if (!target) {
+      return;
+    }
+
+    const reduceMotion = prefersReducedMotion();
+    const rect = target.getBoundingClientRect();
+    const viewportHeight =
+      window.innerHeight || document.documentElement.clientHeight;
+    const centeredOffset = Math.max(0, (viewportHeight - rect.height) / 2);
+    const targetTop = window.pageYOffset + rect.top - centeredOffset;
+    const maxTop =
+      document.documentElement.scrollHeight - viewportHeight;
+    const nextTop = Math.min(Math.max(0, targetTop), Math.max(0, maxTop));
+
+    window.scrollTo({
+      top: nextTop,
+      behavior: reduceMotion ? "auto" : "smooth",
+    });
+  }
+
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
     link.addEventListener("click", function (event) {
       var targetId = link.getAttribute("href");
@@ -135,10 +156,7 @@
         return;
       }
       event.preventDefault();
-      target.scrollIntoView({
-        behavior: prefersReducedMotion() ? "auto" : "smooth",
-        block: "start",
-      });
+      scrollToAnchor(target);
       // Actualiza la URL sin saltar de nuevo.
       if (history.pushState) {
         history.pushState(null, "", targetId);
@@ -570,4 +588,170 @@
       }
     });
   }
+
+  /* ------------------------------------------------------------------
+   * Botones de pago pendientes (Whop)
+   * - Los enlaces [data-whop] aún no tienen URL real: en lugar de
+   *   navegar a un enlace roto, muestran un aviso glass flotante.
+   * ------------------------------------------------------------------ */
+
+  var whopToast = document.createElement("div");
+  whopToast.className = "whop-toast";
+  whopToast.setAttribute("role", "status");
+  whopToast.setAttribute("aria-live", "polite");
+  whopToast.innerHTML =
+    '<svg class="icon" aria-hidden="true"><use href="#icon-info"></use></svg>' +
+    '<span class="whop-toast__text">Este servicio aún no está disponible.</span>';
+  document.body.appendChild(whopToast);
+
+  var whopToastTimer = null;
+
+  function showWhopToast() {
+    whopToast.classList.add("is-visible");
+    if (whopToastTimer) {
+      clearTimeout(whopToastTimer);
+    }
+    whopToastTimer = setTimeout(function () {
+      whopToast.classList.remove("is-visible");
+    }, 4000);
+  }
+
+  document.querySelectorAll("[data-whop]").forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      showWhopToast();
+    });
+  });
+
+  /* ------------------------------------------------------------------
+   * Modal de documentos legales (Políticas / Términos)
+   * - Abre una tarjeta glass con el contenido de politicas.html
+   *   en lugar de navegar a otra página.
+   * - Si el fetch no es posible (p. ej. file://), conserva la
+   *   navegación normal como respaldo.
+   * ------------------------------------------------------------------ */
+
+  var legalModal = document.getElementById("legal-modal");
+
+  function openLegalModal(sectionId, pagePath) {
+    if (!legalModal) {
+      return;
+    }
+
+    var body = legalModal.querySelector("[data-legal-body]");
+    var closeBtn = legalModal.querySelector("[data-legal-close]");
+    var dialog = legalModal.querySelector("[role='dialog']");
+    var lastFocused = document.activeElement;
+
+    if (!body) {
+      return;
+    }
+
+    function closeLegalModal() {
+      legalModal.classList.remove("is-open");
+      legalModal.setAttribute("aria-hidden", "true");
+      if (dialog) {
+        dialog.setAttribute("aria-hidden", "true");
+      }
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", trapLegalKey);
+      if (lastFocused && lastFocused.focus) {
+        lastFocused.focus();
+      }
+    }
+
+    function trapLegalKey(event) {
+      if (event.key === "Escape") {
+        closeLegalModal();
+        return;
+      }
+      if (event.key !== "Tab") {
+        return;
+      }
+      var focusables = legalModal.querySelectorAll(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusables.length === 0) {
+        return;
+      }
+      var first = focusables[0];
+      var last = focusables[focusables.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+
+    fetch(pagePath)
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("No se pudo cargar el documento");
+        }
+        return response.text();
+      })
+      .then(function (html) {
+        var doc = new DOMParser().parseFromString(html, "text/html");
+        var fragment = document.createDocumentFragment();
+        var privacy = doc.getElementById("privacidad");
+        var terms = doc.getElementById("terminos");
+        if (privacy) {
+          fragment.appendChild(privacy.cloneNode(true));
+        }
+        if (terms) {
+          fragment.appendChild(terms.cloneNode(true));
+        }
+        body.innerHTML = "";
+        body.appendChild(fragment);
+
+        legalModal.classList.add("is-open");
+        legalModal.removeAttribute("aria-hidden");
+        if (dialog) {
+          dialog.setAttribute("aria-hidden", "false");
+        }
+        document.body.style.overflow = "hidden";
+        document.addEventListener("keydown", trapLegalKey);
+
+        var focusTarget =
+          closeBtn || dialog.querySelector("button");
+        if (focusTarget) {
+          focusTarget.focus();
+        }
+
+        if (sectionId) {
+          var target = body.querySelector("#" + sectionId);
+          if (target && target.scrollIntoView) {
+            target.scrollIntoView({ block: "start", behavior: prefersReducedMotion() ? "auto" : "smooth" });
+          }
+        }
+
+        if (closeBtn) {
+          closeBtn.addEventListener("click", closeLegalModal, { once: true });
+        }
+        legalModal.addEventListener("click", function (event) {
+          if (event.target === legalModal) {
+            closeLegalModal();
+          }
+        }, { once: true });
+      })
+      .catch(function () {
+        // Respaldo: navegación normal a la página legal.
+        if (lastFocused && lastFocused.href) {
+          window.location.href = lastFocused.getAttribute("href");
+        }
+      });
+  }
+
+  document.querySelectorAll("[data-legal]").forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      var href = link.getAttribute("href") || "";
+      var hashIndex = href.indexOf("#");
+      var pagePath = hashIndex > -1 ? href.slice(0, hashIndex) : href;
+      var sectionId = hashIndex > -1 ? href.slice(hashIndex + 1) : "";
+      openLegalModal(sectionId, pagePath);
+    });
+  });
 })();

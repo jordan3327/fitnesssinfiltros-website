@@ -9,6 +9,10 @@ html {
   scroll-padding-top: calc(var(--header-height) + 1rem);
 }
 
+main [id] {
+  scroll-margin-top: calc(var(--header-height) + 1.75rem);
+}
+
 body {
   font-family: var(--font-body);
   font-size: var(--fs-body);
@@ -596,7 +600,6 @@ strong {
   gap: var(--space-2) var(--space-4);
   margin-top: var(--space-5);
   padding-top: var(--space-4);
-  border-top: 1px solid var(--color-border);
 }
 
 .hero-trust-item {
@@ -859,7 +862,7 @@ strong {
 }
 
 .service-card .btn {
-  margin-top: 0.25rem;
+  margin-top: auto;
 }
 
 /* --- Cómo funciona ------------------------------------------------------ */
@@ -1459,6 +1462,8 @@ select.form-control {
 /* --- Detalle de servicios (página) -------------------------------------- */
 
 .service-detail {
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background: var(--color-white);
@@ -1478,11 +1483,16 @@ select.form-control {
 }
 
 .service-detail p {
+  flex: 1 1 auto;
   font-size: var(--fs-small);
 }
 
 .service-detail .price-row {
   margin: 1rem 0 0.75rem;
+}
+
+.service-detail .btn {
+  margin-top: auto;
 }
 
 .service-detail .service-icon {

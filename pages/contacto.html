@@ -8,11 +8,24 @@
     <title>Contacto | Fitness Sin Filtros</title>
     <meta
       name="description"
-      content="Cuéntale a Fitness Sin Filtros tu objetivo y recibe orientación por WhatsApp para elegir el servicio que se adapte a ti."
+      content="Cuéntanos tu objetivo y recibe orientación por WhatsApp para elegir el servicio que se adapte a ti. Sin formularios largos ni esperas."
     />
     <meta name="theme-color" content="#D23C58" />
     <!-- REVISAR ANTES DE PUBLICAR: confirmar URLs finales según hosting y estructura. -->
     <link rel="canonical" href="https://fitnesssinfiltros.com/contacto.html" />
+    <meta name="author" content="Fitness Sin Filtros" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Fitness Sin Filtros" />
+    <meta property="og:title" content="Contacto | Fitness Sin Filtros" />
+    <meta
+      property="og:description"
+      content="Cuéntanos tu objetivo y recibe orientación por WhatsApp para elegir el servicio que se adapte a ti. Sin formularios largos ni esperas."
+    />
+    <meta property="og:url" content="https://fitnesssinfiltros.com/contacto.html" />
+    <meta property="og:image" content="[PENDIENTE_CLIENTE: añadir la URL absoluta de la imagen que se mostrará al compartir el enlace en redes]" />
+    <meta property="og:locale" content="es_EC" />
 
     <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg" />
 
@@ -179,9 +192,9 @@
           </ul>
         </nav>
 
-        <a class="btn btn-primary nav-cta" data-whatsapp href="#">Hablar por WhatsApp</a>
+        <a class="btn btn-primary nav-cta" data-whatsapp href="#">Escríbeme por WhatsApp</a>
 
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú de navegación">
           <svg class="icon icon-menu" aria-hidden="true"><use href="#icon-menu"></use></svg>
           <svg class="icon icon-close" aria-hidden="true"><use href="#icon-close"></use></svg>
         </button>
@@ -198,7 +211,7 @@
           <li><a class="nav-link" href="contacto.html" aria-current="page">Contacto</a></li>
         </ul>
         <div class="nav-cta-wrap">
-          <a class="btn btn-primary btn-block" data-whatsapp href="#">Hablar por WhatsApp</a>
+          <a class="btn btn-primary btn-block" data-whatsapp href="#">Escríbeme por WhatsApp</a>
         </div>
       </nav>
     </div>
@@ -228,8 +241,8 @@
             <div class="reveal">
               <h2>Cuéntame qué quieres trabajar</h2>
               <p class="contact-form-intro">
-                Completa lo esencial sobre tu objetivo. Al continuar, abrirás WhatsApp con un mensaje
-                preparado que podrás revisar antes de enviarlo.
+                Completa los datos esenciales y al enviar se abrirá WhatsApp con un mensaje listo
+                para revisar antes de enviarlo.
               </p>
 
               <form class="form" data-contact-form novalidate>
@@ -317,7 +330,7 @@
                     class="form-control"
                     id="contact-message"
                     name="message"
-                    placeholder="Cuéntame tu objetivo y tu disponibilidad…"
+                    placeholder="Cuéntame tu objetivo, tu disponibilidad y lo que necesitas…"
                     required
                   ></textarea>
                   <p class="field-error" id="contact-message-error" role="alert"></p>
@@ -339,8 +352,8 @@
               </form>
 
               <p class="form-note">
-                Al enviar, se abrirá WhatsApp con un mensaje preparado. Este sitio no almacena ni
-                envía tus datos a un servidor.
+                Tu mensaje se abre en WhatsApp; este sitio no almacena ni envía tus datos a ningún
+                servidor.
               </p>
             </div>
 
@@ -348,17 +361,19 @@
             <div class="reveal">
               <h2>Elige cómo quieres contactarme</h2>
               <div class="contact-channels">
-                <div class="channel-card">
+                <div class="channel-card channel-card--whatsapp">
                   <svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
-                  <div>
+                  <div class="channel-card__body">
                     <strong>WhatsApp</strong>
                     <!-- REEMPLAZAR: número real de WhatsApp -->
                     <p>Cuéntame qué buscas y revisamos cuál servicio puede encajar contigo.</p>
                   </div>
-                  <a class="btn btn-secondary" href="#" data-whatsapp data-whatsapp-msg="Hola, quiero orientación para elegir el servicio más adecuado para mi objetivo.">
-                    Escribir por WhatsApp
-                    <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
-                  </a>
+                  <div class="channel-card__action">
+                    <a class="btn btn-secondary" href="#" data-whatsapp data-whatsapp-msg="Hola, quiero orientación para elegir el servicio más adecuado para mi objetivo.">
+                      Escribir por WhatsApp
+                      <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
+                    </a>
+                  </div>
                 </div>
 
                 <div class="channel-card" data-email>
@@ -376,7 +391,7 @@
                   <div>
                     <strong>Horarios de atención</strong>
                     <!-- PENDIENTE_CLIENTE: confirmar horarios reales -->
-                    <p data-contact-schedule-text>[PENDIENTE_CLIENTE: confirmar horarios de atención]</p>
+                    <p data-contact-schedule-text>[PENDIENTE_CLIENTE: añadir los horarios de atención]</p>
                   </div>
                 </div>
 
@@ -385,7 +400,7 @@
                   <div>
                     <strong>Atención</strong>
                     <!-- PENDIENTE_CLIENTE: confirmar modalidad y zona de atención -->
-                    <p data-contact-modality-text>[PENDIENTE_CLIENTE: confirmar modalidad de atención]</p>
+                    <p data-contact-modality-text>[PENDIENTE_CLIENTE: añadir la modalidad de atención (online, presencial o híbrida)]</p>
                   </div>
                 </div>
               </div>
@@ -448,8 +463,8 @@
               </h3>
               <div class="faq-answer" id="contact-faq-1">
                 <p>
-                  No. Cada plan se diseña después de conocerte: tus objetivos, hábitos, necesidades
-                  y estilo de vida.
+                  No. Cada plan se diseña después de conocerte: tus objetivos, tu rutina
+                  y tu punto de partida.
                 </p>
               </div>
             </div>
@@ -462,7 +477,8 @@
               </h3>
               <div class="faq-answer" id="contact-faq-2">
                 <p>
-                  [PENDIENTE_CLIENTE: métodos de pago aprobados].
+                  El pago se confirma al contratar tu servicio por WhatsApp.
+                  [PENDIENTE_CLIENTE: añadir los métodos de pago disponibles]
                 </p>
               </div>
             </div>
@@ -475,8 +491,8 @@
               </h3>
               <div class="faq-answer" id="contact-faq-3">
                 <p>
-                  El tiempo de entrega se confirma al contratar, según el servicio y la información
-                  recibida.
+                  El tiempo de entrega se define al contratar, según el servicio y la
+                  información que compartas.
                 </p>
               </div>
             </div>
@@ -575,9 +591,9 @@
         <div class="footer-bottom">
           <p>© <span data-year>2026</span> Fitness Sin Filtros. Todos los derechos reservados.</p>
           <p>
-            <a href="politicas.html#privacidad">Políticas de privacidad</a>
+            <a href="politicas.html#privacidad" data-legal>Políticas de privacidad</a>
             <span aria-hidden="true"> · </span>
-            <a href="politicas.html#terminos">Términos y condiciones</a>
+            <a href="politicas.html#terminos" data-legal>Términos y condiciones</a>
           </p>
         </div>
       </div>
@@ -599,7 +615,7 @@
         </div>
         <h3 class="modal__title" id="modal-title">Tu mensaje está listo</h3>
         <p class="modal__subtitle" id="modal-subtitle">
-          Revisa el resumen antes de abrir WhatsApp. Este sitio no envía datos a un servidor.
+          Revisa el resumen antes de abrir WhatsApp. Ningún dato se envía ni se almacena en un servidor.
         </p>
         <div class="modal__preview" data-modal-preview aria-live="polite"></div>
         <div class="modal__actions">
@@ -609,6 +625,22 @@
           </a>
           <button class="btn btn-ghost btn-block" type="button" data-modal-cancel>Cancelar</button>
         </div>
+      </div>
+    </div>
+
+    <!-- Modal de documentos legales (Políticas / Términos) -->
+    <div class="modal modal--legal" id="legal-modal" aria-hidden="true" aria-label="Documentos legales">
+      <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="legal-modal-title">
+        <div class="modal__head">
+          <div>
+            <svg class="icon" aria-hidden="true"><use href="#icon-lock"></use></svg>
+          </div>
+          <button class="modal__close" type="button" data-legal-close aria-label="Cerrar">
+            <svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg>
+          </button>
+        </div>
+        <h3 class="modal__title" id="legal-modal-title">Políticas de privacidad y términos</h3>
+        <div class="legal modal__legal-body" data-legal-body></div>
       </div>
     </div>
 
