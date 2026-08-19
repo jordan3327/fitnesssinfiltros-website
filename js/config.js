@@ -1,5 +1,5 @@
 /* ==========================================================================
-   config.js — CONFIGURACIÓN EDITABLE DE LA CLIENTA
+   config.js - CONFIGURACIÓN EDITABLE DE LA CLIENTA
    --------------------------------------------------------------------------
    Toda la información que debe personalizar la propietaria del sitio está
    centralizada aquí. Busca los comentarios "PENDIENTE_CLIENTE" y actualiza
@@ -52,53 +52,52 @@ window.CONFIG = {
    * ------------------------------------------------------------------ */
   services: [
     {
-      id: "entrenamiento-1-1",
-      name: "Entrenamiento personal conmigo 1:1",
-      price: "$50",
-      priceNote: "por sesión",
-      // Mensaje enviado por WhatsApp al consultar un servicio.
-      whatsappMessage:
-        "Hola, quiero saber si el servicio de Entrenamiento personal conmigo 1:1 es adecuado para mi objetivo.",
-    },
-    {
       id: "rutina-pdf-sin-seguimiento",
-      name: "Rutina PDF sin seguimiento",
+      name: "Rutina PDF sin seguimiento personalizado",
       price: "$200",
       priceNote: "pago único",
       whatsappMessage:
-        "Hola, quiero saber si la Rutina PDF sin seguimiento es adecuada para mi objetivo.",
+        "Hola, quiero saber si la Rutina PDF sin seguimiento personalizado es adecuada para mi objetivo.",
     },
     {
       id: "rutina-pdf-seguimiento",
-      name: "Rutina PDF con seguimiento",
+      name: "Rutina PDF + seguimiento personalizado",
       price: "$250",
       priceNote: "pago único",
       whatsappMessage:
-        "Hola, quiero saber si la Rutina PDF con seguimiento es adecuada para mi objetivo.",
+        "Hola, quiero saber si la Rutina PDF + seguimiento personalizado es adecuada para mi objetivo.",
     },
     {
-      id: "plan-alimentacion-seguimiento",
-      name: "Plan de alimentación + seguimiento personalizado",
+      id: "guia-alimentacion-seguimiento",
+      name: "Guía Personal de Alimentación Fitness + seguimiento personalizado",
       price: "$250",
       priceNote: "pago único",
       whatsappMessage:
-        "Hola, quiero saber si el Plan de alimentación + seguimiento personalizado es adecuado para mi objetivo.",
+        "Hola, quiero saber si la Guía Personal de Alimentación Fitness + seguimiento personalizado es adecuada para mi objetivo.",
     },
     {
-      id: "plan-alimentacion-sin-seguimiento",
-      name: "Plan de alimentación sin seguimiento",
+      id: "guia-alimentacion-sin-seguimiento",
+      name: "Guía Personal de Alimentación Fitness sin seguimiento",
       price: "$200",
       priceNote: "pago único",
       whatsappMessage:
-        "Hola, quiero saber si el Plan de alimentación sin seguimiento es adecuado para mi objetivo.",
+        "Hola, quiero saber si la Guía Personal de Alimentación Fitness sin seguimiento es adecuada para mi objetivo.",
     },
     {
-      id: "asesoria-personalizada",
-      name: "Asesoría personalizada de 1 hora",
+      id: "asesoria-20-min",
+      name: "Asesoría personalizada (20 minutos)",
       price: "$50",
       priceNote: "por sesión",
       whatsappMessage:
-        "Hola, quiero saber si la Asesoría personalizada de 1 hora es adecuada para mi objetivo.",
+        "Hola, quiero saber si la Asesoría personalizada (20 minutos) es adecuada para mi objetivo.",
+    },
+    {
+      id: "pack-8-semanas",
+      name: "Pack especial 8 semanas",
+      price: "$399",
+      priceNote: "pago único",
+      whatsappMessage:
+        "Hola, quiero saber si el Pack especial 8 semanas es adecuado para mi objetivo.",
     },
   ],
 

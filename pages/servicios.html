@@ -1,30 +1,40 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>document.documentElement.classList.add("js");</script>
+    <script>
+      /* i18n: aplica el idioma guardado antes del primer pintado (evita parpadeo). */
+      (function () {
+        try {
+          if (localStorage.getItem("fsf-language") === "en") {
+            document.documentElement.lang = "en";
+          }
+        } catch (e) {}
+      })();
+    </script>
 
-    <title>Servicios y precios | Fitness Sin Filtros</title>
+    <title>Programas y precios | Fitness Sin Filtros</title>
     <meta
       name="description"
-      content="Entrenamiento 1:1, rutinas en PDF y planes de alimentación con precios claros. Elige el servicio que se adapte a tu objetivo y consulta por WhatsApp."
+      content="Programas de entrenamiento, nutrición y acompañamiento diseñados a tu medida. Elige el programa que mejor se adapte a tu objetivo y consulta por WhatsApp."
     />
     <meta name="theme-color" content="#D23C58" />
-    <!-- REVISAR ANTES DE PUBLICAR: confirmar URLs finales según hosting y estructura. -->
+    <!-- REVISAR ANTES DE PUBLICAR: confirmar URLs finales segÃºn hosting y estructura. -->
     <link rel="canonical" href="https://fitnesssinfiltros.com/servicios.html" />
     <meta name="author" content="Fitness Sin Filtros" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Fitness Sin Filtros" />
-    <meta property="og:title" content="Servicios y precios | Fitness Sin Filtros" />
+    <meta property="og:title" content="Programas y precios | Fitness Sin Filtros" />
     <meta
       property="og:description"
-      content="Entrenamiento 1:1, rutinas en PDF y planes de alimentación con precios claros. Elige el servicio que se adapte a tu objetivo y consulta por WhatsApp."
+      content="Programas de entrenamiento, nutrición y acompañamiento diseñados a tu medida. Elige el programa que mejor se adapte a tu objetivo y consulta por WhatsApp."
     />
     <meta property="og:url" content="https://fitnesssinfiltros.com/servicios.html" />
-    <meta property="og:image" content="[PENDIENTE_CLIENTE: añadir la URL absoluta de la imagen que se mostrará al compartir el enlace en redes]" />
+    <meta property="og:image" content="[PENDIENTE_CLIENTE: aÃ±adir la URL absoluta de la imagen que se mostrarÃ¡ al compartir el enlace en redes]" />
     <meta property="og:locale" content="es_EC" />
 
     <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg" />
@@ -42,6 +52,7 @@
     <link rel="stylesheet" href="../css/components.css" />
     <link rel="stylesheet" href="../css/responsive.css" />
     <link rel="stylesheet" href="../css/editorial-overhaul.css" />
+    <link rel="stylesheet" href="../css/i18n.css" />
   </head>
 
   <body>
@@ -171,108 +182,84 @@
 
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="../index.html" aria-label="Fitness Sin Filtros, página de inicio">
+        <a class="brand" href="../index.html" aria-label="Fitness Sin Filtros, pÃ¡gina de inicio">
 <img class="brand-logo" src="../assets/logo/complet.svg" alt="Fitness Sin Filtros" />
           <span><span class="brand-name">Fitness Sin Filtros</span><span class="brand-domain">fitnesssinfiltros.com</span></span>
         </a>
 
-        <nav class="main-nav" aria-label="Navegación principal">
+        <nav class="main-nav" aria-label="NavegaciÃ³n principal">
           <ul class="nav-list" role="list">
             <li><a class="nav-link" href="../index.html">Inicio</a></li>
             <li><a class="nav-link" href="servicios.html" aria-current="page">Servicios</a></li>
-            <li><a class="nav-link" href="sobre-mi.html">Sobre mí</a></li>
+            <li><a class="nav-link" href="sobre-mi.html">Sobre mÃ­</a></li>
             <li><a class="nav-link" href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
             <li><a class="nav-link" href="contacto.html">Contacto</a></li>
           </ul>
         </nav>
 
-        <a class="btn btn-primary nav-cta" data-whatsapp href="#">Escríbeme por WhatsApp</a>
+        <a class="btn btn-primary nav-cta" data-whatsapp href="#">EscrÃ­beme por WhatsApp</a>
 
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú de navegación">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menÃº de navegaciÃ³n">
           <svg class="icon icon-menu" aria-hidden="true"><use href="#icon-menu"></use></svg>
           <svg class="icon icon-close" aria-hidden="true"><use href="#icon-close"></use></svg>
         </button>
       </div>
     </header>
 
-    <div class="mobile-menu" id="mobile-menu" aria-label="Menú móvil">
-      <nav aria-label="Navegación móvil">
+    <div class="mobile-menu" id="mobile-menu" aria-label="MenÃº mÃ³vil">
+      <nav aria-label="NavegaciÃ³n mÃ³vil">
         <ul class="nav-list" role="list">
           <li><a class="nav-link" href="../index.html">Inicio</a></li>
           <li><a class="nav-link" href="servicios.html" aria-current="page">Servicios</a></li>
-          <li><a class="nav-link" href="sobre-mi.html">Sobre mí</a></li>
+          <li><a class="nav-link" href="sobre-mi.html">Sobre mÃ­</a></li>
           <li><a class="nav-link" href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
           <li><a class="nav-link" href="contacto.html">Contacto</a></li>
         </ul>
-        <div class="nav-cta-wrap">
-          <a class="btn btn-primary btn-block" data-whatsapp href="#">Escríbeme por WhatsApp</a>
+<div class="nav-cta-wrap">
+          <a class="btn btn-primary btn-block" data-whatsapp href="#">EscrÃ­beme por WhatsApp</a>
         </div>
       </nav>
     </div>
 
     <main id="contenido">
-      <section class="sub-hero" aria-labelledby="servicios-titulo">
+            <section class="sub-hero" aria-labelledby="servicios-titulo">
         <div class="container">
           <p class="eyebrow">
             <svg class="icon" aria-hidden="true"><use href="#icon-heart"></use></svg>
-            Servicios y precios
+            Programas y precios
           </p>
-          <h1 id="servicios-titulo">Planes hechos para ti, no para todos</h1>
+          <h1 id="servicios-titulo">Programas hechos para tu etapa actual</h1>
           <p>
-            Primero te escucho; después te propongo el servicio que encaja contigo y con tu punto
-            de partida.
+            Cada opción parte de tu punto de partida, tus metas y tu estilo de vida. Los planes
+            están diseñados para 8 semanas y se confirman por WhatsApp antes de contratar.
           </p>
-          <nav class="inner-nav" aria-label="Ir a un servicio">
+          <nav class="inner-nav" aria-label="Ir a un programa">
             <ul role="list">
-              <li><a href="#entrenamiento-personal">Entrenamiento 1:1</a></li>
-              <li><a href="#rutinas">Rutinas PDF</a></li>
-              <li><a href="#alimentacion">Planes de alimentación</a></li>
+              <li><a href="#rutina-pdf-sin-seguimiento">Rutina PDF</a></li>
+              <li><a href="#rutina-pdf-seguimiento">Rutina + seguimiento</a></li>
+              <li><a href="#guia-alimentacion-seguimiento">Guía de alimentación</a></li>
               <li><a href="#asesoria">Asesoría</a></li>
+              <li><a href="#pack-8-semanas">Pack 8 semanas</a></li>
             </ul>
           </nav>
         </div>
       </section>
 
-      <section class="section" aria-label="Lista de servicios">
+      <section class="section" aria-label="Lista de programas">
         <div class="container">
           <h2 class="sr-only">Servicios y precios</h2>
           <div class="services-grid services-grid--details">
-            <article class="service-detail reveal" id="entrenamiento-personal">
-              <div class="service-detail__head">
-                <span class="service-icon" aria-hidden="true"><svg class="icon"><use href="#icon-users"></use></svg></span>
-                <div>
-                  <h3>Entrenamiento personal conmigo 1:1</h3>
-                  <span class="chip">
-                    <svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>
-                    Acompañamiento según el servicio
-                  </span>
-                </div>
-              </div>
-              <p>
-                Una sesión individual para trabajar según tu objetivo y tu nivel actual. La modalidad,
-                duración, ubicación y condiciones se confirman directamente antes de contratar.
-              </p>
-              <div class="price-row">
-                <span class="price">$50</span>
-                <span class="price-note">por sesión</span>
-              </div>
-              <a class="btn btn-secondary" href="link-aqui" data-whop data-service-id="entrenamiento-1-1">
-                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para entrenamiento-1-1 -->
-                Consultar este servicio
-              </a>
-            </article>
-
-            <article class="service-detail reveal" id="rutinas">
+            <article class="service-detail reveal" id="rutina-pdf-sin-seguimiento">
               <div class="service-detail__head">
                 <span class="service-icon" aria-hidden="true"><svg class="icon"><use href="#icon-file-text"></use></svg></span>
                 <div>
-                  <h3>Rutina PDF sin seguimiento</h3>
-                  <span class="chip">Sin seguimiento</span>
+                  <h3>Rutina PDF sin seguimiento personalizado</h3>
+                  <span class="chip">Sin seguimiento · 8 semanas</span>
                 </div>
               </div>
               <p>
-                Rutina personalizada entregada en PDF, adaptada a tus objetivos y a la información
-                que compartas.
+                Rutina personalizada entregada en PDF, adaptada a tus objetivos, disponibilidad y
+                nivel actual para trabajar durante 8 semanas.
               </p>
               <div class="price-row">
                 <span class="price">$200</span>
@@ -280,24 +267,24 @@
               </div>
               <a class="btn btn-secondary" href="link-aqui" data-whop data-service-id="rutina-pdf-sin-seguimiento">
                 <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para rutina-pdf-sin-seguimiento -->
-                Consultar este servicio
+                Consultar este programa
               </a>
             </article>
 
-            <article class="service-detail reveal" id="rutinas-seguimiento">
+            <article class="service-detail reveal" id="rutina-pdf-seguimiento">
               <div class="service-detail__head">
                 <span class="service-icon" aria-hidden="true"><svg class="icon"><use href="#icon-file-text"></use></svg></span>
                 <div>
-                  <h3>Rutina PDF con seguimiento</h3>
+                  <h3>Rutina PDF + seguimiento personalizado</h3>
                   <span class="chip">
                     <svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg>
-                    Recomendado · Con seguimiento
+                    Recomendado · 8 semanas
                   </span>
                 </div>
               </div>
               <p>
-                Rutina personalizada en PDF con acompañamiento para revisar el proceso según el
-                alcance acordado.
+                Rutina personalizada en PDF con acompañamiento para revisar el proceso, ajustar lo
+                necesario y sostener el avance durante 8 semanas.
               </p>
               <div class="price-row">
                 <span class="price">$250</span>
@@ -305,54 +292,56 @@
               </div>
               <a class="btn btn-primary" href="link-aqui" data-whop data-service-id="rutina-pdf-seguimiento">
                 <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para rutina-pdf-seguimiento -->
-                Consultar este servicio
+                Consultar este programa
               </a>
             </article>
 
-            <article class="service-detail reveal" id="alimentacion">
+            <article class="service-detail reveal" id="guia-alimentacion-seguimiento">
               <div class="service-detail__head">
                 <span class="service-icon" aria-hidden="true"><svg class="icon"><use href="#icon-apple"></use></svg></span>
                 <div>
-                  <h3>Plan de alimentación sin seguimiento</h3>
-                  <span class="chip">Sin seguimiento</span>
-                </div>
-              </div>
-              <p>
-                Plan de alimentación personalizado según tus objetivos, hábitos y estilo de vida, sin
-                acompañamiento continuo.
-              </p>
-              <div class="price-row">
-                <span class="price">$200</span>
-                <span class="price-note">pago único</span>
-              </div>
-              <a class="btn btn-secondary" href="link-aqui" data-whop data-service-id="plan-alimentacion-sin-seguimiento">
-                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para plan-alimentacion-sin-seguimiento -->
-                Consultar este servicio
-              </a>
-            </article>
-
-            <article class="service-detail reveal" id="alimentacion-seguimiento">
-              <div class="service-detail__head">
-                <span class="service-icon" aria-hidden="true"><svg class="icon"><use href="#icon-apple"></use></svg></span>
-                <div>
-                  <h3>Plan de alimentación + seguimiento personalizado</h3>
+                  <h3>Guía Personal de Alimentación Fitness + seguimiento personalizado</h3>
                   <span class="chip">
                     <svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg>
-                    Recomendado · Con seguimiento
+                    Recomendado · 8 semanas
                   </span>
                 </div>
               </div>
               <p>
-                Plan personalizado considerando objetivos, hábitos, necesidades y estilo de vida, con
-                seguimiento según las condiciones acordadas.
+                Guía diseñada según tus objetivos de fitness, preferencias alimentarias, horarios y
+                estilo de vida. Incluye estructura diaria de comidas, opciones de desayuno, almuerzo,
+                cena y snacks, porciones sugeridas, lista de compras y recomendaciones de hábitos.
+                + estructura general de entrenamiento.
               </p>
               <div class="price-row">
                 <span class="price">$250</span>
                 <span class="price-note">pago único</span>
               </div>
-              <a class="btn btn-primary" href="link-aqui" data-whop data-service-id="plan-alimentacion-seguimiento">
-                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para plan-alimentacion-seguimiento -->
-                Consultar este servicio
+              <a class="btn btn-primary" href="link-aqui" data-whop data-service-id="guia-alimentacion-seguimiento">
+                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para guia-alimentacion-seguimiento -->
+                Consultar este programa
+              </a>
+            </article>
+
+            <article class="service-detail reveal" id="guia-alimentacion-sin-seguimiento">
+              <div class="service-detail__head">
+                <span class="service-icon" aria-hidden="true"><svg class="icon"><use href="#icon-apple"></use></svg></span>
+                <div>
+                  <h3>Guía Personal de Alimentación Fitness sin seguimiento</h3>
+                  <span class="chip">Sin seguimiento · 8 semanas</span>
+                </div>
+              </div>
+              <p>
+                Guía personalizada con estructura diaria de comidas, opciones de menú, porciones
+                sugeridas, lista de compras y recomendaciones generales para 8 semanas.
+              </p>
+              <div class="price-row">
+                <span class="price">$200</span>
+                <span class="price-note">pago único</span>
+              </div>
+              <a class="btn btn-secondary" href="link-aqui" data-whop data-service-id="guia-alimentacion-sin-seguimiento">
+                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para guia-alimentacion-sin-seguimiento -->
+                Consultar este programa
               </a>
             </article>
 
@@ -360,20 +349,46 @@
               <div class="service-detail__head">
                 <span class="service-icon" aria-hidden="true"><svg class="icon"><use href="#icon-message-circle"></use></svg></span>
                 <div>
-                  <h3>Asesoría personalizada de 1 hora</h3>
-                  <span class="chip">Sesión de 1 hora</span>
+                  <h3>Asesoría personalizada (20 minutos)</h3>
+                  <span class="chip">Sesión de 20 minutos</span>
                 </div>
               </div>
               <p>
-                Una sesión de una hora para resolver preguntas y recibir orientación según tu meta.
+                Una sesión breve para resolver preguntas, revisar tu objetivo y decirte cuál es el
+                programa que mejor encaja contigo.
               </p>
               <div class="price-row">
                 <span class="price">$50</span>
                 <span class="price-note">por sesión</span>
               </div>
-              <a class="btn btn-secondary" href="link-aqui" data-whop data-service-id="asesoria-personalizada">
-                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para asesoria-personalizada -->
-                Consultar este servicio
+              <a class="btn btn-secondary" href="link-aqui" data-whop data-service-id="asesoria-20-min">
+                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para asesoria-20-min -->
+                Consultar este programa
+              </a>
+            </article>
+
+            <article class="service-detail reveal" id="pack-8-semanas">
+              <div class="service-detail__head">
+                <span class="service-icon" aria-hidden="true"><svg class="icon"><use href="#icon-heart"></use></svg></span>
+                <div>
+                  <h3>Pack especial 8 semanas</h3>
+                  <span class="chip">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg>
+                    Rutina + guía + seguimiento
+                  </span>
+                </div>
+              </div>
+              <p>
+                Incluye rutina PDF, guía de alimentación personalizada y seguimiento durante 8
+                semanas para acompañarte en el proceso completo.
+              </p>
+              <div class="price-row">
+                <span class="price">$399</span>
+                <span class="price-note">pago único</span>
+              </div>
+              <a class="btn btn-primary" href="link-aqui" data-whop data-service-id="pack-8-semanas">
+                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para pack-8-semanas -->
+                Consultar este pack
               </a>
             </article>
           </div>
@@ -381,19 +396,18 @@
           <div class="health-note reveal" role="note">
             <svg class="icon" aria-hidden="true"><use href="#icon-info"></use></svg>
             <p>
-              Los planes de alimentación se ofrecen con fines de orientación general y no
-              reemplazan la valoración ni el tratamiento de un médico o nutricionista clínico si
-              tienes una condición de salud.
+              Este servicio tiene fines educativos y de bienestar general. No constituye
+              asesoramiento médico, diagnóstico, tratamiento ni terapia nutricional y no sustituye
+              la atención de un dietista, nutricionista o profesional de la salud autorizado.
             </p>
           </div>
         </div>
       </section>
-
       <section class="section cta-final" aria-labelledby="cta-titulo">
         <div class="container">
           <svg class="icon" aria-hidden="true"><use href="#icon-heart"></use></svg>
-          <h2 id="cta-titulo">¿No sabes cuál elegir?</h2>
-          <p>Cuéntame tu objetivo y te ayudo a encontrar el plan que mejor se adapte a ti.</p>
+          <h2 id="cta-titulo">Â¿No sabes cuÃ¡l elegir?</h2>
+          <p>CuÃ©ntame tu objetivo y te ayudo a encontrar el plan que mejor se adapte a ti.</p>
           <div class="cta-final__whatsapp-wrap">
             <a class="btn btn-whatsapp btn-lg cta-final__whatsapp" data-whatsapp href="#">
               <span class="cta-final__whatsapp-icon" aria-hidden="true"><svg class="icon"><use href="#icon-whatsapp"></use></svg></span>
@@ -409,10 +423,10 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand footer-col">
-            <a class="brand" href="../index.html" aria-label="Fitness Sin Filtros, página de inicio">
+            <a class="brand" href="../index.html" aria-label="Fitness Sin Filtros, pÃ¡gina de inicio">
               <img class="brand-logo" src="../assets/logo/FSF.svg" alt="Fitness Sin Filtros" />
             </a>
-            <p class="footer-claim">Resultados reales, sin mitos, sin extremos y sin estrés.</p>
+            <p class="footer-claim">Resultados reales, sin mitos, sin extremos y sin estrÃ©s.</p>
           </div>
 
           <div class="footer-col">
@@ -420,29 +434,31 @@
             <ul class="footer-list" role="list">
               <li><a href="../index.html#inicio">Inicio</a></li>
               <li><a href="servicios.html">Servicios</a></li>
-              <li><a href="sobre-mi.html">Sobre mí</a></li>
+              <li><a href="sobre-mi.html">Sobre mÃ­</a></li>
               <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
               <li><a href="contacto.html">Contacto</a></li>
             </ul>
           </div>
 
-          <div class="footer-col">
+                    <div class="footer-col">
             <h4>Servicios</h4>
             <ul class="footer-list" role="list">
-              <li><a href="servicios.html#entrenamiento-personal">Entrenamiento 1:1</a></li>
-              <li><a href="servicios.html#rutinas">Rutinas PDF</a></li>
-              <li><a href="servicios.html#alimentacion">Planes de alimentación</a></li>
-              <li><a href="servicios.html#asesoria">Asesoría 1 hora</a></li>
+              <li><a href="servicios.html#rutina-pdf-sin-seguimiento">Rutina PDF sin seguimiento</a></li>
+              <li><a href="servicios.html#rutina-pdf-seguimiento">Rutina PDF + seguimiento</a></li>
+              <li><a href="servicios.html#guia-alimentacion-seguimiento">Guía alimentación + seguimiento</a></li>
+              <li><a href="servicios.html#guia-alimentacion-sin-seguimiento">Guía alimentación sin seguimiento</a></li>
+              <li><a href="servicios.html#asesoria">Asesoría 20 min</a></li>
+              <li><a href="servicios.html#pack-8-semanas">Pack 8 semanas</a></li>
             </ul>
           </div>
 
           <div class="footer-col">
             <h4>Contacto</h4>
             <ul class="footer-list" role="list">
-              <li><a href="#" data-whatsapp data-whatsapp-msg="Hola, quiero orientación para elegir el servicio más adecuado para mi objetivo.">WhatsApp</a></li>
+              <li><a href="#" data-whatsapp data-whatsapp-msg="Hola, quiero orientaciÃ³n para elegir el servicio mÃ¡s adecuado para mi objetivo.">WhatsApp</a></li>
               <li data-email>
                 <!-- PENDIENTE_CLIENTE: correo oficial (desde js/config.js) -->
-                <a href="mailto:">Correo electrónico</a>
+                <a href="mailto:">Correo electrÃ³nico</a>
               </li>
               <li data-social="instagram">
                 <!-- PENDIENTE_CLIENTE: enlace oficial de Instagram (desde js/config.js) -->
@@ -460,19 +476,32 @@
               <a href="#" data-social="facebook" aria-label="Facebook de Fitness Sin Filtros">
                 <svg class="icon" aria-hidden="true"><use href="#icon-facebook"></use></svg>
               </a>
-              <a href="#" data-whatsapp data-whatsapp-msg="Hola, quiero orientación para elegir el servicio más adecuado para mi objetivo." aria-label="WhatsApp de Fitness Sin Filtros">
+              <a href="#" data-whatsapp data-whatsapp-msg="Hola, quiero orientaciÃ³n para elegir el servicio mÃ¡s adecuado para mi objetivo." aria-label="WhatsApp de Fitness Sin Filtros">
                 <svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
               </a>
+            </div>
+            <div class="language-menu language-menu--footer" data-language-menu data-translate="none" aria-label="Idiomas">
+              <button class="language-pill" type="button" aria-label="Seleccionar idioma" aria-haspopup="listbox" aria-expanded="false" data-language-trigger>
+                <span class="language-pill__flag" data-language-current aria-hidden="true">ES</span>
+                <span data-language-label>ES</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 10l5 5 5-5" />
+                </svg>
+              </button>
+              <div class="language-options" role="listbox" aria-label="Idiomas" data-language-options>
+                <button type="button" role="option" data-language-option="es" aria-selected="true">ES <span>EspaÃ±ol</span></button>
+                <button type="button" role="option" data-language-option="en" aria-selected="false">EN <span>English</span></button>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="footer-bottom">
-          <p>© <span data-year>2026</span> Fitness Sin Filtros. Todos los derechos reservados.</p>
+          <p>Â© <span data-year>2026</span> Fitness Sin Filtros. Todos los derechos reservados.</p>
           <p>
-            <a href="politicas.html#privacidad" data-legal>Políticas de privacidad</a>
-            <span aria-hidden="true"> · </span>
-            <a href="politicas.html#terminos" data-legal>Términos y condiciones</a>
+            <a href="politicas.html#privacidad" data-legal>PolÃ­ticas de privacidad</a>
+            <span aria-hidden="true"> Â· </span>
+            <a href="politicas.html#terminos" data-legal>TÃ©rminos y condiciones</a>
           </p>
         </div>
       </div>
@@ -482,7 +511,7 @@
       <svg class="icon" aria-hidden="true"><use href="#icon-arrow-up"></use></svg>
     </button>
 
-    <div class="modal" id="confirmation-modal" aria-hidden="true" aria-label="Confirmación">
+    <div class="modal" id="confirmation-modal" aria-hidden="true" aria-label="ConfirmaciÃ³n">
       <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-subtitle">
         <div class="modal__head">
           <div>
@@ -492,9 +521,9 @@
             <svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg>
           </button>
         </div>
-        <h3 class="modal__title" id="modal-title">Tu mensaje está listo</h3>
+        <h3 class="modal__title" id="modal-title">Tu mensaje estÃ¡ listo</h3>
         <p class="modal__subtitle" id="modal-subtitle">
-          Revisa el resumen antes de abrir WhatsApp. Ningún dato se envía ni se almacena en un servidor.
+          Revisa el resumen antes de abrir WhatsApp. NingÃºn dato se envÃ­a ni se almacena en un servidor.
         </p>
         <div class="modal__preview" data-modal-preview aria-live="polite"></div>
         <div class="modal__actions">
@@ -507,7 +536,7 @@
       </div>
     </div>
 
-    <!-- Modal de documentos legales (Políticas / Términos) -->
+    <!-- Modal de documentos legales (PolÃ­ticas / TÃ©rminos) -->
     <div class="modal modal--legal" id="legal-modal" aria-hidden="true" aria-label="Documentos legales">
       <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="legal-modal-title">
         <div class="modal__head">
@@ -518,14 +547,19 @@
             <svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg>
           </button>
         </div>
-        <h3 class="modal__title" id="legal-modal-title">Políticas de privacidad y términos</h3>
+        <h3 class="modal__title" id="legal-modal-title">PolÃ­ticas de privacidad y tÃ©rminos</h3>
         <div class="legal modal__legal-body" data-legal-body></div>
       </div>
     </div>
 
     <script src="../js/config.js"></script>
+    <script src="../js/translations.js"></script>
+    <script src="../js/i18n.js"></script>
     <script src="../js/menu.js"></script>
     <script src="../js/faq.js"></script>
     <script src="../js/main.js"></script>
   </body>
 </html>
+
+
+

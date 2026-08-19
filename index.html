@@ -1,38 +1,48 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>document.documentElement.classList.add("js");</script>
+    <script>
+      /* i18n: aplica el idioma guardado antes del primer pintado (evita parpadeo). */
+      (function () {
+        try {
+          if (localStorage.getItem("fsf-language") === "en") {
+            document.documentElement.lang = "en";
+          }
+        } catch (e) {}
+      })();
+    </script>
 
-    <!-- SEO básico -->
-    <title>Fitness Sin Filtros | Entrenamiento, rutinas y planes de alimentación a tu medida</title>
+    <!-- SEO bÃ¡sico -->
+    <title>Fitness Sin Filtros | Programas y planes a tu medida</title>
     <meta
       name="description"
-      content="Entrenamiento, rutinas y planes de alimentación diseñados a tu medida. Una guía clara para avanzar con confianza, sin extremos ni fórmulas generales."
+      content="Programas de entrenamiento, nutrición y acompañamiento diseñados a tu medida. Una guía clara para avanzar con confianza, sin extremos ni fórmulas generales."
     />
     <meta name="author" content="Fitness Sin Filtros" />
     <meta name="theme-color" content="#D23C58" />
-    <!-- REVISAR ANTES DE PUBLICAR: confirmar URLs finales según hosting y estructura. -->
+    <!-- REVISAR ANTES DE PUBLICAR: confirmar URLs finales segÃºn hosting y estructura. -->
     <link rel="canonical" href="https://fitnesssinfiltros.com/" />
 
-    <!-- Open Graph básico -->
+    <!-- Open Graph bÃ¡sico -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Fitness Sin Filtros" />
-    <meta property="og:title" content="Fitness Sin Filtros | Entrenamiento, rutinas y planes a tu medida" />
+    <meta property="og:title" content="Fitness Sin Filtros | Programas y planes a tu medida" />
     <meta
       property="og:description"
-      content="Una guía clara para entrenar y alimentarte mejor, desde tu realidad y sin extremos."
+      content="Una guía clara para avanzar desde tu realidad, con programas personalizados y sin extremos."
     />
     <meta property="og:url" content="https://fitnesssinfiltros.com/" />
-    <!-- PENDIENTE_CLIENTE: añadir la URL absoluta de la imagen que se mostrará al compartir el enlace en redes -->
-    <meta property="og:image" content="[PENDIENTE_CLIENTE: añadir la URL absoluta de la imagen que se mostrará al compartir el enlace en redes]" />
+    <!-- PENDIENTE_CLIENTE: aÃ±adir la URL absoluta de la imagen que se mostrarÃ¡ al compartir el enlace en redes -->
+    <meta property="og:image" content="[PENDIENTE_CLIENTE: aÃ±adir la URL absoluta de la imagen que se mostrarÃ¡ al compartir el enlace en redes]" />
     <meta property="og:locale" content="es_EC" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
 
-    <!-- Tipografías (Google Fonts) -->
+    <!-- TipografÃ­as (Google Fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -47,6 +57,7 @@
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/editorial-overhaul.css" />
+    <link rel="stylesheet" href="css/i18n.css" />
 
     <!-- Schema.org: solo datos confirmados de la marca -->
     <script type="application/ld+json">
@@ -193,29 +204,29 @@
          ============================================================== -->
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="index.html" aria-label="Fitness Sin Filtros, página de inicio">
+        <a class="brand" href="index.html" aria-label="Fitness Sin Filtros, pÃ¡gina de inicio">
           <img class="brand-logo" src="assets/logo/FSF.svg" alt="Fitness Sin Filtros" />
           <span><span class="brand-name">Fitness Sin Filtros</span><span class="brand-domain">fitnesssinfiltros.com</span></span>
         </a>
 
-        <nav class="main-nav" aria-label="Navegación principal">
+        <nav class="main-nav" aria-label="NavegaciÃ³n principal">
           <ul class="nav-list" role="list">
             <li><a class="nav-link" href="index.html" aria-current="page">Inicio</a></li>
             <li><a class="nav-link" href="pages/servicios.html">Servicios</a></li>
-            <li><a class="nav-link" href="pages/sobre-mi.html">Sobre mí</a></li>
+            <li><a class="nav-link" href="pages/sobre-mi.html">Sobre mÃ­</a></li>
             <li><a class="nav-link" href="pages/preguntas-frecuentes.html">Preguntas frecuentes</a></li>
             <li><a class="nav-link" href="pages/contacto.html">Contacto</a></li>
           </ul>
         </nav>
 
-        <a class="btn btn-primary nav-cta" data-whatsapp href="#">Escríbeme por WhatsApp</a>
+        <a class="btn btn-primary nav-cta" data-whatsapp href="#">EscrÃ­beme por WhatsApp</a>
 
         <button
           class="menu-toggle"
           type="button"
           aria-expanded="false"
           aria-controls="mobile-menu"
-          aria-label="Abrir menú de navegación"
+          aria-label="Abrir menÃº de navegaciÃ³n"
         >
           <svg class="icon icon-menu" aria-hidden="true"><use href="#icon-menu"></use></svg>
           <svg class="icon icon-close" aria-hidden="true"><use href="#icon-close"></use></svg>
@@ -223,18 +234,18 @@
       </div>
     </header>
 
-    <!-- Menú móvil -->
-    <div class="mobile-menu" id="mobile-menu" aria-label="Menú móvil">
-      <nav aria-label="Navegación móvil">
+    <!-- MenÃº mÃ³vil -->
+    <div class="mobile-menu" id="mobile-menu" aria-label="MenÃº mÃ³vil">
+      <nav aria-label="NavegaciÃ³n mÃ³vil">
         <ul class="nav-list" role="list">
           <li><a class="nav-link" href="index.html" aria-current="page">Inicio</a></li>
           <li><a class="nav-link" href="pages/servicios.html">Servicios</a></li>
-          <li><a class="nav-link" href="pages/sobre-mi.html">Sobre mí</a></li>
+          <li><a class="nav-link" href="pages/sobre-mi.html">Sobre mÃ­</a></li>
           <li><a class="nav-link" href="pages/preguntas-frecuentes.html">Preguntas frecuentes</a></li>
           <li><a class="nav-link" href="pages/contacto.html">Contacto</a></li>
         </ul>
         <div class="nav-cta-wrap">
-          <a class="btn btn-primary btn-block" data-whatsapp href="#">Escríbeme por WhatsApp</a>
+          <a class="btn btn-primary btn-block" data-whatsapp href="#">EscrÃ­beme por WhatsApp</a>
         </div>
       </nav>
     </div>
@@ -253,19 +264,20 @@
           <div class="hero-copy">
             <p class="eyebrow">
               <svg class="icon" aria-hidden="true"><use href="#icon-heart"></use></svg>
-              Fitness personalizado · Sin extremos
+              Programas personalizados · Sin extremos
             </p>
             <h1 id="hero-titulo">
               Un plan hecho para ti.<br />
-              <span class="accent">Una versión más fuerte de ti.</span>
+              <span class="accent">Una versiÃ³n mÃ¡s fuerte de ti.</span>
             </h1>
-            <p class="lead">
+                        <p class="lead">
               Entrenamiento, alimentación y acompañamiento personalizado para
               avanzar con confianza, sin fórmulas genéricas ni extremos.
             </p>
+            <p class="hero-formats">Personal Training | Online Coaching | Fitness Nutrition Guide</p>
             <div class="hero-actions">
               <a class="btn btn-secondary btn-lg" href="#servicios">
-                Ver servicios
+                Ver programas
                 <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
               </a>
               <a class="btn btn-whatsapp btn-lg" data-whatsapp href="#">
@@ -284,7 +296,7 @@
               </li>
               <li class="hero-trust-item">
                 <svg class="icon" aria-hidden="true"><use href="#icon-message-circle"></use></svg>
-                Acompañamiento cercano
+                AcompaÃ±amiento cercano
               </li>
             </ul>
           </div>
@@ -299,53 +311,53 @@
             />
             <div class="hero-badge" aria-hidden="true">
               <svg class="icon"><use href="#icon-heart"></use></svg>
-              <span>Resultados reales, sin estrés</span>
+              <span>Resultados reales, sin estrÃ©s</span>
             </div>
           </div>
         </div>
       </section>
 
       <!-- ==============================================================
-           2. PRESENTACIÓN DE LA MARCA
+           2. PRESENTACIÃ“N DE LA MARCA
            ============================================================== -->
       <section class="section brand-about" id="marca" aria-labelledby="marca-titulo">
         <div class="container about-grid">
           <div class="about-media reveal">
             <img
               src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=900&h=900&auto=format&fit=crop"
-              alt="Mujer haciendo ejercicio con banda elástica"
+              alt="Mujer haciendo ejercicio con banda elÃ¡stica"
               loading="lazy"
               width="900"
               height="900"
             />
           </div>
           <div class="about-copy reveal">
-            <h2 id="marca-titulo">Cada persona es diferente. Tu plan también.</h2>
+            <h2 id="marca-titulo">Cada persona es diferente. Tu plan tambiÃ©n.</h2>
             <p class="lead">
               Por eso el proceso empieza por escucharte: tu punto de partida, tu
-              rutina y lo que quieres lograr. Solo después diseñamos un plan con
+              rutina y lo que quieres lograr. Solo despuÃ©s diseÃ±amos un plan con
               posibilidades reales de sostenerse.
             </p>
             <ul class="about-points" role="list">
               <li class="about-point">
                 <svg class="icon" aria-hidden="true"><use href="#icon-check-circle"></use></svg>
                 <div>
-                  <strong>Evaluación individual</strong>
-                  <p>Empezamos conociéndote: tus metas, tu ritmo y tu punto de partida.</p>
+                  <strong>EvaluaciÃ³n individual</strong>
+                  <p>Empezamos conociÃ©ndote: tus metas, tu ritmo y tu punto de partida.</p>
                 </div>
               </li>
               <li class="about-point">
                 <svg class="icon" aria-hidden="true"><use href="#icon-target"></use></svg>
                 <div>
                   <strong>Plan personalizado</strong>
-                  <p>Cada recomendación parte de lo que te funciona a ti, no de fórmulas copiadas.</p>
+                  <p>Cada recomendaciÃ³n parte de lo que te funciona a ti, no de fÃ³rmulas copiadas.</p>
                 </div>
               </li>
               <li class="about-point">
                 <svg class="icon" aria-hidden="true"><use href="#icon-message-circle"></use></svg>
                 <div>
-                  <strong>Acompañamiento cercano</strong>
-                  <p>Sabes con quién cuentas y qué incluye tu servicio, sin letra pequeña.</p>
+                  <strong>AcompaÃ±amiento cercano</strong>
+                  <p>Sabes con quiÃ©n cuentas y quÃ© incluye tu servicio, sin letra pequeÃ±a.</p>
                 </div>
               </li>
               <li class="about-point">
@@ -360,65 +372,30 @@
         </div>
       </section>
 
-      <!-- ==============================================================
-           3. SERVICIOS
-           ============================================================== -->
       <section class="section" id="servicios" aria-labelledby="servicios-titulo">
         <div class="container">
           <div class="section-head reveal">
             <p class="eyebrow">
               <svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg>
-              Servicios
+              Programas
             </p>
-            <h2 id="servicios-titulo">Servicios pensados para tu realidad</h2>
+            <h2 id="servicios-titulo">Programas pensados para tu realidad</h2>
             <p class="lead">
-              Después de conocerte, cada servicio se ajusta a tu punto de partida.
-              Estos son los servicios disponibles:
+              Todos los programas están diseñados para 8 semanas. Elige el que mejor se adapte a tu objetivo:
             </p>
           </div>
 
           <div class="services-grid">
-            <!-- Servicio 1 -->
-            <article class="service-card reveal">
-              <div class="service-card__top">
-                <span class="service-icon" aria-hidden="true">
-                  <svg class="icon"><use href="#icon-users"></use></svg>
-                </span>
-                <span class="flag">
-                  <svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg>
-                  Acompañamiento según el servicio
-                </span>
-              </div>
-              <h3>Entrenamiento personal conmigo 1:1</h3>
-              <p class="service-card__desc">
-                Una sesión individual para trabajar según tu objetivo y tu nivel actual.
-              </p>
-              <div class="price-row">
-                <span class="price">$50</span>
-                <span class="price-note">por sesión</span>
-              </div>
-              <a
-                class="btn btn-secondary btn-block"
-                href="link-aqui"
-                data-whop
-                data-service-id="entrenamiento-1-1"
-              >
-                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para entrenamiento-1-1 -->
-                Consultar este servicio
-              </a>
-            </article>
-
-            <!-- Servicio 2 -->
             <article class="service-card reveal">
               <div class="service-card__top">
                 <span class="service-icon" aria-hidden="true">
                   <svg class="icon"><use href="#icon-file-text"></use></svg>
                 </span>
-                <span class="flag flag--no-track">Sin seguimiento</span>
+                <span class="flag flag--no-track">Sin seguimiento · 8 semanas</span>
               </div>
-              <h3>Rutina PDF sin seguimiento</h3>
+              <h3>Rutina PDF sin seguimiento personalizado</h3>
               <p class="service-card__desc">
-                Rutina personalizada entregada en PDF, adaptada a tus objetivos y a la información que compartas.
+                Rutina diseñada desde cero según tu nivel, disponibilidad y objetivo para trabajar durante 8 semanas.
               </p>
               <div class="price-row">
                 <span class="price">$200</span>
@@ -431,11 +408,10 @@
                 data-service-id="rutina-pdf-sin-seguimiento"
               >
                 <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para rutina-pdf-sin-seguimiento -->
-                Consultar este servicio
+                Consultar programa
               </a>
             </article>
 
-            <!-- Servicio 3 (recomendado) -->
             <article class="service-card service-card--featured reveal">
               <div class="service-card__top">
                 <span class="service-icon" aria-hidden="true">
@@ -443,12 +419,12 @@
                 </span>
                 <span class="flag flag--featured">
                   <svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg>
-                  Recomendado
+                  Recomendado · 8 semanas
                 </span>
               </div>
-              <h3>Rutina PDF con seguimiento</h3>
+              <h3>Rutina PDF + seguimiento personalizado</h3>
               <p class="service-card__desc">
-                Rutina personalizada en PDF con acompañamiento para revisar el proceso según el alcance acordado.
+                Rutina en PDF con acompañamiento para revisar el proceso, ajustar lo necesario y sostener el avance.
               </p>
               <div class="price-row">
                 <span class="price">$250</span>
@@ -461,11 +437,10 @@
                 data-service-id="rutina-pdf-seguimiento"
               >
                 <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para rutina-pdf-seguimiento -->
-                Consultar este servicio
+                Consultar programa
               </a>
             </article>
 
-            <!-- Servicio 4 (recomendado) -->
             <article class="service-card service-card--featured reveal">
               <div class="service-card__top">
                 <span class="service-icon" aria-hidden="true">
@@ -473,12 +448,12 @@
                 </span>
                 <span class="flag flag--featured">
                   <svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg>
-                  Recomendado
+                  Recomendado · 8 semanas
                 </span>
               </div>
-              <h3>Plan de alimentación + seguimiento personalizado</h3>
+              <h3>Guía Personal de Alimentación Fitness + seguimiento personalizado</h3>
               <p class="service-card__desc">
-                Plan personalizado considerando objetivos, hábitos, necesidades y estilo de vida, con seguimiento según las condiciones acordadas.
+                Guía con estructura diaria de comidas, opciones, porciones, lista de compras y recomendaciones de hábitos.
               </p>
               <div class="price-row">
                 <span class="price">$250</span>
@@ -488,24 +463,23 @@
                 class="btn btn-primary btn-block"
                 href="link-aqui"
                 data-whop
-                data-service-id="plan-alimentacion-seguimiento"
+                data-service-id="guia-alimentacion-seguimiento"
               >
-                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para plan-alimentacion-seguimiento -->
-                Consultar este servicio
+                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para guia-alimentacion-seguimiento -->
+                Consultar programa
               </a>
             </article>
 
-            <!-- Servicio 5 -->
             <article class="service-card reveal">
               <div class="service-card__top">
                 <span class="service-icon" aria-hidden="true">
                   <svg class="icon"><use href="#icon-apple"></use></svg>
                 </span>
-                <span class="flag flag--no-track">Sin seguimiento</span>
+                <span class="flag flag--no-track">Sin seguimiento · 8 semanas</span>
               </div>
-              <h3>Plan de alimentación sin seguimiento</h3>
+              <h3>Guía Personal de Alimentación Fitness sin seguimiento</h3>
               <p class="service-card__desc">
-                Plan de alimentación personalizado sin acompañamiento continuo.
+                Guía personalizada con estructura diaria de comidas, porciones sugeridas, lista de compras y recomendaciones generales.
               </p>
               <div class="price-row">
                 <span class="price">$200</span>
@@ -515,24 +489,23 @@
                 class="btn btn-secondary btn-block"
                 href="link-aqui"
                 data-whop
-                data-service-id="plan-alimentacion-sin-seguimiento"
+                data-service-id="guia-alimentacion-sin-seguimiento"
               >
-                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para plan-alimentacion-sin-seguimiento -->
-                Consultar este servicio
+                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para guia-alimentacion-sin-seguimiento -->
+                Consultar programa
               </a>
             </article>
 
-            <!-- Servicio 6 -->
             <article class="service-card reveal">
               <div class="service-card__top">
                 <span class="service-icon" aria-hidden="true">
                   <svg class="icon"><use href="#icon-message-circle"></use></svg>
                 </span>
-                <span class="flag">Sesión de 1 hora</span>
+                <span class="flag">Sesión de 20 minutos</span>
               </div>
-              <h3>Asesoría personalizada de 1 hora</h3>
+              <h3>Asesoría personalizada (20 minutos)</h3>
               <p class="service-card__desc">
-                Una sesión de una hora para resolver preguntas y recibir orientación según tu meta.
+                Una sesión breve para resolver dudas y definir cuál es el programa que mejor encaja contigo.
               </p>
               <div class="price-row">
                 <span class="price">$50</span>
@@ -542,26 +515,53 @@
                 class="btn btn-secondary btn-block"
                 href="link-aqui"
                 data-whop
-                data-service-id="asesoria-personalizada"
+                data-service-id="asesoria-20-min"
               >
-                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para asesoria-personalizada -->
-                Consultar este servicio
+                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para asesoria-20-min -->
+                Consultar programa
+              </a>
+            </article>
+
+            <article class="service-card service-card--featured reveal">
+              <div class="service-card__top">
+                <span class="service-icon" aria-hidden="true">
+                  <svg class="icon"><use href="#icon-heart"></use></svg>
+                </span>
+                <span class="flag flag--featured">
+                  <svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg>
+                  Pack completo · 8 semanas
+                </span>
+              </div>
+              <h3>Pack especial 8 semanas</h3>
+              <p class="service-card__desc">
+                Rutina PDF + guía de alimentación + seguimiento personalizado para acompañarte en todo el proceso.
+              </p>
+              <div class="price-row">
+                <span class="price">$399</span>
+                <span class="price-note">pago único</span>
+              </div>
+              <a
+                class="btn btn-primary btn-block"
+                href="link-aqui"
+                data-whop
+                data-service-id="pack-8-semanas"
+              >
+                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para pack-8-semanas -->
+                Consultar pack
               </a>
             </article>
           </div>
 
-          <!-- Nota profesional: planes de alimentación -->
           <div class="health-note reveal" role="note">
             <svg class="icon" aria-hidden="true"><use href="#icon-info"></use></svg>
             <p>
-              Los planes de alimentación se ofrecen con fines de orientación general y no
-              reemplazan la valoración ni el tratamiento de un médico o nutricionista clínico si
-              tienes una condición de salud.
+              Este servicio tiene fines educativos y de bienestar general. No constituye
+              asesoramiento médico, diagnóstico, tratamiento ni terapia nutricional y no sustituye
+              la atención de un dietista, nutricionista o profesional de la salud autorizado.
             </p>
           </div>
         </div>
       </section>
-
       <!-- ==============================================================
            4. CÓMO FUNCIONA
            ============================================================== -->
@@ -570,27 +570,27 @@
           <div class="section-head reveal">
             <p class="eyebrow">
               <svg class="icon" aria-hidden="true"><use href="#icon-target"></use></svg>
-              Cómo funciona
+              CÃ³mo funciona
             </p>
             <h2 id="proceso-titulo">Un proceso sencillo y claro</h2>
-            <p class="lead">Cuatro pasos entre tú y un plan pensado para tu realidad.</p>
+            <p class="lead">Cuatro pasos entre tÃº y un plan pensado para tu realidad.</p>
           </div>
 
           <div class="process-grid">
             <article class="process-card reveal">
               <svg class="icon" aria-hidden="true"><use href="#icon-message-circle"></use></svg>
-              <h3>Cuéntame tu objetivo</h3>
-              <p>Escríbeme por WhatsApp y cuéntame qué quieres lograr.</p>
+              <h3>CuÃ©ntame tu objetivo</h3>
+              <p>EscrÃ­beme por WhatsApp y cuÃ©ntame quÃ© quieres lograr.</p>
             </article>
             <article class="process-card reveal">
               <svg class="icon" aria-hidden="true"><use href="#icon-pencil"></use></svg>
               <h3>Te escucho primero</h3>
-              <p>Hablo contigo para entender tu rutina, tus hábitos y tu punto de partida.</p>
+              <p>Hablo contigo para entender tu rutina, tus hÃ¡bitos y tu punto de partida.</p>
             </article>
             <article class="process-card reveal">
               <svg class="icon" aria-hidden="true"><use href="#icon-file-text"></use></svg>
-              <h3>Diseñamos tu plan</h3>
-              <p>Con esa información preparo un plan claro y realista para ti.</p>
+              <h3>DiseÃ±amos tu plan</h3>
+              <p>Con esa informaciÃ³n preparo un plan claro y realista para ti.</p>
             </article>
             <article class="process-card reveal">
               <svg class="icon" aria-hidden="true"><use href="#icon-activity"></use></svg>
@@ -611,7 +611,7 @@
               <svg class="icon" aria-hidden="true"><use href="#icon-heart"></use></svg>
               Beneficios
             </p>
-            <h2 id="beneficios-titulo">Por qué trabajar conmigo</h2>
+            <h2 id="beneficios-titulo">Por quÃ© trabajar conmigo</h2>
             <p class="lead">Razones para confiar en un proceso que respeta tu ritmo y tu realidad.</p>
           </div>
 
@@ -620,21 +620,21 @@
               <svg class="icon" aria-hidden="true"><use href="#icon-heart"></use></svg>
               <div>
                 <h3>Planes adaptados a tu realidad</h3>
-                <p>Cada recomendación parte de lo que puedes sostener hoy.</p>
+                <p>Cada recomendaciÃ³n parte de lo que puedes sostener hoy.</p>
               </div>
             </article>
             <article class="benefit-card reveal">
               <svg class="icon" aria-hidden="true"><use href="#icon-message-circle"></use></svg>
               <div>
-                <h3>Acompañamiento cercano</h3>
-              <p>Sabes desde el inicio qué incluye tu servicio y cómo se trabaja.</p>
+                <h3>AcompaÃ±amiento cercano</h3>
+              <p>Sabes desde el inicio quÃ© incluye tu servicio y cÃ³mo se trabaja.</p>
               </div>
             </article>
             <article class="benefit-card reveal">
               <svg class="icon" aria-hidden="true"><use href="#icon-target"></use></svg>
               <div>
                 <h3>Metas claras y realistas</h3>
-              <p>Definimos hacia dónde vamos y cómo se mide el avance.</p>
+              <p>Definimos hacia dÃ³nde vamos y cÃ³mo se mide el avance.</p>
               </div>
             </article>
             <article class="benefit-card reveal">
@@ -647,84 +647,22 @@
             <article class="benefit-card reveal">
               <svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg>
               <div>
-                <h3>Hábitos que se quedan</h3>
-                <p>Dejas de depender de la motivación del día.</p>
+                <h3>HÃ¡bitos que se quedan</h3>
+                <p>Dejas de depender de la motivaciÃ³n del dÃ­a.</p>
               </div>
             </article>
             <article class="benefit-card reveal">
               <svg class="icon" aria-hidden="true"><use href="#icon-check-circle"></use></svg>
               <div>
                 <h3>Sin promesas falsas</h3>
-                <p>Te explico qué hacemos y por qué, para que decidas con calma.</p>
+                <p>Te explico quÃ© hacemos y por quÃ©, para que decidas con calma.</p>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- ==============================================================
-           6. TESTIMONIOS
-           ============================================================== -->
-      <section class="section testimonials" id="testimonios" aria-labelledby="testimonios-titulo">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow">
-              <svg class="icon" aria-hidden="true"><use href="#icon-quote"></use></svg>
-              Testimonios
-            </p>
-            <h2 id="testimonios-titulo">Experiencias compartidas con autorización</h2>
-            <!-- REEMPLAZAR: testimonios reales de clientes con su autorización -->
-            <p class="demo-badge">Testimonios pendientes de autorización</p>
-            <p class="lead">
-              Cuando nuestras clientas autoricen compartir su experiencia, la publicaremos aquí.
-            </p>
-          </div>
-
-          <div class="testimonials-grid">
-            <!-- REEMPLAZAR: testimonio real de cliente 1 -->
-            <article class="testimonial-card reveal">
-              <svg class="testimonial-card__quote-icon" aria-hidden="true"><use href="#icon-quote"></use></svg>
-              <blockquote>Espacio reservado para la experiencia de una clienta, siempre con su autorización.</blockquote>
-              <div class="testimonial-card__author">
-                <span class="testimonial-card__avatar" aria-hidden="true">C1</span>
-                <div>
-                  <strong>[PENDIENTE_CLIENTE: nombre de la clienta autorizada]</strong>
-                  <span>Por autorizar</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- REEMPLAZAR: testimonio real de cliente 2 -->
-            <article class="testimonial-card reveal">
-              <svg class="testimonial-card__quote-icon" aria-hidden="true"><use href="#icon-quote"></use></svg>
-              <blockquote>Espacio reservado para la experiencia de una clienta, siempre con su autorización.</blockquote>
-              <div class="testimonial-card__author">
-                <span class="testimonial-card__avatar" aria-hidden="true">C2</span>
-                <div>
-                  <strong>[PENDIENTE_CLIENTE: nombre de la clienta autorizada]</strong>
-                  <span>Por autorizar</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- REEMPLAZAR: testimonio real de cliente 3 -->
-            <article class="testimonial-card reveal">
-              <svg class="testimonial-card__quote-icon" aria-hidden="true"><use href="#icon-quote"></use></svg>
-              <blockquote>Espacio reservado para la experiencia de una clienta, siempre con su autorización.</blockquote>
-              <div class="testimonial-card__author">
-                <span class="testimonial-card__avatar" aria-hidden="true">C3</span>
-                <div>
-                  <strong>[PENDIENTE_CLIENTE: nombre de la clienta autorizada]</strong>
-                  <span>Por autorizar</span>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ==============================================================
-           7. PREGUNTAS FRECUENTES
+            <!-- ==============================================================`n           7. PREGUNTAS FRECUENTES
            ============================================================== -->
       <section class="section faq" id="preguntas" aria-labelledby="faq-titulo">
         <div class="container">
@@ -746,17 +684,17 @@
                   aria-expanded="true"
                   aria-controls="faq-answer-1"
                 >
-                  ¿Los planes son iguales para todas las personas?
+                  Â¿Los planes son iguales para todas las personas?
                   <svg class="chevron" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
                 </button>
               </h3>
               <div class="faq-answer" id="faq-answer-1">
                 <p>
-                  No. Cada plan parte de una evaluación individual: lo que quieres
-                  lograr, tus hábitos y tu punto de partida. No existen soluciones
+                  No. Cada plan parte de una evaluaciÃ³n individual: lo que quieres
+                  lograr, tus hÃ¡bitos y tu punto de partida. No existen soluciones
                   generales.
                 </p>
-                <p><em>[PENDIENTE_CLIENTE: añadir el detalle del proceso de evaluación inicial].</em></p>
+                <p><em>[PENDIENTE_CLIENTE: aÃ±adir el detalle del proceso de evaluaciÃ³n inicial].</em></p>
               </div>
             </div>
 
@@ -768,7 +706,7 @@
                   aria-expanded="false"
                   aria-controls="faq-answer-2"
                 >
-                  ¿Qué incluye el seguimiento?
+                  Â¿QuÃ© incluye el seguimiento?
                   <svg class="chevron" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
                 </button>
               </h3>
@@ -776,9 +714,9 @@
                 <p>
                   Depende del servicio que elijas: no es lo mismo una rutina en PDF
                   que un plan con revisiones. Al contratar te explico exactamente
-                  qué incluye y con qué frecuencia.
+                  quÃ© incluye y con quÃ© frecuencia.
                 </p>
-                <p><em>[PENDIENTE_CLIENTE: añadir frecuencia, canal, duración y tipo de revisión del seguimiento].</em></p>
+                <p><em>[PENDIENTE_CLIENTE: aÃ±adir frecuencia, canal, duraciÃ³n y tipo de revisiÃ³n del seguimiento].</em></p>
               </div>
             </div>
 
@@ -790,16 +728,16 @@
                   aria-expanded="false"
                   aria-controls="faq-answer-3"
                 >
-                  ¿Cómo se realiza el pago?
+                  Â¿CÃ³mo se realiza el pago?
                   <svg class="chevron" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
                 </button>
               </h3>
               <div class="faq-answer" id="faq-answer-3">
                 <p>
-                  Al confirmar tu servicio por WhatsApp te indicaré las opciones
+                  Al confirmar tu servicio por WhatsApp te indicarÃ© las opciones
                   disponibles y los pasos a seguir.
                 </p>
-                <p><em>[PENDIENTE_CLIENTE: añadir los métodos de pago disponibles].</em></p>
+                <p><em>[PENDIENTE_CLIENTE: aÃ±adir los mÃ©todos de pago disponibles].</em></p>
               </div>
             </div>
 
@@ -811,14 +749,14 @@
                   aria-expanded="false"
                   aria-controls="faq-answer-4"
                 >
-                  ¿Puedo contratar solo una asesoría?
+                  Â¿Puedo contratar solo una asesorÃ­a?
                   <svg class="chevron" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
                 </button>
               </h3>
               <div class="faq-answer" id="faq-answer-4">
                 <p>
-                  Sí. La asesoría de una hora está pensada para resolver tus dudas y
-                  definir una estrategia según tu meta.
+                  SÃ­. La asesorÃ­a de una hora estÃ¡ pensada para resolver tus dudas y
+                  definir una estrategia segÃºn tu meta.
                 </p>
                 <p><em>[PENDIENTE_CLIENTE: confirmar disponibilidad de agenda].</em></p>
               </div>
@@ -832,16 +770,16 @@
                   aria-expanded="false"
                   aria-controls="faq-answer-5"
                 >
-                  ¿En cuánto tiempo recibo mi rutina o plan?
+                  Â¿En cuÃ¡nto tiempo recibo mi rutina o plan?
                   <svg class="chevron" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
                 </button>
               </h3>
               <div class="faq-answer" id="faq-answer-5">
                 <p>
-                  El tiempo de entrega se define al contratar, según el servicio y la
-                  información que compartas.
+                  El tiempo de entrega se define al contratar, segÃºn el servicio y la
+                  informaciÃ³n que compartas.
                 </p>
-                <p><em>[PENDIENTE_CLIENTE: añadir los tiempos de entrega por servicio].</em></p>
+                <p><em>[PENDIENTE_CLIENTE: aÃ±adir los tiempos de entrega por servicio].</em></p>
               </div>
             </div>
 
@@ -853,34 +791,34 @@
                   aria-expanded="false"
                   aria-controls="faq-answer-6"
                 >
-                  ¿Puedo solicitar cambios durante el proceso?
+                  Â¿Puedo solicitar cambios durante el proceso?
                   <svg class="chevron" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
                 </button>
               </h3>
               <div class="faq-answer" id="faq-answer-6">
                 <p>
-                  Sí. Si algo no te funciona, lo revisamos y ajustamos según lo
+                  SÃ­. Si algo no te funciona, lo revisamos y ajustamos segÃºn lo
                   acordado en tu servicio.
                 </p>
-                <p><em>[PENDIENTE_CLIENTE: añadir la política de ajustes del servicio].</em></p>
+                <p><em>[PENDIENTE_CLIENTE: aÃ±adir la polÃ­tica de ajustes del servicio].</em></p>
               </div>
             </div>
           </div>
 
           <p class="faq-note">
-            ¿Tienes otra pregunta? Escríbeme por WhatsApp y te respondo con gusto.
+            Â¿Tienes otra pregunta? EscrÃ­beme por WhatsApp y te respondo con gusto.
           </p>
         </div>
       </section>
 
       <!-- ==============================================================
-           8. LLAMADA A LA ACCIÓN FINAL
+           8. LLAMADA A LA ACCIÃ“N FINAL
            ============================================================== -->
       <section class="section cta-final" aria-labelledby="cta-titulo">
         <div class="container">
           <svg class="icon" aria-hidden="true"><use href="#icon-heart"></use></svg>
-          <h2 id="cta-titulo">Tu proceso comienza con una decisión.</h2>
-          <p>Cuéntame qué quieres lograr y encontremos la mejor forma de trabajar juntas.</p>
+          <h2 id="cta-titulo">Tu proceso comienza con una decisiÃ³n.</h2>
+          <p>CuÃ©ntame quÃ© quieres lograr y encontremos la mejor forma de trabajar juntas.</p>
           <div class="cta-final__whatsapp-wrap">
             <a class="btn btn-whatsapp btn-lg cta-final__whatsapp" data-whatsapp href="#">
               <span class="cta-final__whatsapp-icon" aria-hidden="true"><svg class="icon"><use href="#icon-whatsapp"></use></svg></span>
@@ -899,10 +837,10 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand footer-col">
-            <a class="brand" href="index.html" aria-label="Fitness Sin Filtros, página de inicio">
+            <a class="brand" href="index.html" aria-label="Fitness Sin Filtros, pÃ¡gina de inicio">
               <img class="brand-logo" src="assets/logo/complet.svg" alt="Fitness Sin Filtros" />
             </a>
-            <p class="footer-claim">Resultados reales, sin mitos, sin extremos y sin estrés.</p>
+            <p class="footer-claim">Resultados reales, sin mitos, sin extremos y sin estrÃ©s.</p>
           </div>
 
           <div class="footer-col">
@@ -910,19 +848,21 @@
             <ul class="footer-list" role="list">
               <li><a href="index.html#inicio">Inicio</a></li>
               <li><a href="pages/servicios.html">Servicios</a></li>
-              <li><a href="pages/sobre-mi.html">Sobre mí</a></li>
+              <li><a href="pages/sobre-mi.html">Sobre mÃ­</a></li>
               <li><a href="pages/preguntas-frecuentes.html">Preguntas frecuentes</a></li>
               <li><a href="pages/contacto.html">Contacto</a></li>
             </ul>
           </div>
 
-          <div class="footer-col">
+                    <div class="footer-col">
             <h4>Servicios</h4>
             <ul class="footer-list" role="list">
-              <li><a href="pages/servicios.html#entrenamiento-personal">Entrenamiento 1:1</a></li>
-              <li><a href="pages/servicios.html#rutinas">Rutinas PDF</a></li>
-              <li><a href="pages/servicios.html#alimentacion">Planes de alimentación</a></li>
-              <li><a href="pages/servicios.html#asesoria">Asesoría 1 hora</a></li>
+              <li><a href="pages/servicios.html#rutina-pdf-sin-seguimiento">Rutina PDF sin seguimiento</a></li>
+              <li><a href="pages/servicios.html#rutina-pdf-seguimiento">Rutina PDF + seguimiento</a></li>
+              <li><a href="pages/servicios.html#guia-alimentacion-seguimiento">Guía alimentación + seguimiento</a></li>
+              <li><a href="pages/servicios.html#guia-alimentacion-sin-seguimiento">Guía alimentación sin seguimiento</a></li>
+              <li><a href="pages/servicios.html#asesoria">Asesoría 20 min</a></li>
+              <li><a href="pages/servicios.html#pack-8-semanas">Pack 8 semanas</a></li>
             </ul>
           </div>
 
@@ -930,13 +870,13 @@
             <h4>Contacto</h4>
             <ul class="footer-list" role="list">
               <li>
-                <a href="#" data-whatsapp data-whatsapp-msg="Hola, quiero orientación para elegir el servicio más adecuado para mi objetivo.">
+                <a href="#" data-whatsapp data-whatsapp-msg="Hola, quiero orientaciÃ³n para elegir el servicio mÃ¡s adecuado para mi objetivo.">
                   WhatsApp
                 </a>
               </li>
               <li data-email>
                 <!-- PENDIENTE_CLIENTE: correo oficial (se rellena desde js/config.js) -->
-                <a href="mailto:">Correo electrónico</a>
+                <a href="mailto:">Correo electrÃ³nico</a>
               </li>
               <li data-social="instagram">
                 <!-- PENDIENTE_CLIENTE: enlace oficial de Instagram (desde js/config.js) -->
@@ -954,33 +894,53 @@
               <a href="#" data-social="facebook" aria-label="Facebook de Fitness Sin Filtros">
                 <svg class="icon" aria-hidden="true"><use href="#icon-facebook"></use></svg>
               </a>
-              <a href="#" data-whatsapp data-whatsapp-msg="Hola, quiero orientación para elegir el servicio más adecuado para mi objetivo." aria-label="WhatsApp de Fitness Sin Filtros">
+              <a href="#" data-whatsapp data-whatsapp-msg="Hola, quiero orientaciÃ³n para elegir el servicio mÃ¡s adecuado para mi objetivo." aria-label="WhatsApp de Fitness Sin Filtros">
                 <svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
               </a>
+            </div>
+            <div class="language-menu language-menu--footer" data-language-menu data-translate="none" aria-label="Idiomas">
+              <button
+                class="language-pill"
+                type="button"
+                aria-label="Seleccionar idioma"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                data-language-trigger
+              >
+                <span class="language-pill__flag" data-language-current aria-hidden="true">ES</span>
+                <span data-language-label>ES</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 10l5 5 5-5" />
+                </svg>
+              </button>
+              <div class="language-options" role="listbox" aria-label="Idiomas" data-language-options>
+                <button type="button" role="option" data-language-option="es" aria-selected="true">ES <span>EspaÃ±ol</span></button>
+                <button type="button" role="option" data-language-option="en" aria-selected="false">EN <span>English</span></button>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="footer-bottom">
-          <p>© <span data-year>2026</span> Fitness Sin Filtros. Todos los derechos reservados.</p>
+          <p>Â© <span data-year>2026</span> Fitness Sin Filtros. Todos los derechos reservados.</p>
           <p>
-            <a href="pages/politicas.html#privacidad" data-legal>Políticas de privacidad</a>
-            <span aria-hidden="true"> · </span>
-            <a href="pages/politicas.html#terminos" data-legal>Términos y condiciones</a>
+            <a href="pages/politicas.html#privacidad" data-legal>PolÃ­ticas de privacidad</a>
+            <span aria-hidden="true"> Â· </span>
+            <a href="pages/politicas.html#terminos" data-legal>TÃ©rminos y condiciones</a>
           </p>
         </div>
       </div>
     </footer>
 
-    <!-- Botón volver arriba -->
+    <!-- BotÃ³n volver arriba -->
     <button class="back-to-top" type="button" aria-label="Volver arriba">
       <svg class="icon" aria-hidden="true"><use href="#icon-arrow-up"></use></svg>
     </button>
 
     <!-- ==============================================================
-         MODAL DE CONFIRMACIÓN (formulario de contacto)
+         MODAL DE CONFIRMACIÃ“N (formulario de contacto)
          ============================================================== -->
-    <div class="modal" id="confirmation-modal" aria-hidden="true" aria-label="Confirmación">
+    <div class="modal" id="confirmation-modal" aria-hidden="true" aria-label="ConfirmaciÃ³n">
       <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-subtitle">
         <div class="modal__head">
           <div>
@@ -990,9 +950,9 @@
             <svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg>
           </button>
         </div>
-        <h3 class="modal__title" id="modal-title">Tu mensaje está listo</h3>
+        <h3 class="modal__title" id="modal-title">Tu mensaje estÃ¡ listo</h3>
         <p class="modal__subtitle" id="modal-subtitle">
-          Revisa el resumen antes de abrir WhatsApp. Ningún dato se envía ni se almacena en un servidor.
+          Revisa el resumen antes de abrir WhatsApp. NingÃºn dato se envÃ­a ni se almacena en un servidor.
         </p>
         <div class="modal__preview" data-modal-preview aria-live="polite"></div>
         <div class="modal__actions">
@@ -1005,7 +965,7 @@
       </div>
     </div>
 
-    <!-- Modal de documentos legales (Políticas / Términos) -->
+    <!-- Modal de documentos legales (PolÃ­ticas / TÃ©rminos) -->
     <div class="modal modal--legal" id="legal-modal" aria-hidden="true" aria-label="Documentos legales">
       <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="legal-modal-title">
         <div class="modal__head">
@@ -1016,15 +976,22 @@
             <svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg>
           </button>
         </div>
-        <h3 class="modal__title" id="legal-modal-title">Políticas de privacidad y términos</h3>
+        <h3 class="modal__title" id="legal-modal-title">PolÃ­ticas de privacidad y tÃ©rminos</h3>
         <div class="legal modal__legal-body" data-legal-body></div>
       </div>
     </div>
 
     <!-- JavaScript -->
     <script src="js/config.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/faq.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
+
+
+
+
+

@@ -173,8 +173,9 @@
    *   data-whatsapp-msg="..."         -> mensaje personalizado (opcional)
    * ------------------------------------------------------------------ */
 
-  var defaultMessage =
-    "Hola, me gustaría recibir más información sobre sus servicios.";
+  var defaultMessage = FSF.u(
+    "Hola, me gustaría recibir más información sobre sus servicios."
+  );
 
   // Estado "no configurado" para el sistema de botones aprobado
   // (docs/UIVERSE_BUTTON_PATTERNS.md, patrón 4): si el número oficial aún
@@ -198,7 +199,9 @@
       if (!number) {
         // El número aún no está configurado de forma válida: informamos al visitante.
         alert(
-          "El número oficial de WhatsApp todavía no está configurado. Inténtalo más tarde."
+          FSF.u(
+            "El número oficial de WhatsApp todavía no está configurado. Inténtalo más tarde."
+          )
         );
         return;
       }
@@ -374,18 +377,18 @@
     var valid = true;
 
     if (field.required && value === "") {
-      setFieldError(field, "Este campo es obligatorio.");
+      setFieldError(field, FSF.u("Este campo es obligatorio."));
       valid = false;
     } else if (field.type === "email" && value !== "") {
       var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
       if (!emailOk) {
-        setFieldError(field, "Escribe un correo electrónico válido.");
+        setFieldError(field, FSF.u("Escribe un correo electrónico válido."));
         valid = false;
       }
     } else if (field.name === "whatsapp" && value !== "") {
       var digits = value.replace(/[^0-9]/g, "");
       if (digits.length < 7) {
-        setFieldError(field, "Escribe un número de WhatsApp válido.");
+        setFieldError(field, FSF.u("Escribe un número de WhatsApp válido."));
         valid = false;
       }
     }
@@ -447,27 +450,27 @@
       var service =
         serviceSelect && serviceSelect.value
           ? serviceSelect.options[serviceSelect.selectedIndex].text
-          : "No especificado";
+          : FSF.u("No especificado");
       var goalSelect = contactForm.querySelector('[name="goal"]');
       var goal =
         goalSelect && goalSelect.value
           ? goalSelect.options[goalSelect.selectedIndex].text
-          : "No especificado";
+          : FSF.u("No especificado");
       var message = contactForm.querySelector('[name="message"]').value.trim();
 
       var lines = [
-        "Hola, soy " + name + " y quiero comenzar.",
+        FSF.u("Hola, soy ") + name + FSF.u(" y quiero comenzar."),
         "",
-        "• Servicio de interés: " + service,
-        "• Objetivo principal: " + goal,
+        FSF.u("• Servicio de interés: ") + service,
+        FSF.u("• Objetivo principal: ") + goal,
       ];
 
       if (whatsapp) {
-        lines.push("• Mi WhatsApp: " + whatsapp);
+        lines.push(FSF.u("• Mi WhatsApp: ") + whatsapp);
       }
-      lines.push("• Mi correo: " + email);
+      lines.push(FSF.u("• Mi correo: ") + email);
       lines.push("");
-      lines.push("Mensaje:");
+      lines.push(FSF.u("Mensaje:"));
       lines.push(message);
 
       var fullMessage = lines.join("\n");
@@ -478,9 +481,11 @@
         if (formFeedback) {
           formFeedback.classList.add("is-visible");
           formFeedback.querySelector("[data-feedback-title]").textContent =
-            "Aún no podemos conectar por WhatsApp";
+            FSF.u("Aún no podemos conectar por WhatsApp");
           formFeedback.querySelector("[data-feedback-text]").textContent =
-            "El número oficial de WhatsApp todavía no está configurado. Tu mensaje fue validado correctamente; vuelve más tarde para completar el contacto.";
+            FSF.u(
+              "El número oficial de WhatsApp todavía no está configurado. Tu mensaje fue validado correctamente; vuelve más tarde para completar el contacto."
+            );
           formFeedback.querySelector("[data-feedback-action]").style.display =
             "none";
         }
@@ -601,8 +606,17 @@
   whopToast.setAttribute("aria-live", "polite");
   whopToast.innerHTML =
     '<svg class="icon" aria-hidden="true"><use href="#icon-info"></use></svg>' +
-    '<span class="whop-toast__text">Este servicio aún no está disponible.</span>';
+    '<span class="whop-toast__text"></span>';
   document.body.appendChild(whopToast);
+
+  var whopToastText = whopToast.querySelector(".whop-toast__text");
+
+  function renderWhopToast() {
+    whopToastText.textContent = FSF.u("Este servicio aún no está disponible.");
+  }
+
+  renderWhopToast();
+  document.addEventListener("fsf:language", renderWhopToast);
 
   var whopToastTimer = null;
 

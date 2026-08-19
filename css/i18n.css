@@ -1,0 +1,217 @@
+/* ==========================================================================
+   i18n.css - Menú de idioma tipo dropdown
+   --------------------------------------------------------------------------
+   Selector compacto inspirado en ARC: un solo trigger en el header y un panel
+   desplegable accesible con teclado.
+   ========================================================================== */
+
+.language-menu {
+  position: relative;
+  flex: 0 0 auto;
+  z-index: 120;
+}
+
+.language-menu--footer {
+  margin-top: 1.45rem;
+}
+
+.language-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  padding: 0.2rem 0.35rem 0.2rem 0.4rem;
+  border-radius: var(--radius-full);
+  background: var(--color-pink-light);
+  color: var(--color-ink-soft);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--duration-fast) var(--ease),
+    background-color var(--duration-fast) var(--ease),
+    box-shadow var(--duration-fast) var(--ease),
+    color var(--duration-fast) var(--ease);
+}
+
+.language-menu--footer .language-pill {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-footer-text);
+  box-shadow: none;
+  border: 1px solid var(--color-footer-border);
+}
+
+.language-pill:hover {
+  transform: translateY(-1px);
+}
+
+.language-menu--footer .language-pill:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.language-pill:focus-visible {
+  outline: 2px solid var(--color-fuchsia);
+  outline-offset: 3px;
+}
+
+.language-pill__flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.05rem;
+  min-height: 2.05rem;
+  padding-inline: 0.45rem;
+  border-radius: 999px;
+  background: var(--color-white);
+  color: var(--color-fuchsia-dark);
+  line-height: 1;
+  box-shadow: 0 1px 3px rgba(38, 20, 31, 0.12);
+}
+
+.language-menu--footer .language-pill__flag {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-footer-text);
+  box-shadow: none;
+}
+
+.language-pill svg {
+  width: 1rem;
+  height: 1rem;
+  color: inherit;
+  transition: transform var(--duration-fast) var(--ease);
+}
+
+.language-menu.is-open .language-pill svg {
+  transform: rotate(180deg);
+}
+
+.language-options {
+  position: absolute;
+  top: calc(100% + 0.7rem);
+  right: 0;
+  display: grid;
+  gap: 0.35rem;
+  min-width: 13rem;
+  max-width: min(13rem, calc(100vw - 1.5rem));
+  padding: 0.45rem;
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius-md) + 0.35rem);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 20px 40px -24px rgba(38, 20, 31, 0.32);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  opacity: 0;
+  transform: translateY(-6px) scale(0.98);
+  transform-origin: top right;
+  pointer-events: none;
+  visibility: hidden;
+  transition:
+    opacity var(--duration-fast) var(--ease),
+    transform var(--duration-fast) var(--ease),
+    visibility 0s linear var(--duration-fast);
+}
+
+.language-menu--footer .language-options {
+  background: rgba(16, 12, 14, 0.98);
+  border-color: var(--color-footer-border);
+  box-shadow: 0 24px 48px -26px rgba(0, 0, 0, 0.65);
+}
+
+.language-menu.is-open .language-options {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  visibility: visible;
+  transition:
+    opacity var(--duration-fast) var(--ease),
+    transform var(--duration-fast) var(--ease),
+    visibility 0s linear 0s;
+}
+
+.language-options button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.85rem 0.9rem;
+  border-radius: calc(var(--radius-md) - 0.2rem);
+  color: var(--color-ink);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-align: left;
+  transition:
+    background-color var(--duration-fast) var(--ease),
+    color var(--duration-fast) var(--ease);
+}
+
+.language-menu--footer .language-options button {
+  color: var(--color-footer-text);
+}
+
+.language-options button span {
+  color: var(--color-ink-soft);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.language-menu--footer .language-options button span {
+  color: var(--color-footer-text-muted);
+}
+
+.language-options button:hover,
+.language-options button:focus-visible,
+.language-options button[aria-selected="true"] {
+  background: var(--color-pink-light);
+  color: var(--color-fuchsia-dark);
+}
+
+.language-menu--footer .language-options button:hover,
+.language-menu--footer .language-options button:focus-visible,
+.language-menu--footer .language-options button[aria-selected="true"] {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-white);
+}
+
+.language-options button:hover span,
+.language-options button:focus-visible span,
+.language-options button[aria-selected="true"] span {
+  color: var(--color-fuchsia-dark);
+}
+
+.language-menu--footer .language-options button:hover span,
+.language-menu--footer .language-options button:focus-visible span,
+.language-menu--footer .language-options button[aria-selected="true"] span {
+  color: var(--color-footer-text);
+}
+
+@media (max-width: 480px) {
+  .language-pill {
+    gap: 0.35rem;
+    padding-inline: 0.32rem;
+  }
+
+  .language-pill__flag {
+    min-width: 1.85rem;
+    min-height: 1.85rem;
+    padding-inline: 0.35rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .language-pill [data-language-label] {
+    display: none;
+  }
+
+  .language-options {
+    min-width: 12rem;
+  }
+
+  .language-menu--footer {
+    margin-top: 1.25rem;
+  }
+}

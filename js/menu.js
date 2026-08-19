@@ -22,14 +22,14 @@
     lastFocused = document.activeElement;
     menu.classList.add("is-open");
     toggle.setAttribute("aria-expanded", "true");
-    toggle.setAttribute("aria-label", "Cerrar menú");
+    toggle.setAttribute("aria-label", FSF.u("Cerrar menú"));
     document.body.style.overflow = "hidden";
   }
 
   function closeMenu() {
     menu.classList.remove("is-open");
     toggle.setAttribute("aria-expanded", "false");
-    toggle.setAttribute("aria-label", "Abrir menú");
+    toggle.setAttribute("aria-label", FSF.u("Abrir menú"));
     document.body.style.overflow = "";
     if (lastFocused && lastFocused.focus) {
       lastFocused.focus();
@@ -86,5 +86,13 @@
     if (window.matchMedia("(min-width: 1024px)").matches && isOpen()) {
       closeMenu();
     }
+  });
+
+  // Al cambiar el idioma, actualiza el aria-label del botón del menú móvil.
+  document.addEventListener("fsf:language", function () {
+    toggle.setAttribute(
+      "aria-label",
+      isOpen() ? FSF.u("Cerrar menú") : FSF.u("Abrir menú")
+    );
   });
 })();
