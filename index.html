@@ -1,25 +1,12 @@
-﻿<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>document.documentElement.classList.add("js");</script>
-    <script>
-      /* i18n: aplica el idioma guardado antes del primer pintado (evita parpadeo). */
-      (function () {
-        try {
-          if (localStorage.getItem("fsf-language") === "en") {
-            document.documentElement.lang = "en";
-          }
-        } catch (e) {}
-      })();
-    </script>
 
     <!-- SEO básico -->
-    <title>Fitness Sin Filtros | Programas y planes a tu medida</title>
     <meta
       name="description"
-      content="Programas de entrenamiento, nutrición y acompañamiento diseñados a tu medida. Una guía clara para avanzar con confianza, sin extremos ni fórmulas generales."
     />
     <meta name="author" content="Fitness Sin Filtros" />
     <meta name="theme-color" content="#D23C58" />
@@ -29,13 +16,10 @@
     <!-- Open Graph básico -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Fitness Sin Filtros" />
-    <meta property="og:title" content="Fitness Sin Filtros | Programas y planes a tu medida" />
     <meta
       property="og:description"
-      content="Una guía clara para avanzar desde tu realidad, con programas personalizados y sin extremos."
     />
     <meta property="og:url" content="https://fitnesssinfiltros.com/" />
-    <meta property="og:image" content="https://fitnesssinfiltros.com/assets/logo/png/01.png" />
     <meta property="og:locale" content="es_EC" />
 
     <!-- Favicon -->
@@ -56,7 +40,6 @@
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/editorial-overhaul.css" />
-    <link rel="stylesheet" href="css/i18n.css" />
 
     <!-- Schema.org: solo datos confirmados de la marca -->
     <script type="application/ld+json">
@@ -211,7 +194,6 @@
         <nav class="main-nav" aria-label="Navegación principal">
           <ul class="nav-list" role="list">
             <li><a class="nav-link" href="index.html" aria-current="page">Inicio</a></li>
-            <li><a class="nav-link" href="pages/servicios.html">Programas</a></li>
             <li><a class="nav-link" href="pages/sobre-mi.html">Sobre mí</a></li>
             <li><a class="nav-link" href="pages/preguntas-frecuentes.html">Preguntas frecuentes</a></li>
             <li><a class="nav-link" href="pages/contacto.html">Contacto</a></li>
@@ -238,7 +220,6 @@
       <nav aria-label="Navegación móvil">
         <ul class="nav-list" role="list">
           <li><a class="nav-link" href="index.html" aria-current="page">Inicio</a></li>
-          <li><a class="nav-link" href="pages/servicios.html">Programas</a></li>
           <li><a class="nav-link" href="pages/sobre-mi.html">Sobre mí</a></li>
           <li><a class="nav-link" href="pages/preguntas-frecuentes.html">Preguntas frecuentes</a></li>
           <li><a class="nav-link" href="pages/contacto.html">Contacto</a></li>
@@ -263,20 +244,16 @@
           <div class="hero-copy">
             <p class="eyebrow">
               <svg class="icon" aria-hidden="true"><use href="#icon-heart"></use></svg>
-              Programas personalizados · Sin extremos
             </p>
             <h1 id="hero-titulo">
               Un plan hecho para ti.<br />
               <span class="accent">Una versión más fuerte de ti.</span>
             </h1>
-                        <p class="lead">
               Entrenamiento, alimentación y acompañamiento personalizado para
               avanzar con confianza, sin fórmulas genéricas ni extremos.
             </p>
-            <p class="hero-formats">Entrenamiento personal | Coaching online | Guía de nutrición fitness</p>
             <div class="hero-actions">
               <a class="btn btn-secondary btn-lg" href="#servicios">
-                Ver programas
                 <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
               </a>
               <a class="btn btn-whatsapp btn-lg" data-whatsapp href="#">
@@ -372,128 +349,14 @@
       </section>
 
       <!-- ==============================================================
-           3. CAMBIO VISUAL
            ============================================================== -->
-      <section class="section evolution-strip" id="cambio" aria-labelledby="cambio-titulo">
-        <div class="evolution-strip__video" aria-hidden="true">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/imZIU5KI47U?autoplay=1&mute=1&loop=1&playlist=imZIU5KI47U&controls=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3&disablekb=1"
-            title=""
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="evolution-strip__overlay" aria-hidden="true"></div>
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow">
-              <svg class="icon" aria-hidden="true"><use href="#icon-activity"></use></svg>
-              Mi proceso
-            </p>
-            <h2 id="cambio-titulo">Así quiero mostrar mi proceso</h2>
-            <p class="lead">
-              Quiero que esta parte se sienta más real y más cercana: una secuencia visual que
-              acompañe el cambio sin distraer del mensaje principal.
-            </p>
-          </div>
-        </div>
-
-        <div class="evolution-strip__stage" data-scroll-strip>
-          <div class="evolution-strip__sticky">
-            <div class="container evolution-strip__frame">
-              <div class="evolution-strip__track" data-scroll-strip-track>
-                <article class="evolution-card">
-                  <img
-                    src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1000&h=1250&auto=format&fit=crop"
-                    alt="Inicio del proceso con enfoque personal y entrenamiento suave"
-                    loading="lazy"
-                    width="1000"
-                    height="1250"
-                  />
-                  <div class="evolution-card__content">
-                    <span class="evolution-card__index">01</span>
-                    <h3>Empiezo escuchando</h3>
-                    <p>Primero me interesa entender tu punto de partida y lo que de verdad necesitas.</p>
-                  </div>
-                </article>
-
-                <article class="evolution-card">
-                  <img
-                    src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1000&h=1250&auto=format&fit=crop"
-                    alt="Ajuste del plan según hábitos, horarios y nivel real"
-                    loading="lazy"
-                    width="1000"
-                    height="1250"
-                  />
-                  <div class="evolution-card__content">
-                    <span class="evolution-card__index">02</span>
-                    <h3>Ajusto el plan</h3>
-                    <p>Después adapto todo a tu ritmo, tus horarios y lo que sí puedes sostener.</p>
-                  </div>
-                </article>
-
-                <article class="evolution-card">
-                  <img
-                    src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1000&h=1250&auto=format&fit=crop"
-                    alt="Constancia en el entrenamiento con una rutina que se puede mantener"
-                    loading="lazy"
-                    width="1000"
-                    height="1250"
-                  />
-                  <div class="evolution-card__content">
-                    <span class="evolution-card__index">03</span>
-                    <h3>Mantengo lo que funciona</h3>
-                    <p>Me gusta trabajar con lo simple, lo claro y lo que de verdad suma.</p>
-                  </div>
-                </article>
-
-                <article class="evolution-card">
-                  <img
-                    src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=1000&h=1250&auto=format&fit=crop"
-                    alt="Acompañamiento cercano durante el proceso de cambio"
-                    loading="lazy"
-                    width="1000"
-                    height="1250"
-                  />
-                  <div class="evolution-card__content">
-                    <span class="evolution-card__index">04</span>
-                    <h3>Te acompaño</h3>
-                    <p>Si tu servicio incluye seguimiento, voy haciendo ajustes contigo cuando haga falta.</p>
-                  </div>
-                </article>
-
-                <article class="evolution-card evolution-card--accent">
-                  <img
-                    src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1000&h=1250&auto=format&fit=crop"
-                    alt="Evolución con una alimentación organizada y sostenible"
-                    loading="lazy"
-                    width="1000"
-                    height="1250"
-                  />
-                  <div class="evolution-card__content">
-                    <span class="evolution-card__index">05</span>
-                    <h3>Me enfoco en tu evolución</h3>
-                    <p>Lo importante es que avances con algo que puedas mantener y sentir tuyo.</p>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section class="section" id="servicios" aria-labelledby="servicios-titulo">
         <div class="container">
           <div class="section-head reveal">
             <p class="eyebrow">
               <svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg>
-              Programas
             </p>
-            <h2 id="servicios-titulo">Programas pensados para tu realidad</h2>
             <p class="lead">
-              Todos los programas están diseñados para 8 semanas. Elige el que mejor se adapte a tu objetivo:
             </p>
           </div>
 
@@ -503,11 +366,8 @@
                 <span class="service-icon" aria-hidden="true">
                   <svg class="icon"><use href="#icon-file-text"></use></svg>
                 </span>
-                <span class="flag flag--no-track">Sin seguimiento · 8 semanas</span>
               </div>
-              <h3>Rutina PDF sin seguimiento personalizado</h3>
               <p class="service-card__desc">
-                Programa diseñado desde cero según tu nivel, objetivos, disponibilidad y acceso a equipos. Incluye estructura semanal, ejercicios, series, repeticiones, cardio y recomendaciones técnicas para ejecutar tu rutina con buena forma.
               </p>
               <div class="price-row">
                 <span class="price">$200</span>
@@ -515,15 +375,13 @@
               </div>
               <a
                 class="btn btn-secondary btn-block"
-                href="link-aqui"
                 data-whop
                 data-service-id="rutina-pdf-sin-seguimiento"
               >
-                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para rutina-pdf-sin-seguimiento -->
-                Consultar programa
               </a>
             </article>
 
+            <!-- Servicio 3 (recomendado) -->
             <article class="service-card service-card--featured reveal">
               <div class="service-card__top">
                 <span class="service-icon" aria-hidden="true">
@@ -531,12 +389,9 @@
                 </span>
                 <span class="flag flag--featured">
                   <svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg>
-                  Recomendado · 8 semanas
                 </span>
               </div>
-              <h3>Rutina PDF + seguimiento personalizado</h3>
               <p class="service-card__desc">
-                Programa de 8 semanas en PDF con acompañamiento para revisar el proceso, hacer ajustes cuando sea necesario y sostener el avance.
               </p>
               <div class="price-row">
                 <span class="price">$250</span>
@@ -544,12 +399,9 @@
               </div>
               <a
                 class="btn btn-primary btn-block"
-                href="link-aqui"
                 data-whop
                 data-service-id="rutina-pdf-seguimiento"
               >
-                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para rutina-pdf-seguimiento -->
-                Consultar programa
               </a>
             </article>
 
@@ -560,12 +412,9 @@
                 </span>
                 <span class="flag flag--featured">
                   <svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg>
-                  Recomendado · 8 semanas
                 </span>
               </div>
-              <h3>Guía Personal de Alimentación Fitness + seguimiento personalizado</h3>
               <p class="service-card__desc">
-                Guía diseñada según tus objetivos de fitness, preferencias alimentarias, horarios y estilo de vida. Incluye estructura diaria de comidas, distintas opciones para desayuno, almuerzo, cena y snacks, porciones sugeridas, lista de compras, recomendaciones generales de hábitos y una estructura general de entrenamiento para complementar tu proceso.
               </p>
               <div class="price-row">
                 <span class="price">$250</span>
@@ -573,12 +422,8 @@
               </div>
               <a
                 class="btn btn-primary btn-block"
-                href="link-aqui"
                 data-whop
-                data-service-id="guia-alimentacion-seguimiento"
               >
-                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para guia-alimentacion-seguimiento -->
-                Consultar programa
               </a>
             </article>
 
@@ -587,11 +432,8 @@
                 <span class="service-icon" aria-hidden="true">
                   <svg class="icon"><use href="#icon-apple"></use></svg>
                 </span>
-                <span class="flag flag--no-track">Sin seguimiento · 8 semanas</span>
               </div>
-              <h3>Guía Personal de Alimentación Fitness sin seguimiento</h3>
               <p class="service-card__desc">
-                Guía personalizada con estructura diaria de comidas, porciones sugeridas, lista de compras, recomendaciones generales y una estructura general de entrenamiento para ayudarte a mantener una alimentación más organizada y sostenible.
               </p>
               <div class="price-row">
                 <span class="price">$200</span>
@@ -599,25 +441,18 @@
               </div>
               <a
                 class="btn btn-secondary btn-block"
-                href="link-aqui"
-                data-whop
-                data-service-id="guia-alimentacion-sin-seguimiento"
               >
-                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para guia-alimentacion-sin-seguimiento -->
-                Consultar programa
               </a>
             </article>
 
+            <!-- Servicio 6 -->
             <article class="service-card reveal">
               <div class="service-card__top">
                 <span class="service-icon" aria-hidden="true">
                   <svg class="icon"><use href="#icon-message-circle"></use></svg>
                 </span>
-                <span class="flag">Sesión de 20 minutos</span>
               </div>
-              <h3>Asesoría personalizada (20 minutos)</h3>
               <p class="service-card__desc">
-                Sesión breve para revisar tu objetivo, resolver dudas y definir el programa que mejor encaja contigo.
               </p>
               <div class="price-row">
                 <span class="price">$50</span>
@@ -625,53 +460,20 @@
               </div>
               <a
                 class="btn btn-secondary btn-block"
-                href="link-aqui"
-                data-whop
-                data-service-id="asesoria-20-min"
               >
-                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para asesoria-20-min -->
-                Consultar programa
-              </a>
-            </article>
-
-            <article class="service-card service-card--featured reveal">
-              <div class="service-card__top">
-                <span class="service-icon" aria-hidden="true">
-                  <svg class="icon"><use href="#icon-heart"></use></svg>
-                </span>
-                <span class="flag flag--featured">
-                  <svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg>
-                  Pack completo · 8 semanas
-                </span>
-              </div>
-              <h3>Pack especial 8 semanas</h3>
-              <p class="service-card__desc">
-                Incluye rutina PDF, guía de alimentación y seguimiento personalizado para acompañarte durante 8 semanas en todo el proceso.
-              </p>
-              <div class="price-row">
-                <span class="price">$399</span>
-                <span class="price-note">pago único</span>
-              </div>
-              <a
-                class="btn btn-primary btn-block"
-                href="link-aqui"
-                data-whop
-                data-service-id="pack-8-semanas"
-              >
-                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para pack-8-semanas -->
-                Consultar pack
               </a>
             </article>
           </div>
 
+          <!-- Nota profesional: planes de alimentación -->
           <div class="health-note reveal" role="note">
             <svg class="icon" aria-hidden="true"><use href="#icon-info"></use></svg>
             <p>
-              Este contenido tiene fines educativos y de bienestar general. No constituye asesoramiento médico, diagnóstico, tratamiento ni terapia nutricional. No sustituye la valoración, seguimiento ni tratamiento de un médico, nutricionista clínico o profesional de la salud autorizado.
             </p>
           </div>
         </div>
       </section>
+
       <!-- ==============================================================
            4. CÓMO FUNCIONA
            ============================================================== -->
@@ -772,7 +574,6 @@
         </div>
       </section>
 
-            <!-- ==============================================================`n           7. PREGUNTAS FRECUENTES
            ============================================================== -->
       <section class="section faq" id="preguntas" aria-labelledby="faq-titulo">
         <div class="container">
@@ -794,14 +595,11 @@
                   aria-expanded="true"
                   aria-controls="faq-answer-1"
                 >
-                  ¿Los planes son personalizados para cada persona?
                   <svg class="chevron" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
                 </button>
               </h3>
               <div class="faq-answer" id="faq-answer-1">
                 <p>
-                  Sí. Cada plan se crea de manera individual según tus objetivos,
-                  nivel de experiencia, hábitos, preferencias y punto de partida.
                 </p>
               </div>
             </div>
@@ -814,14 +612,11 @@
                   aria-expanded="false"
                   aria-controls="faq-answer-2"
                 >
-                  ¿Qué incluye mi plan?
                   <svg class="chevron" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
                 </button>
               </h3>
               <div class="faq-answer" id="faq-answer-2">
                 <p>
-                  Depende del servicio contratado. Puede incluir plan de alimentación,
-                  rutina personalizada, suplementación, recomendaciones y seguimiento.
                 </p>
               </div>
             </div>
@@ -834,15 +629,11 @@
                   aria-expanded="false"
                   aria-controls="faq-answer-3"
                 >
-                  ¿Cómo funciona el seguimiento?
                   <svg class="chevron" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
                 </button>
               </h3>
               <div class="faq-answer" id="faq-answer-3">
                 <p>
-                  Durante el seguimiento se evalúa tu progreso, se realizan ajustes
-                  cuando sean necesarios y se mantiene comunicación según el servicio
-                  contratado.
                 </p>
               </div>
             </div>
@@ -855,13 +646,11 @@
                   aria-expanded="false"
                   aria-controls="faq-answer-4"
                 >
-                  ¿Puedo contratar solamente una asesoría o un servicio específico?
                   <svg class="chevron" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
                 </button>
               </h3>
               <div class="faq-answer" id="faq-answer-4">
                 <p>
-                  Sí. Puedes elegir entre diferentes servicios según lo que necesites.
                 </p>
               </div>
             </div>
@@ -874,15 +663,11 @@
                   aria-expanded="false"
                   aria-controls="faq-answer-5"
                 >
-                  ¿En cuánto tiempo recibiré mi rutina o plan?
                   <svg class="chevron" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
                 </button>
               </h3>
               <div class="faq-answer" id="faq-answer-5">
                 <p>
-                  Una vez completado el formulario, enviada la información requerida
-                  y confirmado el pago, tu plan será preparado dentro del tiempo
-                  establecido para tu servicio.
                 </p>
               </div>
             </div>
@@ -901,8 +686,6 @@
               </h3>
               <div class="faq-answer" id="faq-answer-6">
                 <p>
-                  Sí. Los cambios razonables pueden evaluarse de acuerdo con tus
-                  necesidades y el tipo de servicio contratado.
                 </p>
               </div>
             </div>
@@ -950,7 +733,6 @@
             <h4>Navega el sitio</h4>
             <ul class="footer-list" role="list">
               <li><a href="index.html#inicio">Inicio</a></li>
-              <li><a href="pages/servicios.html">Programas</a></li>
               <li><a href="pages/sobre-mi.html">Sobre mí</a></li>
               <li><a href="pages/preguntas-frecuentes.html">Preguntas frecuentes</a></li>
               <li><a href="pages/contacto.html">Contacto</a></li>
@@ -958,14 +740,7 @@
           </div>
 
           <div class="footer-col">
-            <h4>Programas</h4>
             <ul class="footer-list" role="list">
-              <li><a href="pages/servicios.html#rutina-pdf-sin-seguimiento">Rutina PDF sin seguimiento</a></li>
-              <li><a href="pages/servicios.html#rutina-pdf-seguimiento">Rutina PDF + seguimiento</a></li>
-              <li><a href="pages/servicios.html#guia-alimentacion-seguimiento">Guía alimentación + seguimiento</a></li>
-              <li><a href="pages/servicios.html#guia-alimentacion-sin-seguimiento">Guía alimentación sin seguimiento</a></li>
-              <li><a href="pages/servicios.html#asesoria">Asesoría 20 min</a></li>
-              <li><a href="pages/servicios.html#pack-8-semanas">Pack 8 semanas</a></li>
             </ul>
           </div>
 
@@ -1000,26 +775,6 @@
               <a href="#" data-whatsapp data-whatsapp-msg="Hola, quiero orientación para elegir el servicio más adecuado para mi objetivo." aria-label="WhatsApp de Fitness Sin Filtros">
                 <svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
               </a>
-            </div>
-            <div class="language-menu language-menu--footer" data-language-menu data-translate="none" aria-label="Idiomas">
-              <button
-                class="language-pill"
-                type="button"
-                aria-label="Seleccionar idioma"
-                aria-haspopup="listbox"
-                aria-expanded="false"
-                data-language-trigger
-              >
-                <span class="language-pill__flag" data-language-current aria-hidden="true">ES</span>
-                <span data-language-label>ES</span>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 10l5 5 5-5" />
-                </svg>
-              </button>
-              <div class="language-options" role="listbox" aria-label="Idiomas" data-language-options>
-                <button type="button" role="option" data-language-option="es" aria-selected="true">ES <span>Español</span></button>
-                <button type="button" role="option" data-language-option="en" aria-selected="false">EN <span>English</span></button>
-              </div>
             </div>
           </div>
         </div>
@@ -1079,16 +834,12 @@
             <svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg>
           </button>
         </div>
-        <h3 class="modal__title" id="legal-modal-title">Políticas de privacidad · Términos y condiciones</h3>
         <div class="legal modal__legal-body" data-legal-body></div>
       </div>
     </div>
 
     <!-- JavaScript -->
     <script src="js/config.js"></script>
-    <script src="js/legal-content.js"></script>
-    <script src="js/translations.js"></script>
-    <script src="js/i18n.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/faq.js"></script>
     <script src="js/main.js"></script>
