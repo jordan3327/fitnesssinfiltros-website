@@ -173,6 +173,79 @@ body::selection { background: var(--brand-rose); color: #fff; }
 .hero-media { border-radius: 2rem 2rem 2rem .35rem; box-shadow: var(--elevation-lifted); transform: rotate(2deg); }
 .hero-media::after { content: ""; position: absolute; inset: 1rem; border: 1px solid rgba(255,255,255,.8); border-radius: 1.35rem 1.35rem 1.35rem .15rem; pointer-events: none; }
 .hero-media img { filter: grayscale(18%) contrast(1.06); }
+.media-placeholder {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: .55rem;
+  width: 100%;
+  min-height: 100%;
+  padding: clamp(1rem, 2vw, 1.45rem);
+  overflow: hidden;
+  border: 1px dashed rgba(208, 60, 87, .28);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, .92), rgba(240, 228, 223, .96)),
+    repeating-linear-gradient(135deg, rgba(208, 60, 87, .06) 0 10px, rgba(255, 255, 255, .02) 10px 20px);
+  color: #5b4c53;
+}
+
+.media-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(208, 60, 87, .14), transparent 45%),
+    radial-gradient(circle at bottom right, rgba(177, 30, 85, .08), transparent 38%);
+  pointer-events: none;
+}
+
+.media-placeholder > * {
+  position: relative;
+  z-index: 1;
+}
+
+.media-placeholder__tag {
+  width: fit-content;
+  border-radius: 999px;
+  padding: .34rem .6rem;
+  background: rgba(208, 60, 87, .12);
+  color: var(--brand-rose);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.media-placeholder strong {
+  display: block;
+  color: #1d1619;
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 1.8vw, 1.65rem);
+  letter-spacing: -.04em;
+  line-height: 1.02;
+}
+
+.media-placeholder p {
+  margin: 0;
+  max-width: 24ch;
+  font-size: .9rem;
+  line-height: 1.45;
+}
+
+.media-placeholder code {
+  width: fit-content;
+  padding: .3rem .5rem;
+  border-radius: .6rem;
+  background: rgba(21, 15, 18, .08);
+  color: #3b3136;
+  font-size: .74rem;
+}
+
+.hero-media__placeholder {
+  aspect-ratio: 4 / 5;
+  border-radius: inherit;
+  box-shadow: var(--shadow-card);
+}
 .hero-badge { max-width: 11rem; border: 0; border-radius: 1rem; background: var(--brand-black); color: #fff; box-shadow: var(--elevation); font-size: .76rem; }
 .hero-badge .icon { color: #fff; }
 .hero-blob--pink { background: var(--brand-rose); opacity: .08; }
@@ -190,6 +263,13 @@ body::selection { background: var(--brand-rose); color: #fff; }
 .about-media { position: relative; }
 .about-media::before { content: "01"; position: absolute; z-index: 1; left: -1rem; top: -1rem; display: grid; place-items:center; width: 4.25rem; height: 4.25rem; border-radius: 50%; background: var(--brand-rose); color: #fff; font: 600 1.1rem var(--font-heading); }
 .about-media img, .about-media__placeholder { border-radius: 1.5rem 1.5rem 1.5rem .2rem; box-shadow: none; }
+.about-media__placeholder {
+  aspect-ratio: 1 / 1;
+  justify-content: center;
+  text-align: center;
+  border-style: solid;
+  box-shadow: none;
+}
 .about-points { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
 .about-point { display: block; padding: 1rem 0; border-top: 1px solid rgba(255,255,255,.24); }
 .about-point > .icon { margin-bottom: .7rem; color: #ffb1c0; }
@@ -331,22 +411,49 @@ body::selection { background: var(--brand-rose); color: #fff; }
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
   background: linear-gradient(180deg, rgba(0, 0, 0, .08) 28%, rgba(0, 0, 0, .84) 100%);
 }
 
-.evolution-card img {
+.evolution-card img,
+.evolution-card__placeholder {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   transform: scale(1.03);
+  z-index: 0;
+}
+
+.evolution-card__placeholder {
+  justify-content: flex-end;
+  border-radius: inherit;
+  padding: 1.15rem;
+  border-style: solid;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.86), rgba(240,228,223,.92)),
+    repeating-linear-gradient(135deg, rgba(208,60,87,.08) 0 12px, rgba(255,255,255,0) 12px 24px);
+  color: #4f4046;
+}
+
+.evolution-card__placeholder strong {
+  font-size: clamp(1.2rem, 1.9vw, 1.8rem);
+}
+
+.evolution-card__placeholder p {
+  max-width: 18ch;
+  color: inherit;
+}
+
+.evolution-card img {
+  object-fit: cover;
   filter: saturate(.96) contrast(1.04);
 }
 
 .evolution-card__content {
   position: absolute;
   inset: auto 1rem 1rem;
-  z-index: 1;
+  z-index: 2;
   display: grid;
   gap: .4rem;
 }

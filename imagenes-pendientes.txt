@@ -1,0 +1,46 @@
+FITNESS SIN FILTROS - IMAGENES PENDIENTES
+
+Carpeta sugerida para las imagenes finales:
+assets/images/home/
+
+Orden y nombre sugerido:
+
+1. Home / portada
+   - Placeholder: IMG 01
+   - Archivo sugerido: home-01-hero.jpg
+   - Ubicacion: seccion inicial / portada principal
+
+2. Home / presentacion
+   - Placeholder: IMG 02
+   - Archivo sugerido: home-02-about.jpg
+   - Ubicacion: seccion "Cada persona es diferente. Tu plan tambien."
+
+3. Cambio visual / tarjeta 01
+   - Placeholder: IMG 03
+   - Archivo sugerido: home-03-cambio-01.jpg
+   - Ubicacion: cuestionario visual / tarjeta 01
+
+4. Cambio visual / tarjeta 02
+   - Placeholder: IMG 04
+   - Archivo sugerido: home-04-cambio-02.jpg
+   - Ubicacion: cuestionario visual / tarjeta 02
+
+5. Cambio visual / tarjeta 03
+   - Placeholder: IMG 05
+   - Archivo sugerido: home-05-cambio-03.jpg
+   - Ubicacion: cuestionario visual / tarjeta 03
+
+6. Cambio visual / tarjeta 04
+   - Placeholder: IMG 06
+   - Archivo sugerido: home-06-cambio-04.jpg
+   - Ubicacion: cuestionario visual / tarjeta 04
+
+7. Cambio visual / tarjeta 05
+   - Placeholder: IMG 07
+   - Archivo sugerido: home-07-cambio-05.jpg
+   - Ubicacion: cuestionario visual / tarjeta 05
+
+Notas:
+- Cuando tengas la foto definitiva, guardala con el nombre sugerido o cambia el texto del placeholder.
+- Si prefieres otra carpeta, solo actualiza la ruta en el HTML.
+- Los logos del sitio se dejaron intactos porque no son fotos de contenido.
