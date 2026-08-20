@@ -589,6 +589,15 @@ strong {
   max-width: 34rem;
 }
 
+.hero-formats {
+  margin: calc(var(--space-1) * -1) 0 var(--space-5);
+  color: var(--color-ink-soft);
+  font-size: var(--fs-small);
+  letter-spacing: .02em;
+  line-height: 1.5;
+  max-width: 34rem;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;

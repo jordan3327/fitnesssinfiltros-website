@@ -39,14 +39,25 @@
     return number;
   }
 
+  function getConfiguredWhatsAppUrl() {
+    var url = String(CONFIG.whatsappUrl || "").trim();
+    if (!url) {
+      return "";
+    }
+    if (!/^https:\/\/wa\.me\/message\/[A-Za-z0-9]+$/.test(url)) {
+      return "";
+    }
+    return url;
+  }
+
   // URL de WhatsApp en formato internacional (sin "+", sin espacios).
-  // Devuelve null si el número no está configurado de forma válida.
+  // Si no hay número válido, usa el enlace directo configurado por la clienta.
   function buildWhatsAppUrl(message) {
     var number = getValidatedNumber();
-    if (!number) {
-      return null;
+    if (number) {
+      return "https://wa.me/" + number + "?text=" + encodeURIComponent(message);
     }
-    return "https://wa.me/" + number + "?text=" + encodeURIComponent(message);
+    return getConfiguredWhatsAppUrl() || null;
   }
 
   function getServiceMessage(serviceId) {
@@ -180,7 +191,7 @@
   // Estado "no configurado" para el sistema de botones aprobado
   // (docs/UIVERSE_BUTTON_PATTERNS.md, patrón 4): si el número oficial aún
   // no es válido, los controles de WhatsApp se marcan como deshabilitados.
-  var whatsappAvailable = Boolean(getValidatedNumber());
+  var whatsappAvailable = Boolean(getValidatedNumber() || getConfiguredWhatsAppUrl());
 
   document.querySelectorAll("[data-whatsapp]").forEach(function (el) {
     if (!whatsappAvailable) {
@@ -195,8 +206,9 @@
       var message = customMsg || getServiceMessage(serviceId) || defaultMessage;
 
       var number = getValidatedNumber();
+      var directUrl = getConfiguredWhatsAppUrl();
 
-      if (!number) {
+      if (!number && !directUrl) {
         // El número aún no está configurado de forma válida: informamos al visitante.
         alert(
           FSF.u(
@@ -290,7 +302,7 @@
     }
   });
 
-  /* Resplandor direccional para tarjetas en dispositivos con ratÃ³n. */
+  /* Resplandor direccional para tarjetas en dispositivos con ratón. */
   var supportsFinePointer =
     window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
