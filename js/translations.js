@@ -72,10 +72,10 @@ window.FSFTranslations = {
       "When you use the contact form or message us on WhatsApp, you share details like your name, email, and phone number. We only use them to reply to you and arrange the service you requested.",
     "Cuatro pasos entre tú y un plan pensado para tu realidad.":
       "Four steps between you and a plan built around your reality.",
-    "Cuestionario visual": "Visual questionnaire",
-    "Ayúdame a elegir el texto correcto": "Help me choose the right text",
-    "Estas imágenes muestran mi evolución personal, desde antes hasta la actualidad. Te dejo unas preguntas para que me digas qué texto encaja mejor con cada una.":
-      "These images show my personal evolution, from before to the present. I'm leaving you a few questions so you can tell me which text fits each one best.",
+    "Mi proceso": "My process",
+    "Así quiero mostrar mi proceso": "This is how I want to show my process",
+    "Quiero que esta parte se sienta más real y más cercana: una secuencia visual que acompañe el cambio sin distraer del mensaje principal.":
+      "I want this section to feel more real and closer to home: a visual sequence that supports the change without distracting from the main message.",
     "Cuéntame qué buscas y revisamos cuál servicio puede encajar contigo.":
       "Tell me what you're looking for and we'll figure out which service could fit you.",
     "Cuéntame qué quieres lograr y encontremos la mejor forma de trabajar juntas.":
@@ -91,11 +91,11 @@ window.FSFTranslations = {
     "Cómo funciona": "How it works",
     "Cómo trabajo contigo": "How I work with you",
     "Definición": "Definition",
-    "¿Cómo describirías mi punto de partida?": "How would you describe my starting point?",
-    "Inicio de la evolución personal con enfoque suave":
-      "The start of my personal evolution with a gentle approach",
-    "¿Qué palabras usarías para contar cómo se veía mi etapa inicial?":
-      "What words would you use to describe what my initial stage looked like?",
+    "Empiezo escuchando": "I start by listening",
+    "Inicio del proceso con enfoque personal y entrenamiento suave":
+      "Starting the process with a personal focus and gentle training",
+    "Primero me interesa entender tu punto de partida y lo que de verdad necesitas.":
+      "First I want to understand your starting point and what you truly need.",
     "Definimos hacia dónde vamos y cómo se mide el avance.":
       "We define where we're heading and how progress is measured.",
     "Definimos metas realistas y medimos el avance paso a paso.":
@@ -145,11 +145,11 @@ window.FSFTranslations = {
     "Evaluación individual": "Individual assessment",
     "Evaluación individual para orientar el plan.":
       "Individual assessment to guide the plan.",
-    "¿Qué cambio te gustaría resaltar aquí?": "What change would you like to highlight here?",
-    "Momento de ajuste dentro de la evolución personal":
-      "A moment of adjustment within my personal evolution",
-    "¿Prefieres hablar de transformación, disciplina, rutina o hábitos?":
-      "Would you prefer to talk about transformation, discipline, routine, or habits?",
+    "Ajusto el plan": "I adjust the plan",
+    "Ajuste del plan según hábitos, horarios y nivel real":
+      "Plan adjustment based on habits, schedules, and real level",
+    "Después adapto todo a tu ritmo, tus horarios y lo que sí puedes sostener.":
+      "Then I adapt everything to your pace, your schedule, and what you can actually sustain.",
     "Experiencias compartidas con autorización":
       "Shared experiences, with authorization",
     "Facebook": "Facebook",
@@ -222,16 +222,16 @@ window.FSFTranslations = {
     "Planes hechos para ti, no para todos": "Plans made for you, not for everyone",
     "Planes personalizados según la información compartida.":
       "Personalized plans based on the information shared.",
-    "¿Qué frase usarías para mi constancia?": "What phrase would you use for my consistency?",
-    "Constancia como parte de la evolución personal":
-      "Consistency as part of my personal evolution",
-    "¿Te suena mejor progreso, disciplina, estabilidad o evolución?":
-      "Does progress, discipline, stability, or evolution sound better to you?",
-    "¿Qué dirías sobre mi acompañamiento?": "What would you say about my support?",
-    "Acompañamiento cercano durante la evolución personal":
-      "Close support during my personal evolution",
-    "Si esta imagen habla de apoyo, ¿qué texto te nace para describirlo?":
-      "If this image speaks about support, what text comes to mind to describe it?",
+    "Mantengo lo que funciona": "I keep what works",
+    "Constancia en el entrenamiento con una rutina que se puede mantener":
+      "Consistency in training with a routine you can actually maintain",
+    "Me gusta trabajar con lo simple, lo claro y lo que de verdad suma.":
+      "I like working with what is simple, clear, and truly adds value.",
+    "Te acompaño": "I support you",
+    "Acompañamiento cercano durante el proceso de cambio":
+      "Close support during the change process",
+    "Si tu servicio incluye seguimiento, voy haciendo ajustes contigo cuando haga falta.":
+      "If your service includes follow-up, I make adjustments with you whenever they are needed.",
     "Políticas de privacidad": "Privacy policy",
     "Políticas de privacidad · Términos y condiciones": "Privacy Policy · Terms & Conditions",
     "Por autorizar": "Pending authorization",
@@ -244,11 +244,11 @@ window.FSFTranslations = {
       "First I listen; then I propose the service that fits you and your starting point.",
     "Progreso a tu ritmo": "Progress at your pace",
     "Progreso sin extremos": "Progress without extremes",
-    "¿Cómo contarías mi versión actual?": "How would you describe my current version?",
-    "Versión actual de la evolución personal":
-      "Current version of my personal evolution",
-    "Esta es la etapa más reciente: ¿qué mensaje usarías para cerrarla con fuerza?":
-      "This is the most recent stage: what message would you use to close it strongly?",
+    "Me enfoco en tu evolución": "I focus on your progress",
+    "Evolución con una alimentación organizada y sostenible":
+      "Progress with organized, sustainable nutrition",
+    "Lo importante es que avances con algo que puedas mantener y sentir tuyo.":
+      "What matters is that you move forward with something you can maintain and feel is yours.",
     "Propiedad intelectual": "Intellectual property",
     "Puedes solicitar en cualquier momento que eliminemos la información que hayas compartido, escribiendo al correo o WhatsApp de contacto.":
       "You can ask us at any time to delete the information you've shared by writing to the contact email or WhatsApp.",

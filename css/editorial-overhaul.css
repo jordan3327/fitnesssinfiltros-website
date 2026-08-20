@@ -178,8 +178,8 @@ body::selection { background: var(--brand-rose); color: #fff; }
 .hero-blob--pink { background: var(--brand-rose); opacity: .08; }
 .hero-blob--blush { background: var(--brand-salmon); opacity: .1; }
 
-.section { padding-block: clamp(5.5rem, 10vw, 10rem); }
-.section-head { margin-bottom: clamp(2.5rem, 4vw, 4rem); }
+.section { padding-block: clamp(4.5rem, 8vw, 8.5rem); }
+.section-head { margin-bottom: clamp(2rem, 3vw, 3.25rem); }
 .section-head h2, .about-copy h2, .sub-hero h1 { letter-spacing: -.06em; line-height: .95; text-wrap: balance; }
 .section-head h2 { max-width: 16ch; font-size: clamp(2.55rem, 5vw, 5rem); }
 .section-head .lead { max-width: 43rem; color: #554a50; }
