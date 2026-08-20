@@ -262,17 +262,17 @@ body::selection { background: var(--brand-rose); color: #fff; }
 .evolution-strip .section-head {
   position: relative;
   z-index: 4;
-  margin-bottom: clamp(2rem, 3.5vw, 3rem);
+  margin-bottom: clamp(.65rem, 1.4vw, 1.1rem);
 }
 
 .evolution-strip__sticky {
   position: sticky;
-  top: calc(var(--header-height) + 1rem);
+  top: calc(var(--header-height) + .35rem);
   display: flex;
-  align-items: center;
-  height: calc(100vh - var(--header-height) - 2rem);
+  align-items: flex-start;
+  height: calc(100vh - var(--header-height) - 1rem);
   z-index: 2;
-  margin-top: clamp(.5rem, 2vw, 1.5rem);
+  margin-top: .1rem;
 }
 
 .evolution-strip__frame {
@@ -280,9 +280,9 @@ body::selection { background: var(--brand-rose); color: #fff; }
   overflow: hidden;
   width: min(calc(100vw - 1rem), 96rem);
   max-width: none;
-  padding: 1rem clamp(.75rem, 1.4vw, 1.5rem);
+  padding: .7rem clamp(.55rem, 1vw, 1rem);
   border: 1px solid rgba(255, 255, 255, .14);
-  border-radius: 2rem;
+  border-radius: 1.6rem;
   background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02));
   box-shadow: var(--elevation-lifted);
 }
@@ -312,15 +312,15 @@ body::selection { background: var(--brand-rose); color: #fff; }
   position: relative;
   z-index: 1;
   display: flex;
-  gap: 1.15rem;
+  gap: .75rem;
   will-change: transform;
   transform: translate3d(0, 0, 0);
 }
 
 .evolution-card {
   position: relative;
-  flex: 0 0 clamp(18rem, 31vw, 24rem);
-  min-height: clamp(26rem, 60vh, 37rem);
+  flex: 0 0 clamp(14rem, 22vw, 19rem);
+  min-height: clamp(19rem, 42vh, 27rem);
   overflow: hidden;
   border-radius: 1.45rem;
   background: #000;
@@ -345,7 +345,7 @@ body::selection { background: var(--brand-rose); color: #fff; }
 
 .evolution-card__content {
   position: absolute;
-  inset: auto 1rem 1rem;
+  inset: auto .8rem .8rem;
   z-index: 1;
   display: grid;
   gap: .4rem;
@@ -369,15 +369,15 @@ body::selection { background: var(--brand-rose); color: #fff; }
 .evolution-card h3 {
   margin: 0;
   color: #fff;
-  font-size: clamp(1.45rem, 2.1vw, 2rem);
+  font-size: clamp(1.05rem, 1.45vw, 1.3rem);
   letter-spacing: -.05em;
 }
 
 .evolution-card p {
   margin: 0;
-  max-width: 16ch;
+  max-width: 18ch;
   color: rgba(255, 255, 255, .78);
-  font-size: .92rem;
+  font-size: .74rem;
   line-height: 1.5;
 }
 

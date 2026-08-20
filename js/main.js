@@ -392,8 +392,8 @@
       var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
       var travel = Math.max(0, track.scrollWidth - frame.clientWidth);
       var sectionHeight = Math.max(
-        viewportHeight * 1.3,
-        viewportHeight + travel + Math.round(viewportHeight * 0.4)
+        viewportHeight * 0.9,
+        viewportHeight + travel * 0.55 + Math.round(viewportHeight * 0.12)
       );
 
       section.style.height = sectionHeight + "px";
