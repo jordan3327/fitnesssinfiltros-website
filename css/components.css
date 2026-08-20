@@ -27,7 +27,29 @@
   max-width: 46rem;
 }
 
-.health-note .icon,
+.health-note {
+  display: block;
+  max-width: 58rem;
+  margin-inline: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: center;
+}
+
+.health-note .icon {
+  display: none;
+}
+
+.health-note p {
+  margin: 0 auto;
+  max-width: 52rem;
+  font-size: var(--fs-tiny);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  color: var(--color-ink-soft);
+}
+
 .disclaimer-note .icon {
   width: 1.4rem;
   height: 1.4rem;
@@ -36,7 +58,6 @@
   margin-top: 0.12rem;
 }
 
-.health-note p,
 .disclaimer-note p {
   font-size: var(--fs-small);
   color: var(--color-ink-soft);

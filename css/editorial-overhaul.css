@@ -35,7 +35,10 @@ body::selection { background: var(--brand-rose); color: #fff; }
   box-shadow: 0 12px 30px rgba(24, 17, 20, .06);
 }
 
-.header-inner { min-height: clamp(5.75rem, 8vw, 6.75rem); }
+.header-inner {
+  min-height: clamp(4.6rem, 6vw, 5.35rem);
+  padding-block: .25rem;
+}
 
 .brand {
   gap: clamp(0.5rem, 1.5vw, 0.9rem);
@@ -44,25 +47,32 @@ body::selection { background: var(--brand-rose); color: #fff; }
 
 .brand-logo {
   display: block;
-  width: clamp(4rem, 7vw, 5.25rem);
+  width: clamp(3.1rem, 4.8vw, 4.2rem);
   height: auto;
   aspect-ratio: 1;
   flex: 0 0 auto;
   object-fit: contain;
 }
 .brand-mark { width: 2rem; height: 2rem; border: 1px solid var(--line-strong); background: #fff; }
-.brand-name { display: block; font-size: .98rem; letter-spacing: .075em; white-space: nowrap; }
-.brand-domain { display: block; font-size: .64rem; letter-spacing: .1em; white-space: nowrap; color: var(--color-fuchsia-dark); }
+.brand-name { display: block; font-size: .88rem; letter-spacing: .07em; white-space: nowrap; }
+.brand-domain { display: block; font-size: .58rem; letter-spacing: .095em; white-space: nowrap; color: var(--color-fuchsia-dark); }
 
 .main-nav .nav-list { gap: .25rem; }
 .nav-link {
   border-radius: 999px;
-  padding: .55rem .8rem;
-  font-size: .78rem;
-  letter-spacing: .035em;
+  padding: .42rem .68rem;
+  font-size: .72rem;
+  letter-spacing: .04em;
   text-transform: uppercase;
 }
 .nav-link:hover, .nav-link[aria-current="page"] { background: var(--color-pink-light); color: var(--brand-rose); }
+
+.nav-cta {
+  min-height: 2.8rem;
+  padding-inline: 1.15rem;
+  font-size: .74rem;
+  letter-spacing: .05em;
+}
 
 .btn {
   position: relative;
@@ -409,7 +419,14 @@ body::selection { background: var(--brand-rose); color: #fff; }
 .flag--featured { background: var(--brand-rose); color: #fff; }
 .price { font-size: 2.15rem; letter-spacing: -.06em; }
 .price-note { text-transform: uppercase; letter-spacing: .08em; }
-.health-note { border-radius: 1rem; border-color: var(--line-strong); background: #f4eee9; }
+.health-note {
+  margin-inline: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
 
 .process { position: relative; overflow: hidden; background: var(--brand-rose); color: #fff; }
 .process .section-head h2, .process .section-head p { color: #fff; }

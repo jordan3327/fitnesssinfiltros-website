@@ -42,8 +42,8 @@ window.FSFTranslations = {
     "C1": "C1",
     "C2": "C2",
     "C3": "C3",
-    "Cada persona es diferente, y el punto de partida es siempre el mismo: escucharte.":
-      "Everyone is different, and the starting point is always the same: listening to you.",
+    "Cada programa se adapta a tu punto de partida, tus objetivos y tu estilo de vida. La propuesta se organiza en bloques de 8 semanas y se confirma por WhatsApp antes de contratar.":
+      "Each program is adapted to your starting point, your goals, and your lifestyle. The proposal is organized in 8-week blocks and confirmed on WhatsApp before you sign up.",
     "Cada persona es diferente. Tu plan también.":
       "Everyone is different. So is your plan.",
     "Cada plan se adapta individualmente. No se prometen resultados garantizados: el avance depende de la constancia y el compromiso de cada persona.":
@@ -72,10 +72,10 @@ window.FSFTranslations = {
       "When you use the contact form or message us on WhatsApp, you share details like your name, email, and phone number. We only use them to reply to you and arrange the service you requested.",
     "Cuatro pasos entre tú y un plan pensado para tu realidad.":
       "Four steps between you and a plan built around your reality.",
-    "Cambio visual": "Visual change",
-    "Constancia": "Consistency",
-    "Desliza mientras bajas por la página: la secuencia avanza hacia la izquierda y acompaña tu recorrido.":
-      "Scroll down: the sequence moves left and follows your journey.",
+    "Cuestionario visual": "Visual questionnaire",
+    "Ayúdame a elegir el texto correcto": "Help me choose the right text",
+    "Estas imágenes muestran mi evolución personal, desde antes hasta la actualidad. Te dejo unas preguntas para que me digas qué texto encaja mejor con cada una.":
+      "These images show my personal evolution, from before to the present. I'm leaving you a few questions so you can tell me which text fits each one best.",
     "Cuéntame qué buscas y revisamos cuál servicio puede encajar contigo.":
       "Tell me what you're looking for and we'll figure out which service could fit you.",
     "Cuéntame qué quieres lograr y encontremos la mejor forma de trabajar juntas.":
@@ -90,10 +90,12 @@ window.FSFTranslations = {
       "Tell me your goal and I'll help you find the plan that best fits you.",
     "Cómo funciona": "How it works",
     "Cómo trabajo contigo": "How I work with you",
-    "Evolución": "Evolution",
     "Definición": "Definition",
-    "Escuchamos tu realidad y ordenamos lo que sí puedes sostener hoy.":
-      "We listen to your reality and organize what you can actually sustain today.",
+    "¿Cómo describirías mi punto de partida?": "How would you describe my starting point?",
+    "Inicio de la evolución personal con enfoque suave":
+      "The start of my personal evolution with a gentle approach",
+    "¿Qué palabras usarías para contar cómo se veía mi etapa inicial?":
+      "What words would you use to describe what my initial stage looked like?",
     "Definimos hacia dónde vamos y cómo se mide el avance.":
       "We define where we're heading and how progress is measured.",
     "Definimos metas realistas y medimos el avance paso a paso.":
@@ -143,11 +145,11 @@ window.FSFTranslations = {
     "Evaluación individual": "Individual assessment",
     "Evaluación individual para orientar el plan.":
       "Individual assessment to guide the plan.",
-    "Ajuste": "Adjustment",
-    "Acompañamiento": "Support",
-    "Acompañamiento cercano": "Close-knit support",
-    "Tu plan se adapta a horarios, nivel, hábitos y preferencias reales.":
-      "Your plan adapts to real schedules, level, habits, and preferences.",
+    "¿Qué cambio te gustaría resaltar aquí?": "What change would you like to highlight here?",
+    "Momento de ajuste dentro de la evolución personal":
+      "A moment of adjustment within my personal evolution",
+    "¿Prefieres hablar de transformación, disciplina, rutina o hábitos?":
+      "Would you prefer to talk about transformation, discipline, routine, or habits?",
     "Experiencias compartidas con autorización":
       "Shared experiences, with authorization",
     "Facebook": "Facebook",
@@ -220,21 +222,16 @@ window.FSFTranslations = {
     "Planes hechos para ti, no para todos": "Plans made for you, not for everyone",
     "Planes personalizados según la información compartida.":
       "Personalized plans based on the information shared.",
-    "Punto de partida": "Starting point",
-    "Punto de partida con entrenamiento suave y enfoque personal":
-      "Starting point with gentle training and a personal approach",
-    "Repetimos lo que funciona y quitamos lo que complica tu avance.":
-      "We repeat what works and remove what gets in the way of your progress.",
-    "Ajuste del plan con hábitos y entrenamiento realistas":
-      "Plan adjustment with realistic habits and training",
-    "Constancia en el entrenamiento con una rutina sostenible":
-      "Consistency in training with a sustainable routine",
-    "Acompañamiento cercano durante el proceso de cambio":
-      "Close support during the change process",
-    "Evolución con una alimentación organizada y sostenible":
-      "Evolution through organized, sustainable nutrition",
-    "Te sigo de cerca para hacer ajustes con intención y claridad.":
-      "I keep close track so I can make adjustments with intention and clarity.",
+    "¿Qué frase usarías para mi constancia?": "What phrase would you use for my consistency?",
+    "Constancia como parte de la evolución personal":
+      "Consistency as part of my personal evolution",
+    "¿Te suena mejor progreso, disciplina, estabilidad o evolución?":
+      "Does progress, discipline, stability, or evolution sound better to you?",
+    "¿Qué dirías sobre mi acompañamiento?": "What would you say about my support?",
+    "Acompañamiento cercano durante la evolución personal":
+      "Close support during my personal evolution",
+    "Si esta imagen habla de apoyo, ¿qué texto te nace para describirlo?":
+      "If this image speaks about support, what text comes to mind to describe it?",
     "Políticas de privacidad": "Privacy policy",
     "Políticas de privacidad · Términos y condiciones": "Privacy Policy · Terms & Conditions",
     "Por autorizar": "Pending authorization",
@@ -247,8 +244,11 @@ window.FSFTranslations = {
       "First I listen; then I propose the service that fits you and your starting point.",
     "Progreso a tu ritmo": "Progress at your pace",
     "Progreso sin extremos": "Progress without extremes",
-    "Construimos una versión más estable, más consciente y más tuya.":
-      "We build a version of you that is steadier, more aware, and more yours.",
+    "¿Cómo contarías mi versión actual?": "How would you describe my current version?",
+    "Versión actual de la evolución personal":
+      "Current version of my personal evolution",
+    "Esta es la etapa más reciente: ¿qué mensaje usarías para cerrarla con fuerza?":
+      "This is the most recent stage: what message would you use to close it strongly?",
     "Propiedad intelectual": "Intellectual property",
     "Puedes solicitar en cualquier momento que eliminemos la información que hayas compartido, escribiendo al correo o WhatsApp de contacto.":
       "You can ask us at any time to delete the information you've shared by writing to the contact email or WhatsApp.",
