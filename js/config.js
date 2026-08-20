@@ -16,7 +16,8 @@ window.CONFIG = {
   // Ejemplo: "593991234567" (Ecuador, 12 dígitos).
   // Mientras esté vacío, los botones de WhatsApp informarán que aún
   // no está configurado en lugar de abrir un enlace roto.
-  whatsappNumber: "",
+  whatsappNumber: "15512322005",
+  whatsappDisplay: "+1 (551) 232-2005",
   whatsappUrl: "https://wa.me/message/IH4VI25P6KX7C1",
 
   // PENDIENTE_CLIENTE: nombre de la entrenadora / profesional

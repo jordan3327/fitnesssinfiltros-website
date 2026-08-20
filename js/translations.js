@@ -35,10 +35,10 @@ window.FSFTranslations = {
     "Atención": "Service format",
     "Aumentar energía": "Boost energy",
     "Beneficios": "Benefits",
-    "Borrador legal pendiente de revisión profesional y de adaptación a la normativa aplicable antes de publicar el sitio.":
-      "Legal draft pending professional review and adaptation to applicable regulations before the site goes live.",
-    "Borrador legal pendiente de revisión profesional y de adaptación al modelo de negocio antes de publicar el sitio.":
-      "Legal draft pending professional review and adaptation to the business model before the site goes live.",
+    "Este contenido resume cómo Fitness Sin Filtros gestiona la privacidad y el uso del sitio.":
+      "This content summarizes how Fitness Sin Filtros handles privacy and site usage.",
+    "Este contenido resume las condiciones aplicables a los programas y servicios de Fitness Sin Filtros.":
+      "This content summarizes the terms that apply to Fitness Sin Filtros programs and services.",
     "C1": "C1",
     "C2": "C2",
     "C3": "C3",
@@ -208,7 +208,7 @@ window.FSFTranslations = {
     "Planes personalizados según la información compartida.":
       "Personalized plans based on the information shared.",
     "Políticas de privacidad": "Privacy policy",
-    "Políticas de privacidad y términos": "Privacy policy and terms",
+    "Políticas de privacidad · Términos y condiciones": "Privacy Policy · Terms & Conditions",
     "Por autorizar": "Pending authorization",
     "Por eso el proceso empieza por escucharte: tu punto de partida, tu rutina y lo que quieres lograr. Solo después diseñamos un plan con posibilidades reales de sostenerse.":
       "That's why the process starts by listening to you: your starting point, your routine, and what you want to achieve. Only then do we design a plan with real chances of lasting.",
@@ -530,10 +530,10 @@ window.FSFSeo = {
   },
   "politicas.html": {
     en: {
-      title: "Privacy policy and terms | Fitness Sin Filtros",
+      title: "Privacy Policy · Terms & Conditions | Fitness Sin Filtros",
       description:
         "Information on how we handle your data and the terms of use of Fitness Sin Filtros services.",
-      ogTitle: "Privacy policy and terms | Fitness Sin Filtros",
+      ogTitle: "Privacy Policy · Terms & Conditions | Fitness Sin Filtros",
       ogDescription:
         "Information on how we handle your data and the terms of use of Fitness Sin Filtros services.",
       ogLocale: "en_US"

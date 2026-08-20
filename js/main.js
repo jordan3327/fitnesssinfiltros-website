@@ -73,6 +73,18 @@
     return "";
   }
 
+  function getWhatsAppDisplayNumber() {
+    var display = String(CONFIG.whatsappDisplay || "").trim();
+    if (display) {
+      return display;
+    }
+    var number = getValidatedNumber();
+    if (!number) {
+      return "";
+    }
+    return "+" + number;
+  }
+
   /* ------------------------------------------------------------------
    * Año automático en el footer
    * ------------------------------------------------------------------ */
@@ -263,6 +275,15 @@
       link.setAttribute("target", "_blank");
       link.setAttribute("rel", "noopener noreferrer");
     }
+  });
+
+  document.querySelectorAll("[data-whatsapp-number]").forEach(function (el) {
+    var number = getWhatsAppDisplayNumber();
+    if (!number) {
+      el.hidden = true;
+      return;
+    }
+    el.textContent = number;
   });
 
   // Oculta los contenedores de iconos sociales si no quedan enlaces visibles.
@@ -659,6 +680,56 @@
 
   var legalModal = document.getElementById("legal-modal");
 
+  function openLegalModalWithHtml(html, sectionId) {
+    if (!legalModal) {
+      return;
+    }
+
+    var body = legalModal.querySelector("[data-legal-body]");
+    var closeBtn = legalModal.querySelector("[data-legal-close]");
+    var dialog = legalModal.querySelector("[role='dialog']");
+    if (!body) {
+      return;
+    }
+
+    var doc = new DOMParser().parseFromString(html, "text/html");
+    var fragment = document.createDocumentFragment();
+    var privacy = doc.getElementById("privacidad");
+    var terms = doc.getElementById("terminos");
+
+    if (privacy) {
+      fragment.appendChild(privacy.cloneNode(true));
+    }
+    if (terms) {
+      fragment.appendChild(terms.cloneNode(true));
+    }
+
+    body.innerHTML = "";
+    body.appendChild(fragment);
+
+    legalModal.classList.add("is-open");
+    legalModal.removeAttribute("aria-hidden");
+    if (dialog) {
+      dialog.setAttribute("aria-hidden", "false");
+    }
+    document.body.style.overflow = "hidden";
+
+    if (sectionId) {
+      var target = body.querySelector("#" + sectionId);
+      if (target && target.scrollIntoView) {
+        target.scrollIntoView({
+          block: "start",
+          behavior: prefersReducedMotion() ? "auto" : "smooth",
+        });
+      }
+    }
+
+    var focusTarget = closeBtn || dialog.querySelector("button");
+    if (focusTarget) {
+      focusTarget.focus();
+    }
+  }
+
   function openLegalModal(sectionId, pagePath) {
     if (!legalModal) {
       return;
@@ -711,6 +782,27 @@
       }
     }
 
+    if (window.LEGAL_DOCUMENTS && window.LEGAL_DOCUMENTS.privacidad && window.LEGAL_DOCUMENTS.terminos) {
+      openLegalModalWithHtml(
+        String(window.LEGAL_DOCUMENTS.privacidad) + "\n" + String(window.LEGAL_DOCUMENTS.terminos),
+        sectionId
+      );
+      if (closeBtn) {
+        closeBtn.addEventListener("click", closeLegalModal, { once: true });
+      }
+      legalModal.addEventListener(
+        "click",
+        function (event) {
+          if (event.target === legalModal) {
+            closeLegalModal();
+          }
+        },
+        { once: true }
+      );
+      document.addEventListener("keydown", trapLegalKey);
+      return;
+    }
+
     fetch(pagePath)
       .then(function (response) {
         if (!response.ok) {
@@ -719,40 +811,7 @@
         return response.text();
       })
       .then(function (html) {
-        var doc = new DOMParser().parseFromString(html, "text/html");
-        var fragment = document.createDocumentFragment();
-        var privacy = doc.getElementById("privacidad");
-        var terms = doc.getElementById("terminos");
-        if (privacy) {
-          fragment.appendChild(privacy.cloneNode(true));
-        }
-        if (terms) {
-          fragment.appendChild(terms.cloneNode(true));
-        }
-        body.innerHTML = "";
-        body.appendChild(fragment);
-
-        legalModal.classList.add("is-open");
-        legalModal.removeAttribute("aria-hidden");
-        if (dialog) {
-          dialog.setAttribute("aria-hidden", "false");
-        }
-        document.body.style.overflow = "hidden";
-        document.addEventListener("keydown", trapLegalKey);
-
-        var focusTarget =
-          closeBtn || dialog.querySelector("button");
-        if (focusTarget) {
-          focusTarget.focus();
-        }
-
-        if (sectionId) {
-          var target = body.querySelector("#" + sectionId);
-          if (target && target.scrollIntoView) {
-            target.scrollIntoView({ block: "start", behavior: prefersReducedMotion() ? "auto" : "smooth" });
-          }
-        }
-
+        openLegalModalWithHtml(html, sectionId);
         if (closeBtn) {
           closeBtn.addEventListener("click", closeLegalModal, { once: true });
         }
@@ -761,8 +820,25 @@
             closeLegalModal();
           }
         }, { once: true });
+        document.addEventListener("keydown", trapLegalKey);
       })
       .catch(function () {
+        if (window.LEGAL_DOCUMENTS && window.LEGAL_DOCUMENTS.privacidad && window.LEGAL_DOCUMENTS.terminos) {
+          openLegalModalWithHtml(
+            String(window.LEGAL_DOCUMENTS.privacidad) + "\n" + String(window.LEGAL_DOCUMENTS.terminos),
+            sectionId
+          );
+          if (closeBtn) {
+            closeBtn.addEventListener("click", closeLegalModal, { once: true });
+          }
+          legalModal.addEventListener("click", function (event) {
+            if (event.target === legalModal) {
+              closeLegalModal();
+            }
+          }, { once: true });
+          document.addEventListener("keydown", trapLegalKey);
+          return;
+        }
         // Respaldo: navegación normal a la página legal.
         if (lastFocused && lastFocused.href) {
           window.location.href = lastFocused.getAttribute("href");

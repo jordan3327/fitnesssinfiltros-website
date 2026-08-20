@@ -376,8 +376,10 @@
                   <svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                   <div class="channel-card__body">
                     <strong>WhatsApp</strong>
-                    <!-- REEMPLAZAR: número real de WhatsApp -->
-                    <p>Cuéntame qué buscas y revisamos cuál servicio puede encajar contigo.</p>
+                    <p>
+                      Escríbeme al <strong data-whatsapp-number></strong> y revisamos cuál
+                      programa puede encajar mejor contigo.
+                    </p>
                   </div>
                   <div class="channel-card__action">
                     <a class="btn btn-secondary" href="#" data-whatsapp data-whatsapp-msg="Hola, quiero orientación para elegir el servicio más adecuado para mi objetivo.">
@@ -666,12 +668,13 @@
             <svg class="icon" aria-hidden="true"><use href="#icon-close"></use></svg>
           </button>
         </div>
-        <h3 class="modal__title" id="legal-modal-title">Políticas de privacidad y términos</h3>
+        <h3 class="modal__title" id="legal-modal-title">Políticas de privacidad · Términos y condiciones</h3>
         <div class="legal modal__legal-body" data-legal-body></div>
       </div>
     </div>
 
     <script src="../js/config.js"></script>
+    <script src="../js/legal-content.js"></script>
     <script src="../js/translations.js"></script>
     <script src="../js/i18n.js"></script>
     <script src="../js/menu.js"></script>
