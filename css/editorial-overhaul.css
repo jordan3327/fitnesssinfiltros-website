@@ -278,7 +278,7 @@ body::selection { background: var(--brand-rose); color: #fff; }
 .evolution-strip__frame {
   position: relative;
   overflow: hidden;
-  width: min(calc(100vw - 1rem), 96rem);
+  width: min(calc(100vw - .5rem), 98rem);
   max-width: none;
   padding: .85rem clamp(.65rem, 1.2vw, 1.2rem);
   border: 1px solid rgba(255, 255, 255, .14);
