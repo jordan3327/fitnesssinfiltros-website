@@ -369,6 +369,72 @@
   }
 
   /* ------------------------------------------------------------------
+   * Strip horizontal guiado por scroll
+   * ------------------------------------------------------------------ */
+
+  var scrollStripSections = document.querySelectorAll("[data-scroll-strip]");
+
+  if (scrollStripSections.length) {
+    var scrollStripState = { ticking: false };
+
+    function clamp(value, min, max) {
+      return Math.min(Math.max(value, min), max);
+    }
+
+    function updateScrollStrip(section) {
+      var frame = section.querySelector(".evolution-strip__frame");
+      var track = section.querySelector("[data-scroll-strip-track]");
+
+      if (!frame || !track) {
+        return;
+      }
+
+      var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      var travel = Math.max(0, track.scrollWidth - frame.clientWidth);
+      var sectionHeight = Math.max(
+        viewportHeight * 1.3,
+        viewportHeight + travel + Math.round(viewportHeight * 0.4)
+      );
+
+      section.style.height = sectionHeight + "px";
+
+      if (prefersReducedMotion()) {
+        track.style.transform = "translate3d(0, 0, 0)";
+        return;
+      }
+
+      var rect = section.getBoundingClientRect();
+      var maxScroll = Math.max(1, sectionHeight - viewportHeight);
+      var progress = clamp(-rect.top / maxScroll, 0, 1);
+
+      track.style.transform =
+        "translate3d(" + -travel * progress + "px, 0, 0)";
+    }
+
+    function updateScrollStrips() {
+      for (var i = 0; i < scrollStripSections.length; i++) {
+        updateScrollStrip(scrollStripSections[i]);
+      }
+    }
+
+    function scheduleScrollStripUpdate() {
+      if (scrollStripState.ticking) {
+        return;
+      }
+      scrollStripState.ticking = true;
+      window.requestAnimationFrame(function () {
+        scrollStripState.ticking = false;
+        updateScrollStrips();
+      });
+    }
+
+    window.addEventListener("scroll", scheduleScrollStripUpdate, { passive: true });
+    window.addEventListener("resize", scheduleScrollStripUpdate);
+    window.addEventListener("load", scheduleScrollStripUpdate);
+    updateScrollStrips();
+  }
+
+  /* ------------------------------------------------------------------
    * Formulario de contacto
    * - Valida los campos con mensajes de error accesibles.
    * - No finge enviar datos: muestra una confirmación y abre WhatsApp

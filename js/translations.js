@@ -72,6 +72,10 @@ window.FSFTranslations = {
       "When you use the contact form or message us on WhatsApp, you share details like your name, email, and phone number. We only use them to reply to you and arrange the service you requested.",
     "Cuatro pasos entre tú y un plan pensado para tu realidad.":
       "Four steps between you and a plan built around your reality.",
+    "Cambio visual": "Visual change",
+    "Constancia": "Consistency",
+    "Desliza mientras bajas por la página: la secuencia avanza hacia la izquierda y acompaña tu recorrido.":
+      "Scroll down: the sequence moves left and follows your journey.",
     "Cuéntame qué buscas y revisamos cuál servicio puede encajar contigo.":
       "Tell me what you're looking for and we'll figure out which service could fit you.",
     "Cuéntame qué quieres lograr y encontremos la mejor forma de trabajar juntas.":
@@ -86,7 +90,10 @@ window.FSFTranslations = {
       "Tell me your goal and I'll help you find the plan that best fits you.",
     "Cómo funciona": "How it works",
     "Cómo trabajo contigo": "How I work with you",
+    "Evolución": "Evolution",
     "Definición": "Definition",
+    "Escuchamos tu realidad y ordenamos lo que sí puedes sostener hoy.":
+      "We listen to your reality and organize what you can actually sustain today.",
     "Definimos hacia dónde vamos y cómo se mide el avance.":
       "We define where we're heading and how progress is measured.",
     "Definimos metas realistas y medimos el avance paso a paso.":
@@ -100,6 +107,7 @@ window.FSFTranslations = {
       "After getting to know you, each service adapts to your starting point. These are the available services:",
     "Diseñamos tu plan": "We design your plan",
     "Dudas frecuentes": "Frequently asked questions",
+    "El cambio se ve en movimiento": "Change becomes visible in motion",
     "El pago se realiza antes de iniciar el servicio mediante los métodos de pago disponibles al momento de contratar.":
       "Payment is made before starting the service using the payment methods available at the time of booking.",
     "El tiempo de entrega se define al contratar, según el servicio y la información que compartas.":
@@ -135,6 +143,11 @@ window.FSFTranslations = {
     "Evaluación individual": "Individual assessment",
     "Evaluación individual para orientar el plan.":
       "Individual assessment to guide the plan.",
+    "Ajuste": "Adjustment",
+    "Acompañamiento": "Support",
+    "Acompañamiento cercano": "Close-knit support",
+    "Tu plan se adapta a horarios, nivel, hábitos y preferencias reales.":
+      "Your plan adapts to real schedules, level, habits, and preferences.",
     "Experiencias compartidas con autorización":
       "Shared experiences, with authorization",
     "Facebook": "Facebook",
@@ -207,6 +220,21 @@ window.FSFTranslations = {
     "Planes hechos para ti, no para todos": "Plans made for you, not for everyone",
     "Planes personalizados según la información compartida.":
       "Personalized plans based on the information shared.",
+    "Punto de partida": "Starting point",
+    "Punto de partida con entrenamiento suave y enfoque personal":
+      "Starting point with gentle training and a personal approach",
+    "Repetimos lo que funciona y quitamos lo que complica tu avance.":
+      "We repeat what works and remove what gets in the way of your progress.",
+    "Ajuste del plan con hábitos y entrenamiento realistas":
+      "Plan adjustment with realistic habits and training",
+    "Constancia en el entrenamiento con una rutina sostenible":
+      "Consistency in training with a sustainable routine",
+    "Acompañamiento cercano durante el proceso de cambio":
+      "Close support during the change process",
+    "Evolución con una alimentación organizada y sostenible":
+      "Evolution through organized, sustainable nutrition",
+    "Te sigo de cerca para hacer ajustes con intención y claridad.":
+      "I keep close track so I can make adjustments with intention and clarity.",
     "Políticas de privacidad": "Privacy policy",
     "Políticas de privacidad · Términos y condiciones": "Privacy Policy · Terms & Conditions",
     "Por autorizar": "Pending authorization",
@@ -219,6 +247,8 @@ window.FSFTranslations = {
       "First I listen; then I propose the service that fits you and your starting point.",
     "Progreso a tu ritmo": "Progress at your pace",
     "Progreso sin extremos": "Progress without extremes",
+    "Construimos una versión más estable, más consciente y más tuya.":
+      "We build a version of you that is steadier, more aware, and more yours.",
     "Propiedad intelectual": "Intellectual property",
     "Puedes solicitar en cualquier momento que eliminemos la información que hayas compartido, escribiendo al correo o WhatsApp de contacto.":
       "You can ask us at any time to delete the information you've shared by writing to the contact email or WhatsApp.",

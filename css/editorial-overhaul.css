@@ -186,6 +186,182 @@ body::selection { background: var(--brand-rose); color: #fff; }
 .about-point strong { color: #ffb1c0; }
 .about-point p { margin-top: .25rem; color: rgba(255,255,255,.7); font-size: .83rem; }
 
+.evolution-strip {
+  position: relative;
+  overflow: clip;
+  background:
+    radial-gradient(circle at top left, rgba(208, 60, 87, .18), transparent 38%),
+    linear-gradient(180deg, #150f12 0%, #120d11 100%);
+  color: #fff;
+}
+
+.evolution-strip .section-head h2,
+.evolution-strip .section-head .lead {
+  color: inherit;
+}
+
+.evolution-strip .eyebrow {
+  border-color: rgba(255, 255, 255, .24);
+  background: rgba(255, 255, 255, .08);
+  color: #fff;
+}
+
+.evolution-strip__stage {
+  position: relative;
+  min-height: clamp(38rem, 76vh, 54rem);
+}
+
+.evolution-strip__video,
+.evolution-strip__overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.evolution-strip__video {
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.evolution-strip__video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100vw, 100%);
+  height: max(100vh, 100%);
+  min-width: 100%;
+  min-height: 100%;
+  border: 0;
+  transform: translate(-50%, -50%) scale(1.18);
+  filter: saturate(.72) brightness(.33) contrast(1.08);
+}
+
+.evolution-strip__overlay {
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(21, 15, 18, .66), rgba(21, 15, 18, .78)),
+    radial-gradient(circle at center, rgba(0, 0, 0, .06), rgba(0, 0, 0, .32));
+}
+
+.evolution-strip__sticky {
+  position: sticky;
+  top: calc(var(--header-height) + 1rem);
+  display: flex;
+  align-items: center;
+  height: calc(100vh - var(--header-height) - 2rem);
+  z-index: 2;
+}
+
+.evolution-strip__frame {
+  position: relative;
+  overflow: hidden;
+  width: min(calc(100vw - 1rem), 96rem);
+  max-width: none;
+  padding: 1rem clamp(.75rem, 1.4vw, 1.5rem);
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 2rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02));
+  box-shadow: var(--elevation-lifted);
+}
+
+.evolution-strip__frame::before,
+.evolution-strip__frame::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(1.25rem, 4vw, 3rem);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.evolution-strip__frame::before {
+  left: 0;
+  background: linear-gradient(90deg, rgba(23, 16, 19, .9), transparent);
+}
+
+.evolution-strip__frame::after {
+  right: 0;
+  background: linear-gradient(270deg, rgba(23, 16, 19, .9), transparent);
+}
+
+.evolution-strip__track {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 1.15rem;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.evolution-card {
+  position: relative;
+  flex: 0 0 clamp(18rem, 31vw, 24rem);
+  min-height: clamp(26rem, 60vh, 37rem);
+  overflow: hidden;
+  border-radius: 1.45rem;
+  background: #000;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, .24);
+}
+
+.evolution-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, .08) 28%, rgba(0, 0, 0, .84) 100%);
+}
+
+.evolution-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.03);
+  filter: saturate(.96) contrast(1.04);
+}
+
+.evolution-card__content {
+  position: absolute;
+  inset: auto 1rem 1rem;
+  z-index: 1;
+  display: grid;
+  gap: .4rem;
+}
+
+.evolution-card__index {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 999px;
+  padding: .35rem .7rem;
+  background: rgba(255, 255, 255, .08);
+  color: #fff;
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.evolution-card h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.45rem, 2.1vw, 2rem);
+  letter-spacing: -.05em;
+}
+
+.evolution-card p {
+  margin: 0;
+  max-width: 16ch;
+  color: rgba(255, 255, 255, .78);
+  font-size: .92rem;
+  line-height: 1.5;
+}
+
+.evolution-card--accent {
+  border: 1px solid rgba(255, 255, 255, .12);
+}
+
 #servicios { background: #fffdfb; }
 .services-grid { gap: 1rem; }
 .service-card, .service-detail {
