@@ -189,6 +189,7 @@ body::selection { background: var(--brand-rose); color: #fff; }
 .evolution-strip {
   position: relative;
   overflow: clip;
+  isolation: isolate;
   background:
     radial-gradient(circle at top left, rgba(208, 60, 87, .18), transparent 38%),
     linear-gradient(180deg, #150f12 0%, #120d11 100%);
@@ -243,6 +244,17 @@ body::selection { background: var(--brand-rose); color: #fff; }
     radial-gradient(circle at center, rgba(0, 0, 0, .06), rgba(0, 0, 0, .32));
 }
 
+.evolution-strip .container {
+  position: relative;
+  z-index: 3;
+}
+
+.evolution-strip .section-head {
+  position: relative;
+  z-index: 4;
+  margin-bottom: clamp(2rem, 3.5vw, 3rem);
+}
+
 .evolution-strip__sticky {
   position: sticky;
   top: calc(var(--header-height) + 1rem);
@@ -250,6 +262,7 @@ body::selection { background: var(--brand-rose); color: #fff; }
   align-items: center;
   height: calc(100vh - var(--header-height) - 2rem);
   z-index: 2;
+  margin-top: clamp(.5rem, 2vw, 1.5rem);
 }
 
 .evolution-strip__frame {
