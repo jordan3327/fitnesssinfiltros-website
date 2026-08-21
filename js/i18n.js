@@ -58,25 +58,6 @@
       /* localStorage no disponible */
     }
 
-    var langs = [];
-    try {
-      if (window.navigator.languages && window.navigator.languages.length) {
-        langs = window.navigator.languages.slice();
-      }
-      if (window.navigator.language) {
-        langs.push(window.navigator.language);
-      }
-    } catch (e) {
-      /* navegador sin navigator.language */
-    }
-
-    for (var i = 0; i < langs.length; i++) {
-      var code = String(langs[i] || "").toLowerCase();
-      if (code.indexOf("en") === 0) {
-        return "en";
-      }
-    }
-
     return "es";
   }
 
