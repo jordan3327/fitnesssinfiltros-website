@@ -44,3 +44,25 @@ Notas:
 - Cuando tengas la foto definitiva, guardala con el nombre sugerido o cambia el texto del placeholder.
 - Si prefieres otra carpeta, solo actualiza la ruta en el HTML.
 - Los logos del sitio se dejaron intactos porque no son fotos de contenido.
+
+ASIGNACION FINAL (2026-08-24, analisis imagen por imagen):
+Los placeholders ya fueron reemplazados por <img> en index.html.
+Las fotos se copiaron desde assets/images/img/ (los originales siguen ahi).
+Para cambiar una foto: renombra/reescribe el archivo en assets/images/home/
+manteniendo el mismo nombre.
+
+  home-01-hero.jpg      <- image0.jpeg   (cardio en cinta, sonriendo a camara)
+  home-02-about.jpg     <- image2.jpeg   (russian twist con balon, mirando a camara)
+  home-03-cambio-01.jpg <- image7.jpeg   (antes, frontal, a camara)
+  home-04-cambio-02.jpg <- image9.jpeg   (collage antes/despues)
+  home-05-cambio-03.jpg <- image15.jpeg  (espalda con definicion muscular)
+  home-06-cambio-04.jpg <- image1.jpeg   (peso muerto con mancuerna, accion)
+  home-07-cambio-05.jpg <- image11.jpeg  (selfie espejo, resultado/confianza)
+
+Recambio disponible: image6 (antes espalda), image8 (antes perfil),
+image12, image13, image14 (selfies amarillo).
+Sin uso: image3 (logo FSF, ya esta en assets/logo), image4 (familiar),
+image5 (baja resolucion), image10 (captura de pantalla).
+
+Nota: el hero usa object-position: 50% 22% (editorial-overhaul.css)
+para que la cara no se corte con el recorte 4:5.

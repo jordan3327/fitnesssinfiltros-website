@@ -172,7 +172,7 @@ body::selection { background: var(--brand-rose); color: #fff; }
 }
 .hero-media { border-radius: 2rem 2rem 2rem .35rem; box-shadow: var(--elevation-lifted); transform: rotate(2deg); }
 .hero-media::after { content: ""; position: absolute; inset: 1rem; border: 1px solid rgba(255,255,255,.8); border-radius: 1.35rem 1.35rem 1.35rem .15rem; pointer-events: none; }
-.hero-media img { filter: grayscale(18%) contrast(1.06); }
+.hero-media img { filter: grayscale(18%) contrast(1.06); object-position: 50% 22%; }
 .media-placeholder {
   position: relative;
   display: flex;
