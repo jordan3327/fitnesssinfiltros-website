@@ -369,69 +369,152 @@
   }
 
   /* ------------------------------------------------------------------
-   * Strip horizontal guiado por scroll
+   * Historia por capítulos
+   * - El scroll dentro de la sección avanza los capítulos 01 → 05.
+   * - Flechas, puntos, teclado y swipe permiten navegar directamente.
+   * - Respeta prefers-reduced-motion.
    * ------------------------------------------------------------------ */
 
-  var scrollStripSections = document.querySelectorAll("[data-scroll-strip]");
+  var story = document.querySelector("[data-story]");
 
-  if (scrollStripSections.length) {
-    var scrollStripState = { ticking: false };
+  if (story) {
+    var storyImgs = story.querySelectorAll(".story__media img");
+    var storyChapters = story.querySelectorAll(".story__chapter");
+    var storyGhosts = story.querySelectorAll(".story__ghost span");
+    var storyDots = story.querySelectorAll("[data-story-goto]");
+    var storySegments = story.querySelectorAll(".story__segments i");
+    var storyCounter = story.querySelector("[data-story-current]");
+    var storyTotal = storyChapters.length;
+    var storyIndex = -1;
+    var storyTicking = false;
 
-    function clamp(value, min, max) {
+    function storyClamp(value, min, max) {
       return Math.min(Math.max(value, min), max);
     }
 
-    function updateScrollStrip(section) {
-      var frame = section.querySelector(".evolution-strip__frame");
-      var track = section.querySelector("[data-scroll-strip-track]");
-
-      if (!frame || !track) {
-        return;
-      }
-
-      var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-      var travel = Math.max(0, track.scrollWidth - frame.clientWidth);
-      var sectionHeight = Math.max(
-        viewportHeight * 1.3,
-        viewportHeight + travel * 0.7 + Math.round(viewportHeight * 0.25)
-      );
-
-      section.style.height = sectionHeight + "px";
-
-      if (prefersReducedMotion()) {
-        track.style.transform = "translate3d(0, 0, 0)";
-        return;
-      }
-
-      var rect = section.getBoundingClientRect();
-      var maxScroll = Math.max(1, sectionHeight - viewportHeight);
-      var progress = clamp(-rect.top / maxScroll, 0, 1);
-
-      track.style.transform =
-        "translate3d(" + -travel * progress + "px, 0, 0)";
+    function storyScrollable() {
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      return Math.max(1, story.offsetHeight - vh);
     }
 
-    function updateScrollStrips() {
-      for (var i = 0; i < scrollStripSections.length; i++) {
-        updateScrollStrip(scrollStripSections[i]);
+    function storyProgress() {
+      var top = story.getBoundingClientRect().top;
+      return storyClamp(-top / storyScrollable(), 0, 1);
+    }
+
+    function pad2(n) {
+      return n < 10 ? "0" + n : "" + n;
+    }
+
+    function setStoryChapter(index) {
+      if (index === storyIndex) {
+        return;
+      }
+      storyIndex = index;
+      for (var k = 0; k < storyTotal; k++) {
+        var active = k === index;
+        if (storyImgs[k]) { storyImgs[k].classList.toggle("is-active", active); }
+        if (storyGhosts[k]) { storyGhosts[k].classList.toggle("is-active", active); }
+        if (storyDots[k]) { storyDots[k].classList.toggle("is-active", active); }
+        if (storyChapters[k]) {
+          storyChapters[k].classList.toggle("is-active", active);
+          storyChapters[k].setAttribute("aria-hidden", active ? "false" : "true");
+        }
+      }
+      if (storyCounter) {
+        storyCounter.textContent = pad2(index + 1);
       }
     }
 
-    function scheduleScrollStripUpdate() {
-      if (scrollStripState.ticking) {
-        return;
+    function updateStory() {
+      storyTicking = false;
+      var progress = storyProgress();
+      setStoryChapter(Math.round(progress * (storyTotal - 1)));
+
+      for (var k = 0; k < storyTotal; k++) {
+        if (!storySegments[k]) { continue; }
+        var fill = storyClamp(progress * (storyTotal - 1) - k + 1, 0, 1);
+        storySegments[k].style.transform = "scaleX(" + fill + ")";
       }
-      scrollStripState.ticking = true;
-      window.requestAnimationFrame(function () {
-        scrollStripState.ticking = false;
-        updateScrollStrips();
+    }
+
+    function requestStoryUpdate() {
+      if (!storyTicking) {
+        storyTicking = true;
+        window.requestAnimationFrame(updateStory);
+      }
+    }
+
+    function goToChapter(index) {
+      var i = storyClamp(index, 0, storyTotal - 1);
+      var target = story.offsetTop + (i / (storyTotal - 1)) * storyScrollable() + 2;
+      window.scrollTo({
+        top: target,
+        behavior: prefersReducedMotion() ? "auto" : "smooth"
       });
     }
 
-    window.addEventListener("scroll", scheduleScrollStripUpdate, { passive: true });
-    window.addEventListener("resize", scheduleScrollStripUpdate);
-    window.addEventListener("load", scheduleScrollStripUpdate);
-    updateScrollStrips();
+    var prevBtn = story.querySelector("[data-story-prev]");
+    var nextBtn = story.querySelector("[data-story-next]");
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function () {
+        goToChapter((storyIndex < 0 ? 0 : storyIndex) - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function () {
+        goToChapter((storyIndex < 0 ? 0 : storyIndex) + 1);
+      });
+    }
+
+    for (var d = 0; d < storyDots.length; d++) {
+      storyDots[d].addEventListener("click", function (event) {
+        var i = parseInt(event.currentTarget.getAttribute("data-story-goto"), 10);
+        goToChapter(i);
+      });
+    }
+
+    document.addEventListener("keydown", function (event) {
+      var rect = story.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      var inView = rect.top < vh * 0.6 && rect.bottom > vh * 0.4;
+      if (!inView) { return; }
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+        event.preventDefault();
+        goToChapter((storyIndex < 0 ? 0 : storyIndex) + 1);
+      } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+        event.preventDefault();
+        goToChapter((storyIndex < 0 ? 0 : storyIndex) - 1);
+      }
+    });
+
+    var touchX = null;
+    var touchY = null;
+
+    story.addEventListener("touchstart", function (event) {
+      if (event.touches.length === 1) {
+        touchX = event.touches[0].clientX;
+        touchY = event.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    story.addEventListener("touchend", function (event) {
+      if (touchX === null || touchY === null) { return; }
+      var dx = event.changedTouches[0].clientX - touchX;
+      var dy = event.changedTouches[0].clientY - touchY;
+      if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.4) {
+        goToChapter((storyIndex < 0 ? 0 : storyIndex) + (dx < 0 ? 1 : -1));
+      }
+      touchX = null;
+      touchY = null;
+    }, { passive: true });
+
+    window.addEventListener("scroll", requestStoryUpdate, { passive: true });
+    window.addEventListener("resize", requestStoryUpdate);
+    window.addEventListener("load", requestStoryUpdate);
+    updateStory();
   }
 
   /* ------------------------------------------------------------------
