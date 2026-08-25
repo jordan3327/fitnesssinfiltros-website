@@ -1079,3 +1079,77 @@ body::selection { background: var(--brand-rose); color: #fff; }
     font-size: 0.8rem;
   }
 }
+
+/* ==========================================================================
+   MEJORAS UI 2026-08-24
+   ========================================================================== */
+
+/* Toggle de idioma: solo código + chevron (evita "ES ES") */
+.language-pill [data-language-label] { display: none; }
+
+/* Rejilla de principios en 2x2 cuando hay 4 elementos */
+@media (min-width: 48em) {
+  .benefits-grid--even { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Zoom sutil de la foto al pasar el cursor sobre las tarjetas del strip */
+.evolution-card img { transition: transform 0.6s var(--motion-ease-out); }
+.evolution-card:hover img,
+.evolution-card:focus-within img { transform: scale(1.08); }
+
+/* Badge "Más popular" */
+.service-card--popular { position: relative; }
+.popular-badge {
+  position: absolute;
+  top: -0.85rem;
+  right: 1.1rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: linear-gradient(135deg, #d03c57, #a92544);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(208, 60, 87, 0.38);
+}
+.popular-badge .icon { width: 0.85rem; height: 0.85rem; }
+
+/* Cinta marquee de marca */
+.brand-marquee {
+  overflow: hidden;
+  background: var(--brand-rose, #d03c57);
+  color: #fff;
+  padding: 0.85rem 0;
+}
+.brand-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: brand-marquee 28s linear infinite;
+}
+.brand-marquee__track span {
+  font-family: var(--font-heading, serif);
+  font-size: 1rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+@keyframes brand-marquee {
+  to { transform: translateX(-50%); }
+}
+
+/* Número fantasma de cada paso: entra con la tarjeta */
+html.js .process-card.reveal::before {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s var(--motion-ease-out) 0.3s,
+    transform 0.5s var(--motion-ease-out) 0.3s;
+}
+html.js .process-card.reveal.is-visible::before {
+  opacity: 1;
+  transform: none;
+}

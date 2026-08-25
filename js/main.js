@@ -393,7 +393,7 @@
       var travel = Math.max(0, track.scrollWidth - frame.clientWidth);
       var sectionHeight = Math.max(
         viewportHeight * 1.3,
-        viewportHeight + travel + Math.round(viewportHeight * 0.4)
+        viewportHeight + travel * 0.7 + Math.round(viewportHeight * 0.25)
       );
 
       section.style.height = sectionHeight + "px";
@@ -432,6 +432,39 @@
     window.addEventListener("resize", scheduleScrollStripUpdate);
     window.addEventListener("load", scheduleScrollStripUpdate);
     updateScrollStrips();
+  }
+
+  /* ------------------------------------------------------------------
+   * Parallax sutil del hero
+   * - Mueve la imagen del hero a distinta velocidad que el scroll.
+   * - Se desactiva con prefers-reduced-motion.
+   * ------------------------------------------------------------------ */
+
+  var heroMediaImg = document.querySelector(".hero-media img");
+
+  if (heroMediaImg && !prefersReducedMotion()) {
+    var heroParallaxTick = false;
+
+    var updateHeroParallax = function () {
+      heroParallaxTick = false;
+      var scrollY = window.scrollY || window.pageYOffset;
+
+      if (scrollY < window.innerHeight * 1.2) {
+        heroMediaImg.style.transform =
+          "translate3d(0, " + Math.round(scrollY * 0.07) + "px, 0)";
+      }
+    };
+
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (!heroParallaxTick) {
+          heroParallaxTick = true;
+          window.requestAnimationFrame(updateHeroParallax);
+        }
+      },
+      { passive: true }
+    );
   }
 
   /* ------------------------------------------------------------------

@@ -1579,6 +1579,16 @@ html.js .testimonials-grid .reveal:nth-child(4) {
   transition-delay: 0.15s;
 }
 
+html.js .services-grid .reveal:nth-child(5),
+html.js .benefits-grid .reveal:nth-child(5) {
+  transition-delay: 0.2s;
+}
+
+html.js .services-grid .reveal:nth-child(6),
+html.js .benefits-grid .reveal:nth-child(6) {
+  transition-delay: 0.25s;
+}
+
 /* --- Entrada escalonada del hero (CSS puro, sin JS) ----------------------- */
 
 @keyframes hero-rise {
