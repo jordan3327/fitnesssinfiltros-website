@@ -303,8 +303,10 @@ body::selection { background: var(--brand-rose); color: #fff; }
 
 .evolution-strip__video,
 .evolution-strip__overlay {
-  position: absolute;
-  inset: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  margin-bottom: -100vh;
 }
 
 .evolution-strip__video {
