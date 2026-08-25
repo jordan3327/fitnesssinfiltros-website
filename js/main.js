@@ -518,6 +518,28 @@
   }
 
   /* ------------------------------------------------------------------
+   * Antes / Después — slider de comparación
+   * - Un input range invisible cubre la foto: drag táctil, mouse y
+   *   flechas del teclado funcionan sin código extra.
+   * ------------------------------------------------------------------ */
+
+  var baSliders = document.querySelectorAll("[data-ba]");
+
+  for (var b = 0; b < baSliders.length; b++) {
+    (function (slider) {
+      var range = slider.querySelector("[data-ba-range]");
+      if (!range) {
+        return;
+      }
+      var update = function () {
+        slider.style.setProperty("--ba-pos", range.value + "%");
+      };
+      range.addEventListener("input", update);
+      update();
+    })(baSliders[b]);
+  }
+
+  /* ------------------------------------------------------------------
    * Parallax sutil del hero
    * - Mueve la imagen del hero a distinta velocidad que el scroll.
    * - Se desactiva con prefers-reduced-motion.
