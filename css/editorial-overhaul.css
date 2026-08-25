@@ -618,7 +618,6 @@ body::selection { background: var(--brand-rose); color: #fff; }
 #servicios { background: #fffdfb; }
 .services-grid { gap: 1rem; }
 .service-card, .service-detail {
-  overflow: hidden;
   border: 1px solid var(--line-strong);
   border-radius: 1.25rem;
   background: #fff;
@@ -629,6 +628,7 @@ body::selection { background: var(--brand-rose); color: #fff; }
   content: "";
   position: absolute;
   inset: 0;
+  border-radius: inherit;
   pointer-events: none;
   background: radial-gradient(300px circle at var(--pointer-x, 50%) var(--pointer-y, 50%), rgba(208,60,87,.14), transparent 45%);
   opacity: 0;
