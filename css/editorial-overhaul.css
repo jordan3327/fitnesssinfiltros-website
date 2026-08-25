@@ -1273,6 +1273,39 @@ html.js .process-card.reveal.is-visible::before {
 }
 
 /* ==========================================================================
+   ELEMENTOS FLOTANTES DECORATIVOS
+   Iconos del sprite en flotación lenta, puntos estratégicos.
+   ========================================================================== */
+
+.float-el {
+  position: absolute;
+  width: clamp(2rem, 3.5vw, 3.4rem);
+  height: clamp(2rem, 3.5vw, 3.4rem);
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--fo, 0.12);
+  color: var(--fc, var(--brand-rose, #d03c57));
+  animation: float-drift var(--fd, 9s) ease-in-out var(--fdel, 0s) infinite alternate;
+  will-change: transform;
+}
+
+@keyframes float-drift {
+  from { transform: translateY(-12px) rotate(-7deg); }
+  to { transform: translateY(14px) rotate(6deg); }
+}
+
+.brand-about, .cta-final { position: relative; overflow: hidden; }
+.brand-about .container, .cta-final .container { position: relative; z-index: 1; }
+
+@media (max-width: 640px) {
+  .float-el { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-el { animation: none; }
+}
+
+/* ==========================================================================
    ANTES / DESPUÉS — slider arrastrable
    ========================================================================== */
 
@@ -1399,6 +1432,64 @@ html.js .process-card.reveal.is-visible::before {
 
 @media (prefers-reduced-motion: reduce) {
   .ba-after { transition: none; }
+}
+
+/* ==========================================================================
+   OBJETOS FLOTANTES — elementos de gym en puntos estratégicos
+   ========================================================================== */
+
+.floaters {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.brand-about .container,
+.process .container { position: relative; z-index: 1; }
+
+.fl {
+  position: absolute;
+  width: 2.7rem;
+  height: 2.7rem;
+  opacity: 0.12;
+  animation: fl-float var(--fl-dur, 8s) ease-in-out var(--fl-delay, 0s) infinite alternate;
+}
+
+.fl-hero-1 { top: 15%; left: 4%; color: var(--brand-rose, #d03c57); --fl-dur: 7.5s; }
+.fl-hero-2 { top: 66%; left: 47%; width: 2rem; height: 2rem; color: var(--brand-rose, #d03c57); opacity: 0.1; --fl-dur: 9s; --fl-delay: 0.8s; }
+.fl-hero-3 { top: 28%; right: 5%; color: var(--brand-rose, #d03c57); --fl-dur: 8.5s; --fl-delay: 0.4s; }
+
+.fl-marca-1 { top: 11%; right: 5%; color: #fff; opacity: 0.08; --fl-dur: 9s; }
+.fl-marca-2 { bottom: 13%; left: 4%; color: #fff; opacity: 0.07; --fl-dur: 10s; --fl-delay: 1s; }
+
+.fl-proceso-1 { top: 16%; left: 5%; color: #fff; opacity: 0.16; --fl-dur: 8s; }
+.fl-proceso-2 { bottom: 15%; right: 6%; color: #fff; opacity: 0.14; --fl-dur: 9.5s; --fl-delay: 0.6s; }
+
+@keyframes fl-float {
+  from { transform: translateY(-12px) rotate(-8deg); }
+  to { transform: translateY(12px) rotate(7deg); }
+}
+
+/* Latido suave del corazón en los CTA finales */
+.cta-final { position: relative; }
+.cta-final .container > svg.icon {
+  animation: fl-beat 2.6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes fl-beat {
+  0%, 100% { transform: scale(1); }
+  12% { transform: scale(1.09); }
+  24% { transform: scale(1); }
+  36% { transform: scale(1.07); }
+  48% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fl,
+  .cta-final .container > svg.icon { animation: none; }
 }
 
 /* ==========================================================================
