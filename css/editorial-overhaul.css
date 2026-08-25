@@ -1153,3 +1153,56 @@ html.js .process-card.reveal.is-visible::before {
   opacity: 1;
   transform: none;
 }
+
+/* ==========================================================================
+   FONDOS FOTOGRÁFICOS ESTRATÉGICOS
+   Foto + overlay oscuro en heroes internos, CTA final y proceso.
+   ========================================================================== */
+
+/* --- Heroes internos con foto --- */
+.sub-hero--photo {
+  background:
+    linear-gradient(180deg, rgba(21, 15, 18, 0.78), rgba(21, 15, 18, 0.88)),
+    var(--section-photo) center 30% / cover no-repeat;
+  background-color: #171114;
+  color: #fff;
+}
+.sub-hero--photo h1 { color: #fff; }
+.sub-hero--photo p { color: rgba(255, 255, 255, 0.82); }
+.sub-hero--photo .eyebrow {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.38);
+  color: #fff;
+}
+
+.sub-hero--photo-gym { --section-photo: url("../assets/images/home/home-05-cambio-03.jpg"); }
+.sub-hero--photo-training { --section-photo: url("../assets/images/home/home-02-about.jpg"); }
+.sub-hero--photo-smile { --section-photo: url("../assets/images/home/home-01-hero.jpg"); }
+.sub-hero--photo-deadlift { --section-photo: url("../assets/images/home/home-06-cambio-04.jpg"); }
+
+/* --- CTA final con foto --- */
+.cta-final--photo {
+  background:
+    linear-gradient(180deg, rgba(21, 15, 18, 0.8), rgba(21, 15, 18, 0.9)),
+    var(--section-photo) center / cover no-repeat;
+  background-color: #171114;
+}
+.cta-final--photo-gym { --section-photo: url("../assets/images/home/home-05-cambio-03.jpg"); }
+.cta-final--photo-deadlift { --section-photo: url("../assets/images/home/home-06-cambio-04.jpg"); }
+.cta-final--photo-result { --section-photo: url("../assets/images/home/home-07-cambio-05.jpg"); }
+.cta-final--photo-smile { --section-photo: url("../assets/images/home/home-01-hero.jpg"); }
+
+/* --- Proceso con textura fotográfica bajo el rosa de marca --- */
+.process--photo {
+  background:
+    linear-gradient(180deg, rgba(208, 60, 87, 0.92), rgba(169, 37, 68, 0.94)),
+    url("../assets/images/home/home-06-cambio-04.jpg") center / cover no-repeat;
+  background-color: var(--brand-rose, #d03c57);
+}
+
+/* Parallax fijo solo en desktop y sin movimiento reducido */
+@media (min-width: 48em) and (prefers-reduced-motion: no-preference) {
+  .sub-hero--photo,
+  .cta-final--photo,
+  .process--photo { background-attachment: fixed, fixed; }
+}
