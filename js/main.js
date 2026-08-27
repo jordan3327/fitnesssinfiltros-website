@@ -1,13 +1,13 @@
-/* ==========================================================================
-   main.js — Funcionalidades globales
-   - Botones de WhatsApp dinámicos (usando window.CONFIG)
+﻿/* ==========================================================================
+   main.js â€” Funcionalidades globales
+   - Botones de WhatsApp dinÃ¡micos (usando window.CONFIG)
    - Datos de contacto (correo, redes, horarios, modalidad) desde CONFIG
-   - Año automático en el footer
+   - AÃ±o automÃ¡tico en el footer
    - Header con estado al hacer scroll
-   - Botón "volver arriba"
+   - BotÃ³n "volver arriba"
    - Scroll suave con respeto a prefers-reduced-motion
-   - Animaciones de aparición (IntersectionObserver)
-   - Formulario de contacto: validación + confirmación + WhatsApp
+   - Animaciones de apariciÃ³n (IntersectionObserver)
+   - Formulario de contacto: validaciÃ³n + confirmaciÃ³n + WhatsApp
    ========================================================================== */
 
 (function () {
@@ -26,8 +26,8 @@
     );
   }
 
-  // Número de WhatsApp validado: solo dígitos y con al menos 10 dígitos.
-  // Evita abrir wa.me con números incompletos o de ejemplo ("593XXXXXXXXX").
+  // NÃºmero de WhatsApp validado: solo dÃ­gitos y con al menos 10 dÃ­gitos.
+  // Evita abrir wa.me con nÃºmeros incompletos o de ejemplo ("593XXXXXXXXX").
   function getValidatedNumber() {
     var number = String(CONFIG.whatsappNumber || "").trim();
     if (!/^\d+$/.test(number)) {
@@ -51,7 +51,7 @@
   }
 
   // URL de WhatsApp en formato internacional (sin "+", sin espacios).
-  // Si no hay número válido, usa el enlace directo configurado por la clienta.
+  // Si no hay nÃºmero vÃ¡lido, usa el enlace directo configurado por la clienta.
   function buildWhatsAppUrl(message) {
     var number = getValidatedNumber();
     if (number) {
@@ -86,9 +86,32 @@
   }
 
   /* ------------------------------------------------------------------
-   * Año automático en el footer
+   * AÃ±o automÃ¡tico en el footer
    * ------------------------------------------------------------------ */
 
+  function buildContactWhatsAppMessage(data) {
+    var name = data.name || FSF.u("Hola");
+    var service = data.service || FSF.u("No especificado");
+    var goal = data.goal || FSF.u("No especificado");
+    var email = data.email || FSF.u("No especificado");
+    var whatsapp = data.whatsapp || FSF.u("No especificado");
+    var message = data.message || FSF.u("No compartiste un mensaje adicional.");
+
+    return [
+      FSF.u("Hola, soy ") + name + FSF.u(" ✨"),
+      FSF.u("Quiero comenzar y me gustaría recibir orientación para elegir la mejor opción para mi objetivo."),
+      "",
+      FSF.u("• Servicio de interés: ") + service,
+      FSF.u("• Objetivo principal: ") + goal,
+      FSF.u("• Mi WhatsApp: ") + whatsapp,
+      FSF.u("• Mi correo: ") + email,
+      "",
+      FSF.u("Lo que me gustaría trabajar:"),
+      message,
+      "",
+      FSF.u("Quedo atenta a tu respuesta. ¡Gracias!"),
+    ].join("\n");
+  }
   var yearEls = document.querySelectorAll("[data-year]");
   var currentYear = new Date().getFullYear();
   yearEls.forEach(function (el) {
@@ -116,7 +139,7 @@
   updateHeaderState();
 
   /* ------------------------------------------------------------------
-   * Botón "volver arriba"
+   * BotÃ³n "volver arriba"
    * ------------------------------------------------------------------ */
 
   var backToTop = document.querySelector(".back-to-top");
@@ -188,21 +211,21 @@
   });
 
   /* ------------------------------------------------------------------
-   * Botones de WhatsApp dinámicos
+   * Botones de WhatsApp dinÃ¡micos
    * Cualquier elemento con [data-whatsapp] abre el chat con un mensaje.
    * Uso:
-   *   data-whatsapp                  -> habilita el botón
+   *   data-whatsapp                  -> habilita el botÃ³n
    *   data-service-id="plan-..."      -> usa el mensaje definido en CONFIG
    *   data-whatsapp-msg="..."         -> mensaje personalizado (opcional)
    * ------------------------------------------------------------------ */
 
   var defaultMessage = FSF.u(
-    "Hola, me gustaría recibir más información sobre sus servicios."
+    "Hola, me gustaría recibir más información sobre los programas y saber cuál se adapta mejor a mi objetivo."
   );
 
   // Estado "no configurado" para el sistema de botones aprobado
-  // (docs/UIVERSE_BUTTON_PATTERNS.md, patrón 4): si el número oficial aún
-  // no es válido, los controles de WhatsApp se marcan como deshabilitados.
+  // (docs/UIVERSE_BUTTON_PATTERNS.md, patrÃ³n 4): si el nÃºmero oficial aÃºn
+  // no es vÃ¡lido, los controles de WhatsApp se marcan como deshabilitados.
   var whatsappAvailable = Boolean(getValidatedNumber() || getConfiguredWhatsAppUrl());
 
   document.querySelectorAll("[data-whatsapp]").forEach(function (el) {
@@ -221,10 +244,10 @@
       var directUrl = getConfiguredWhatsAppUrl();
 
       if (!number && !directUrl) {
-        // El número aún no está configurado de forma válida: informamos al visitante.
+        // El nÃºmero aÃºn no estÃ¡ configurado de forma vÃ¡lida: informamos al visitante.
         alert(
           FSF.u(
-            "El número oficial de WhatsApp todavía no está configurado. Inténtalo más tarde."
+            "El nÃºmero oficial de WhatsApp todavÃ­a no estÃ¡ configurado. IntÃ©ntalo mÃ¡s tarde."
           )
         );
         return;
@@ -236,13 +259,6 @@
       }
     });
   });
-
-  /* ------------------------------------------------------------------
-   * Datos de contacto desde CONFIG
-   * - Enlaces de correo y redes sociales: se rellenan desde CONFIG y se
-   *   ocultan si no están confirmados (PENDIENTE_CLIENTE).
-   * - Horarios y modalidad de atención: se ocultan si no están confirmados.
-   * ------------------------------------------------------------------ */
 
   document.querySelectorAll("[data-email]").forEach(function (el) {
     var email = String(CONFIG.email || "").trim();
@@ -323,7 +339,7 @@
     }
   });
 
-  /* Resplandor direccional para tarjetas en dispositivos con ratón. */
+  /* Resplandor direccional para tarjetas en dispositivos con ratÃ³n. */
   var supportsFinePointer =
     window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
@@ -341,7 +357,7 @@
   }
 
   /* ------------------------------------------------------------------
-   * Animaciones de aparición (IntersectionObserver)
+   * Animaciones de apariciÃ³n (IntersectionObserver)
    * ------------------------------------------------------------------ */
 
   var revealEls = document.querySelectorAll(".reveal");
@@ -369,8 +385,8 @@
   }
 
   /* ------------------------------------------------------------------
-   * Historia por capítulos
-   * - El scroll dentro de la sección avanza los capítulos 01 → 05.
+   * Historia por capÃ­tulos
+   * - El scroll dentro de la secciÃ³n avanza los capÃ­tulos 01 â†’ 05.
    * - Flechas, puntos, teclado y swipe permiten navegar directamente.
    * - Respeta prefers-reduced-motion.
    * ------------------------------------------------------------------ */
@@ -518,9 +534,9 @@
   }
 
   /* ------------------------------------------------------------------
-   * Antes / Después — slider de comparación
-   * - Un input range invisible cubre la foto: drag táctil, mouse y
-   *   flechas del teclado funcionan sin código extra.
+   * Antes / DespuÃ©s â€” slider de comparaciÃ³n
+   * - Un input range invisible cubre la foto: drag tÃ¡ctil, mouse y
+   *   flechas del teclado funcionan sin cÃ³digo extra.
    * ------------------------------------------------------------------ */
 
   var baSliders = document.querySelectorAll("[data-ba]");
@@ -575,8 +591,8 @@
   /* ------------------------------------------------------------------
    * Formulario de contacto
    * - Valida los campos con mensajes de error accesibles.
-   * - No finge enviar datos: muestra una confirmación y abre WhatsApp
-   *   con la información escrita.
+   * - No finge enviar datos: muestra una confirmaciÃ³n y abre WhatsApp
+   *   con la informaciÃ³n escrita.
    * ------------------------------------------------------------------ */
 
   var contactForm = document.querySelector("[data-contact-form]");
@@ -619,13 +635,13 @@
     } else if (field.type === "email" && value !== "") {
       var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
       if (!emailOk) {
-        setFieldError(field, FSF.u("Escribe un correo electrónico válido."));
+        setFieldError(field, FSF.u("Escribe un correo electrÃ³nico vÃ¡lido."));
         valid = false;
       }
     } else if (field.name === "whatsapp" && value !== "") {
       var digits = value.replace(/[^0-9]/g, "");
       if (digits.length < 7) {
-        setFieldError(field, FSF.u("Escribe un número de WhatsApp válido."));
+        setFieldError(field, FSF.u("Escribe un nÃºmero de WhatsApp vÃ¡lido."));
         valid = false;
       }
     }
@@ -695,33 +711,24 @@
           : FSF.u("No especificado");
       var message = contactForm.querySelector('[name="message"]').value.trim();
 
-      var lines = [
-        FSF.u("Hola, soy ") + name + FSF.u(" y quiero comenzar."),
-        "",
-        FSF.u("• Servicio de interés: ") + service,
-        FSF.u("• Objetivo principal: ") + goal,
-      ];
-
-      if (whatsapp) {
-        lines.push(FSF.u("• Mi WhatsApp: ") + whatsapp);
-      }
-      lines.push(FSF.u("• Mi correo: ") + email);
-      lines.push("");
-      lines.push(FSF.u("Mensaje:"));
-      lines.push(message);
-
-      var fullMessage = lines.join("\n");
-
+      var fullMessage = buildContactWhatsAppMessage({
+        name: name,
+        service: service,
+        goal: goal,
+        email: email,
+        whatsapp: whatsapp,
+        message: message,
+      });
       var number = getValidatedNumber();
 
       if (!number) {
         if (formFeedback) {
           formFeedback.classList.add("is-visible");
           formFeedback.querySelector("[data-feedback-title]").textContent =
-            FSF.u("Aún no podemos conectar por WhatsApp");
+            FSF.u("AÃºn no podemos conectar por WhatsApp");
           formFeedback.querySelector("[data-feedback-text]").textContent =
             FSF.u(
-              "El número oficial de WhatsApp todavía no está configurado. Tu mensaje fue validado correctamente; vuelve más tarde para completar el contacto."
+              "El nÃºmero oficial de WhatsApp todavÃ­a no estÃ¡ configurado. Tu mensaje fue validado correctamente; vuelve mÃ¡s tarde para completar el contacto."
             );
           formFeedback.querySelector("[data-feedback-action]").style.display =
             "none";
@@ -729,7 +736,7 @@
         return;
       }
 
-      // Muestra la confirmación antes de abrir WhatsApp.
+      // Muestra la confirmaciÃ³n antes de abrir WhatsApp.
       openConfirmationModal({
         preview: fullMessage,
         whatsappUrl: buildWhatsAppUrl(fullMessage),
@@ -743,7 +750,7 @@
   }
 
   /* ------------------------------------------------------------------
-   * Modal de confirmación accesible
+   * Modal de confirmaciÃ³n accesible
    * ------------------------------------------------------------------ */
 
   function openConfirmationModal(data) {
@@ -831,55 +838,13 @@
     });
   }
 
-  /* ------------------------------------------------------------------
-   * Botones de pago pendientes (Whop)
-   * - Los enlaces [data-whop] aún no tienen URL real: en lugar de
-   *   navegar a un enlace roto, muestran un aviso glass flotante.
-   * ------------------------------------------------------------------ */
-
-  var whopToast = document.createElement("div");
-  whopToast.className = "whop-toast";
-  whopToast.setAttribute("role", "status");
-  whopToast.setAttribute("aria-live", "polite");
-  whopToast.innerHTML =
-    '<svg class="icon" aria-hidden="true"><use href="#icon-info"></use></svg>' +
-    '<span class="whop-toast__text"></span>';
-  document.body.appendChild(whopToast);
-
-  var whopToastText = whopToast.querySelector(".whop-toast__text");
-
-  function renderWhopToast() {
-    whopToastText.textContent = FSF.u("Este servicio aún no está disponible.");
-  }
-
-  renderWhopToast();
-  document.addEventListener("fsf:language", renderWhopToast);
-
-  var whopToastTimer = null;
-
-  function showWhopToast() {
-    whopToast.classList.add("is-visible");
-    if (whopToastTimer) {
-      clearTimeout(whopToastTimer);
-    }
-    whopToastTimer = setTimeout(function () {
-      whopToast.classList.remove("is-visible");
-    }, 4000);
-  }
-
-  document.querySelectorAll("[data-whop]").forEach(function (link) {
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-      showWhopToast();
-    });
-  });
 
   /* ------------------------------------------------------------------
-   * Modal de documentos legales (Políticas / Términos)
+   * Modal de documentos legales (PolÃ­ticas / TÃ©rminos)
    * - Abre una tarjeta glass con el contenido de politicas.html
-   *   en lugar de navegar a otra página.
+   *   en lugar de navegar a otra pÃ¡gina.
    * - Si el fetch no es posible (p. ej. file://), conserva la
-   *   navegación normal como respaldo.
+   *   navegaciÃ³n normal como respaldo.
    * ------------------------------------------------------------------ */
 
   var legalModal = document.getElementById("legal-modal");
@@ -1043,7 +1008,7 @@
           document.addEventListener("keydown", trapLegalKey);
           return;
         }
-        // Respaldo: navegación normal a la página legal.
+        // Respaldo: navegaciÃ³n normal a la pÃ¡gina legal.
         if (lastFocused && lastFocused.href) {
           window.location.href = lastFocused.getAttribute("href");
         }
@@ -1061,3 +1026,6 @@
     });
   });
 })();
+
+
+

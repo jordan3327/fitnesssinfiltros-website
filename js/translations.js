@@ -440,35 +440,7 @@ window.FSFTranslations = {
     "WhatsApp de Fitness Sin Filtros": "Fitness Sin Filtros on WhatsApp",
     "YouTube de Fitness Sin Filtros": "Fitness Sin Filtros on YouTube",
     "YouTube: perfil oficial pendiente": "YouTube: official profile pending",
-    "tucorreo@ejemplo.com": "tucorreo@ejemplo.com",
-
-    /* Placeholders pendientes de la clienta (se traducen claramente en inglés) */
-    "[PENDIENTE_CLIENTE: añadir aquí la biografía aprobada de la entrenadora: nombre, formación, experiencia, especialidades, modalidad de trabajo y cualquier dato personal que autorice publicar].":
-      "[PENDING_CLIENT: add here the trainer's approved bio: name, credentials, experience, specialties, working format, and any personal details she authorizes publishing].",
-    "[PENDIENTE_CLIENTE: añadir el detalle del proceso de evaluación inicial].":
-      "[PENDING_CLIENT: add the details of the initial assessment process].",
-    "[PENDIENTE_CLIENTE: añadir frecuencia, canal, duración y tipo de revisión del seguimiento].":
-      "[PENDING_CLIENT: add the frequency, channel, duration, and type of follow-up review].",
-    "[PENDIENTE_CLIENTE: añadir la modalidad de atención (online, presencial o híbrida) y la zona o ciudad].":
-      "[PENDING_CLIENT: add the service format (online, in-person, or hybrid) and the area or city].",
-    "[PENDIENTE_CLIENTE: añadir la modalidad de atención (online, presencial o híbrida)]":
-      "[PENDING_CLIENT: add the service format (online, in-person, or hybrid)]",
-    "[PENDIENTE_CLIENTE: añadir la política de ajustes del servicio].":
-      "[PENDING_CLIENT: add the service adjustment policy].",
-    "[PENDIENTE_CLIENTE: añadir los horarios de atención]":
-      "[PENDING_CLIENT: add support hours]",
-    "[PENDIENTE_CLIENTE: añadir los métodos de pago disponibles].":
-      "[PENDING_CLIENT: add the available payment methods].",
-    "[PENDIENTE_CLIENTE: añadir los tiempos de entrega por servicio].":
-      "[PENDING_CLIENT: add delivery times per service].",
-    "[PENDIENTE_CLIENTE: añadir métodos de pago, condiciones, comprobante de pago y momento de pago confirmados].":
-      "[PENDING_CLIENT: add the confirmed payment methods, conditions, payment receipt, and payment timing].",
-    "[PENDIENTE_CLIENTE: añadir nombre, identificación y datos de contacto de la persona responsable del tratamiento de datos personales].":
-      "[PENDING_CLIENT: add the name, ID, and contact details of the person responsible for personal data processing].",
-    "[PENDIENTE_CLIENTE: confirmar disponibilidad de agenda].":
-      "[PENDING_CLIENT: confirm schedule availability].",
-    "[PENDIENTE_CLIENTE: nombre de la clienta autorizada]":
-      "[PENDING_CLIENT: name of the authorized client]"
+    "tucorreo@ejemplo.com": "tucorreo@ejemplo.com"
   }
 };
 
@@ -570,3 +542,5 @@ window.FSFSeo = {
     }
   }
 };
+
+

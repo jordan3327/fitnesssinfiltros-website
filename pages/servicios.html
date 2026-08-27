@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>document.documentElement.classList.add("js");</script>
     <script>
-      /* i18n: aplica el idioma guardado antes del primer pintado (evita parpadeo). */
       (function () {
         try {
           if (localStorage.getItem("fsf-language") === "en") {
@@ -15,30 +14,29 @@
       })();
     </script>
 
-    <title>Programas y precios | Fitness Sin Filtros</title>
+    <title>FSF · Programas</title>
     <meta
       name="description"
       content="Programas de entrenamiento, nutrición y acompañamiento diseñados a tu medida. Elige el programa que mejor se adapte a tu objetivo y consulta por WhatsApp."
     />
+    <meta name="application-name" content="Fitness Sin Filtros" />
     <meta name="theme-color" content="#D23C58" />
-    <!-- REVISAR ANTES DE PUBLICAR: confirmar URLs finales según hosting y estructura. -->
-    <link rel="canonical" href="https://jordan3327.github.io/fitnesssinfiltros-website/servicios.html" />
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/SVG PART/FSF.svg?v=20260827" />
+    <link rel="canonical" href="https://fitnesssinfiltros.com/servicios.html" />
     <meta name="author" content="Fitness Sin Filtros" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Fitness Sin Filtros" />
-    <meta property="og:title" content="Programas y precios | Fitness Sin Filtros" />
+    <meta property="og:title" content="FSF · Programas" />
     <meta
       property="og:description"
       content="Programas de entrenamiento, nutrición y acompañamiento diseñados a tu medida. Elige el programa que mejor se adapte a tu objetivo y consulta por WhatsApp."
     />
-    <meta property="og:url" content="https://jordan3327.github.io/fitnesssinfiltros-website/servicios.html" />
-    <meta property="og:image" content="https://jordan3327.github.io/fitnesssinfiltros-website/assets/og.jpg" />
+    <meta property="og:url" content="https://fitnesssinfiltros.com/servicios.html" />
+    <meta property="og:image" content="https://fitnesssinfiltros.com/assets/og.jpg" />
     <meta property="og:locale" content="es_EC" />
     <meta name="twitter:card" content="summary_large_image" />
-
-    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -183,9 +181,12 @@
 
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="../index.html" aria-label="Fitness Sin Filtros, página de inicio">
-<img class="brand-logo" src="../assets/logo/SVG PART/FSF.svg" alt="Fitness Sin Filtros" />
-          <span><span class="brand-name">Fitness Sin Filtros</span><span class="brand-domain">fitnesssinfiltros.com</span></span>
+<a class="brand" href="../index.html" aria-label="Fitness Sin Filtros, página de inicio">
+          <img class="brand-logo" src="../assets/logo/SVG PART/FSF.svg" alt="Fitness Sin Filtros" />
+          <span>
+            <span class="brand-name">Fitness Sin Filtros</span>
+            <span class="brand-subtitle">Sin atajos. Sin extremos.</span>
+          </span>
         </a>
 
         <nav class="main-nav" aria-label="Navegación principal">
@@ -232,8 +233,8 @@
           <h1 id="servicios-titulo">Programas hechos para tu etapa actual</h1>
           <p>
             Cada programa se adapta a tu punto de partida, tus objetivos y tu estilo de vida.
-            La propuesta se organiza en bloques de 8 semanas y se confirma por WhatsApp antes de
-            contratar.
+            Todos los planes se organizan en bloques de 8 semanas y se confirman por WhatsApp
+            antes de contratar.
           </p>
           <nav class="inner-nav" aria-label="Ir a un programa">
             <ul role="list">
@@ -255,21 +256,20 @@
               <div class="service-detail__head">
                 <span class="service-icon" aria-hidden="true"><svg class="icon"><use href="#icon-file-text"></use></svg></span>
                 <div>
-                  <h3>Rutina PDF sin seguimiento personalizado</h3>
-                  <span class="chip">Sin seguimiento · 8 semanas</span>
-                </div>
+              <h3>Rutina PDF sin seguimiento personalizado</h3>
+              <span class="chip">Sin seguimiento · 8 semanas</span>
+              </div>
               </div>
               <p>
                 Programa diseñado desde cero según tu nivel, objetivos, disponibilidad y acceso a
                 equipos. Incluye estructura semanal, ejercicios, series, repeticiones, cardio y
-                recomendaciones técnicas para ejecutar tu rutina con buena forma.
+                recomendaciones para ejecutar tu rutina con buena técnica.
               </p>
               <div class="price-row">
                 <span class="price">$200</span>
                 <span class="price-note">pago único</span>
               </div>
-              <a class="btn btn-secondary" href="link-aqui" data-whop data-service-id="rutina-pdf-sin-seguimiento">
-                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para rutina-pdf-sin-seguimiento -->
+              <a class="btn btn-secondary" href="#" data-whatsapp data-service-id="rutina-pdf-sin-seguimiento">
                 Consultar este programa
               </a>
             </article>
@@ -278,7 +278,7 @@
               <div class="service-detail__head">
                 <span class="service-icon" aria-hidden="true"><svg class="icon"><use href="#icon-file-text"></use></svg></span>
                 <div>
-                  <h3>Rutina PDF + seguimiento personalizado</h3>
+              <h3>Rutina PDF + seguimiento personalizado</h3>
                   <span class="chip">
                     <svg class="icon" aria-hidden="true"><use href="#icon-star"></use></svg>
                     Recomendado · 8 semanas
@@ -287,14 +287,13 @@
               </div>
               <p>
                 Programa de 8 semanas en PDF con acompañamiento para revisar el proceso, hacer
-                ajustes cuando sea necesario y sostener el avance.
+                ajustes cuando sea necesario y sostener el avance con seguimiento personalizado.
               </p>
               <div class="price-row">
                 <span class="price">$250</span>
                 <span class="price-note">pago único</span>
               </div>
-              <a class="btn btn-primary" href="link-aqui" data-whop data-service-id="rutina-pdf-seguimiento">
-                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para rutina-pdf-seguimiento -->
+              <a class="btn btn-primary" href="#" data-whatsapp data-service-id="rutina-pdf-seguimiento">
                 Consultar este programa
               </a>
             </article>
@@ -312,17 +311,15 @@
               </div>
               <p>
                 Guía diseñada según tus objetivos de fitness, preferencias alimentarias, horarios y
-                estilo de vida. Incluye estructura diaria de comidas, distintas opciones para
-                desayuno, almuerzo, cena y snacks, porciones sugeridas, lista de compras,
-                recomendaciones generales de hábitos y una estructura general de entrenamiento para
-                complementar tu proceso.
+                estilo de vida. Incluye estructura diaria de comidas, opciones para desayuno,
+                almuerzo, cena y snacks, porciones sugeridas, lista de compras, hábitos y una
+                estructura general de entrenamiento.
               </p>
               <div class="price-row">
                 <span class="price">$250</span>
                 <span class="price-note">pago único</span>
               </div>
-              <a class="btn btn-primary" href="link-aqui" data-whop data-service-id="guia-alimentacion-seguimiento">
-                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para guia-alimentacion-seguimiento -->
+              <a class="btn btn-primary" href="#" data-whatsapp data-service-id="guia-alimentacion-seguimiento">
                 Consultar este programa
               </a>
             </article>
@@ -337,15 +334,14 @@
               </div>
               <p>
                 Guía personalizada con estructura diaria de comidas, porciones sugeridas, lista de
-                compras, recomendaciones generales y una estructura general de entrenamiento para
-                ayudarte a mantener una alimentación más organizada y sostenible.
+                compras, hábitos generales y una estructura general de entrenamiento para ayudarte
+                a mantener una alimentación más organizada y sostenible.
               </p>
               <div class="price-row">
                 <span class="price">$200</span>
                 <span class="price-note">pago único</span>
               </div>
-              <a class="btn btn-secondary" href="link-aqui" data-whop data-service-id="guia-alimentacion-sin-seguimiento">
-                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para guia-alimentacion-sin-seguimiento -->
+              <a class="btn btn-secondary" href="#" data-whatsapp data-service-id="guia-alimentacion-sin-seguimiento">
                 Consultar este programa
               </a>
             </article>
@@ -359,15 +355,14 @@
                 </div>
               </div>
               <p>
-                Sesión breve para revisar tu objetivo, resolver dudas y definir cuál es el programa
-                que mejor encaja contigo.
+                Sesión breve para revisar tu objetivo, resolver dudas y definir cuál de los
+                programas encaja mejor contigo.
               </p>
               <div class="price-row">
                 <span class="price">$50</span>
                 <span class="price-note">por sesión</span>
               </div>
-              <a class="btn btn-secondary" href="link-aqui" data-whop data-service-id="asesoria-20-min">
-                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para asesoria-20-min -->
+              <a class="btn btn-secondary" href="#" data-whatsapp data-service-id="asesoria-20-min">
                 Consultar este programa
               </a>
             </article>
@@ -388,15 +383,14 @@
                 </div>
               </div>
               <p>
-                Incluye rutina PDF, guía de alimentación personalizada y seguimiento durante 8
-                semanas para acompañarte en todo el proceso.
+                Incluye rutina PDF, guía de alimentación y seguimiento personalizado durante 8
+                semanas como un especial más completo y estratégico.
               </p>
               <div class="price-row">
                 <span class="price">$399</span>
                 <span class="price-note">pago único</span>
               </div>
-              <a class="btn btn-primary" href="link-aqui" data-whop data-service-id="pack-8-semanas">
-                <!-- PENDIENTE_CLIENTE: reemplazar link-aqui por el enlace de pago de Whop para pack-8-semanas -->
+              <a class="btn btn-primary" href="#" data-whatsapp data-service-id="pack-8-semanas">
                 Consultar este pack
               </a>
             </article>
@@ -406,9 +400,8 @@
             <svg class="icon" aria-hidden="true"><use href="#icon-info"></use></svg>
             <p>
               Este contenido tiene fines educativos y de bienestar general. No constituye
-              asesoramiento médico, diagnóstico, tratamiento ni terapia nutricional. No sustituye
-              la valoración, seguimiento ni tratamiento de un médico, nutricionista clínico o
-              profesional de la salud autorizado.
+              asesoramiento médico, diagnóstico, tratamiento ni terapia nutricional, y no sustituye
+              la atención de un dietista, nutricionista o profesional de la salud autorizado.
             </p>
           </div>
         </div>
@@ -467,15 +460,12 @@
             <ul class="footer-list" role="list">
               <li><a href="#" data-whatsapp data-whatsapp-msg="Hola, quiero orientación para elegir el servicio más adecuado para mi objetivo.">WhatsApp</a></li>
               <li data-email>
-                <!-- PENDIENTE_CLIENTE: correo oficial (desde js/config.js) -->
                 <a href="mailto:">Correo electrónico</a>
               </li>
               <li data-social="instagram">
-                <!-- PENDIENTE_CLIENTE: enlace oficial de Instagram (desde js/config.js) -->
                 <a href="#">Instagram</a>
               </li>
               <li data-social="facebook">
-                <!-- PENDIENTE_CLIENTE: enlace oficial de Facebook (desde js/config.js) -->
                 <a href="#">Facebook</a>
               </li>
             </ul>
@@ -571,3 +561,5 @@
     <script src="../js/main.js"></script>
   </body>
 </html>
+
+

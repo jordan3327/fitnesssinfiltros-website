@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>document.documentElement.classList.add("js");</script>
     <script>
-      /* i18n: aplica el idioma guardado antes del primer pintado (evita parpadeo). */
       (function () {
         try {
           if (localStorage.getItem("fsf-language") === "en") {
@@ -15,30 +14,29 @@
       })();
     </script>
 
-    <title>Contacto | Fitness Sin Filtros</title>
+    <title>FSF · Contacto</title>
     <meta
       name="description"
       content="Cuéntanos tu objetivo y recibe orientación por WhatsApp para elegir el servicio que se adapte a ti. Sin formularios largos ni esperas."
     />
+    <meta name="application-name" content="Fitness Sin Filtros" />
     <meta name="theme-color" content="#D23C58" />
-    <!-- REVISAR ANTES DE PUBLICAR: confirmar URLs finales según hosting y estructura. -->
-    <link rel="canonical" href="https://jordan3327.github.io/fitnesssinfiltros-website/contacto.html" />
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/SVG PART/FSF.svg?v=20260827" />
+    <link rel="canonical" href="https://fitnesssinfiltros.com/contacto.html" />
     <meta name="author" content="Fitness Sin Filtros" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Fitness Sin Filtros" />
-    <meta property="og:title" content="Contacto | Fitness Sin Filtros" />
+    <meta property="og:title" content="FSF · Contacto" />
     <meta
       property="og:description"
       content="Cuéntanos tu objetivo y recibe orientación por WhatsApp para elegir el servicio que se adapte a ti. Sin formularios largos ni esperas."
     />
-    <meta property="og:url" content="https://jordan3327.github.io/fitnesssinfiltros-website/contacto.html" />
-    <meta property="og:image" content="https://jordan3327.github.io/fitnesssinfiltros-website/assets/og.jpg" />
+    <meta property="og:url" content="https://fitnesssinfiltros.com/contacto.html" />
+    <meta property="og:image" content="https://fitnesssinfiltros.com/assets/og.jpg" />
     <meta property="og:locale" content="es_EC" />
     <meta name="twitter:card" content="summary_large_image" />
-
-    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -191,7 +189,10 @@
       <div class="container header-inner">
         <a class="brand" href="../index.html" aria-label="Fitness Sin Filtros, página de inicio">
           <img class="brand-logo" src="../assets/logo/SVG PART/FSF.svg" alt="Fitness Sin Filtros" />
-          <span><span class="brand-name">Fitness Sin Filtros</span><span class="brand-domain">fitnesssinfiltros.com</span></span>
+          <span>
+            <span class="brand-name">Fitness Sin Filtros</span>
+            <span class="brand-subtitle">Sin atajos. Sin extremos.</span>
+          </span>
         </a>
 
         <nav class="main-nav" aria-label="Navegación principal">
@@ -326,9 +327,9 @@
                     <option value="" selected disabled>Selecciona tu objetivo…</option>
                     <option>Definición</option>
                     <option>Ganar masa muscular</option>
-                    <option>Entrenamiento guiado</option>
                     <option>Mejorar hábitos alimenticios</option>
                     <option>Aumentar energía</option>
+                    <option>Necesito orientación para elegir un plan</option>
                     <option>Otro objetivo</option>
                   </select>
                   <p class="field-error" id="contact-goal-error" role="alert"></p>
@@ -394,7 +395,6 @@
                   <svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
                   <div>
                     <strong>Correo</strong>
-                    <!-- PENDIENTE_CLIENTE: correo oficial (se rellena desde js/config.js) -->
                     <p>Úsalo si prefieres dejar tu consulta o información por escrito.</p>
                     <a class="btn btn-ghost" href="mailto:">Correo electrónico</a>
                   </div>
@@ -404,8 +404,7 @@
                   <svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg>
                   <div>
                     <strong>Horarios de atención</strong>
-                    <!-- PENDIENTE_CLIENTE: confirmar horarios reales -->
-                    <p data-contact-schedule-text>[PENDIENTE_CLIENTE: añadir los horarios de atención]</p>
+                    <p data-contact-schedule-text>Horario por confirmar por WhatsApp.</p>
                   </div>
                 </div>
 
@@ -413,13 +412,10 @@
                   <svg class="icon" aria-hidden="true"><use href="#icon-pin"></use></svg>
                   <div>
                     <strong>Atención</strong>
-                    <!-- PENDIENTE_CLIENTE: confirmar modalidad y zona de atención -->
-                    <p data-contact-modality-text>[PENDIENTE_CLIENTE: añadir la modalidad de atención (online, presencial o híbrida)]</p>
+                    <p data-contact-modality-text>Atención online y presencial según disponibilidad.</p>
                   </div>
                 </div>
               </div>
-
-              <!-- PENDIENTE_CLIENTE: enlaces oficiales de redes sociales (desde js/config.js) -->
               <nav class="social-connect social-list social-list--spaced" aria-label="Redes sociales de Fitness Sin Filtros">
                 <p class="social-connect__label">Encuéntrame también en</p>
                 <div class="social-connect__icons">
@@ -561,15 +557,12 @@
             <ul class="footer-list" role="list">
               <li><a href="#" data-whatsapp data-whatsapp-msg="Hola, quiero orientación para elegir el servicio más adecuado para mi objetivo.">WhatsApp</a></li>
               <li data-email>
-                <!-- PENDIENTE_CLIENTE: correo oficial (desde js/config.js) -->
                 <a href="mailto:">Correo electrónico</a>
               </li>
               <li data-social="instagram">
-                <!-- PENDIENTE_CLIENTE: enlace oficial de Instagram (desde js/config.js) -->
                 <a href="#">Instagram</a>
               </li>
               <li data-social="facebook">
-                <!-- PENDIENTE_CLIENTE: enlace oficial de Facebook (desde js/config.js) -->
                 <a href="#">Facebook</a>
               </li>
             </ul>
@@ -683,3 +676,5 @@
     <script src="../js/main.js"></script>
   </body>
 </html>
+
+

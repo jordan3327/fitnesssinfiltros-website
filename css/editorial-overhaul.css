@@ -59,8 +59,11 @@ body::selection { background: var(--brand-rose); color: #fff; }
 .brand-mark { width: 2rem; height: 2rem; border: 1px solid var(--line-strong); background: #fff; }
 .brand > span {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   min-width: 0;
+  line-height: 1;
 }
 .brand-name {
   display: block;
@@ -69,6 +72,16 @@ body::selection { background: var(--brand-rose); color: #fff; }
   line-height: 1;
   white-space: nowrap;
   color: var(--brand-black);
+}
+.brand-subtitle {
+  display: block;
+  margin-top: .22rem;
+  font-size: .56rem;
+  font-weight: 700;
+  letter-spacing: .19em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--brand-rose);
 }
 .brand-domain { display: none; }
 
@@ -125,6 +138,7 @@ body::selection { background: var(--brand-rose); color: #fff; }
   min-height: min(850px, calc(100vh - 4.75rem));
   display: grid;
   align-items: center;
+  overflow: hidden;
   overflow: clip;
   background: #fffdfb;
 }
@@ -156,6 +170,7 @@ body::selection { background: var(--brand-rose); color: #fff; }
   line-height: .89;
   letter-spacing: -.075em;
   text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 .hero h1 .accent {
   display: inline-block;
@@ -268,7 +283,7 @@ body::selection { background: var(--brand-rose); color: #fff; }
 
 .section { padding-block: clamp(4.5rem, 8vw, 8.5rem); }
 .section-head { margin-bottom: clamp(2rem, 3vw, 3.25rem); }
-.section-head h2, .about-copy h2, .sub-hero h1 { letter-spacing: -.06em; line-height: .95; text-wrap: balance; }
+.section-head h2, .about-copy h2, .sub-hero h1 { letter-spacing: -.06em; line-height: .95; text-wrap: balance; overflow-wrap: anywhere; }
 .section-head h2 { max-width: 16ch; font-size: clamp(2.55rem, 5vw, 5rem); }
 .section-head .lead { max-width: 43rem; color: #554a50; }
 
@@ -291,8 +306,23 @@ body::selection { background: var(--brand-rose); color: #fff; }
 .about-point strong { color: #ffb1c0; }
 .about-point p { margin-top: .25rem; color: rgba(255,255,255,.7); font-size: .83rem; }
 
+.about-signature {
+  margin-top: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.about-signature__logo {
+  display: block;
+  width: min(15.5rem, 70%);
+  max-width: 100%;
+  height: auto;
+}
+
 .evolution-strip {
   position: relative;
+  overflow: hidden;
   overflow: clip;
   isolation: isolate;
   padding-top: 0;
@@ -320,6 +350,7 @@ body::selection { background: var(--brand-rose); color: #fff; }
 
 .evolution-strip__video,
 .evolution-strip__overlay {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   height: 100vh;
@@ -368,6 +399,7 @@ body::selection { background: var(--brand-rose); color: #fff; }
 .story { position: relative; height: 520vh; }
 
 .story__pin {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   height: 100vh;
@@ -805,6 +837,7 @@ body::selection { background: var(--brand-rose); color: #fff; }
 .sub-hero { background: #fffdfb; padding-block: clamp(5rem, 10vw, 10rem) clamp(3.5rem, 7vw, 6rem); }
 .sub-hero::after { content: ""; display: block; width: clamp(5rem,12vw,10rem); height: .4rem; margin-top: 2rem; background: var(--brand-rose); }
 .sub-hero h1 { max-width: 13ch; font-size: clamp(3rem, 7vw, 6.3rem); }
+.sub-hero h1 { overflow-wrap: anywhere; }
 .sub-hero p { color: #554a50; }
 .about-media__placeholder { background: #f0e4df; color: #463a3f; }
 .service-detail { padding: 1.75rem; }
@@ -904,11 +937,11 @@ body::selection { background: var(--brand-rose); color: #fff; }
 
 @media (min-width: 1024px) {
   .brand {
-    gap: clamp(0.25rem, .75vw, 0.5rem);
+    gap: clamp(0.28rem, .85vw, 0.55rem);
   }
 
   .brand > span {
-    transform: translateX(-0.3rem);
+    transform: translate(-0.15rem, 0.35rem);
   }
 
   .hero-grid { grid-template-columns: 1.14fr .86fr; }
@@ -925,6 +958,32 @@ body::selection { background: var(--brand-rose); color: #fff; }
   .cta-final__whatsapp-subtitle,
   .cta-final__whatsapp-arrow { transition: none; }
   .btn::after { display: none; }
+}
+
+@supports not (text-wrap: balance) {
+  .hero h1,
+  .section-head h2,
+  .about-copy h2,
+  .sub-hero h1 {
+    text-wrap: normal;
+    word-break: normal;
+  }
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .site-header {
+    background: rgba(255, 248, 244, 0.97);
+  }
+
+  .benefit-card:hover {
+    background: rgba(255, 255, 255, .82);
+  }
+
+  .benefit-card:hover,
+  .social-connect .social-connect__icons a:hover {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
 }
 
 /* --- Tarjeta de canal (referencia Photoshop) ----------------------------- */

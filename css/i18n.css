@@ -112,6 +112,12 @@
     visibility 0s linear var(--duration-fast);
 }
 
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .language-options {
+    background: rgba(255, 255, 255, 0.98);
+  }
+}
+
 .language-menu--footer .language-options {
   background: rgba(16, 12, 14, 0.98);
   border-color: var(--color-footer-border);

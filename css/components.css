@@ -1,5 +1,5 @@
-/* ==========================================================================
-   components.css — Componentes reutilizables
+﻿/* ==========================================================================
+   components.css â€” Componentes reutilizables
    ========================================================================== */
 
 /* --- Iconos (sprite SVG) ------------------------------------------------ */
@@ -70,7 +70,7 @@
   background: var(--color-white);
 }
 
-/* --- Contenido legal (políticas / términos) ------------------------------ */
+/* --- Contenido legal (polÃ­ticas / tÃ©rminos) ------------------------------ */
 
 .legal article {
   max-width: var(--container-narrow);
@@ -131,7 +131,7 @@
   height: 0.95em;
 }
 
-/* --- lista de verificación (checks) -------------------------------------- */
+/* --- lista de verificaciÃ³n (checks) -------------------------------------- */
 
 .check-list {
   list-style: none;
@@ -155,22 +155,7 @@
   margin-top: 0.12rem;
 }
 
-/* --- Aviso de "demo" (testimonios de ejemplo) ------------------------------ */
-
-.demo-badge {
-  display: inline-block;
-  font-size: var(--fs-tiny);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-ink-muted);
-  border: 1px dashed var(--color-border-strong);
-  border-radius: var(--radius-full);
-  padding: 0.3rem 0.8rem;
-  margin-bottom: var(--space-2);
-}
-
-/* --- Modal de confirmación ------------------------------------------------- */
+/* --- Modal de confirmaciÃ³n ------------------------------------------------- */
 
 .modal {
   position: fixed;
@@ -301,6 +286,16 @@
   flex-direction: column;
 }
 
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .modal--legal {
+    background: rgba(38, 20, 31, 0.8);
+  }
+
+  .modal--legal .modal__dialog {
+    background: #fffdfb;
+  }
+}
+
 .modal--legal .legal article {
   max-width: none;
 }
@@ -383,7 +378,7 @@
   }
 }
 
-/* --- Utilidades de la página de contacto -------------------------------- */
+/* --- Utilidades de la pÃ¡gina de contacto -------------------------------- */
 
 .contact-grid {
   display: grid;
@@ -412,3 +407,4 @@
   text-align: center;
   margin-top: 1.5rem;
 }
+

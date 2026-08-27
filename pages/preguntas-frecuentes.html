@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>document.documentElement.classList.add("js");</script>
     <script>
-      /* i18n: aplica el idioma guardado antes del primer pintado (evita parpadeo). */
       (function () {
         try {
           if (localStorage.getItem("fsf-language") === "en") {
@@ -15,30 +14,29 @@
       })();
     </script>
 
-    <title>Preguntas frecuentes sobre programas | Fitness Sin Filtros</title>
+    <title>FSF · FAQ</title>
     <meta
       name="description"
       content="Resolvemos tus dudas sobre programas personalizados, seguimiento, pagos y cómo empezar a trabajar con Fitness Sin Filtros."
     />
+    <meta name="application-name" content="Fitness Sin Filtros" />
     <meta name="theme-color" content="#D23C58" />
-    <!-- REVISAR ANTES DE PUBLICAR: confirmar URLs finales según hosting y estructura. -->
-    <link rel="canonical" href="https://jordan3327.github.io/fitnesssinfiltros-website/preguntas-frecuentes.html" />
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/SVG PART/FSF.svg?v=20260827" />
+    <link rel="canonical" href="https://fitnesssinfiltros.com/preguntas-frecuentes.html" />
     <meta name="author" content="Fitness Sin Filtros" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Fitness Sin Filtros" />
-    <meta property="og:title" content="Preguntas frecuentes sobre programas | Fitness Sin Filtros" />
+    <meta property="og:title" content="FSF · FAQ" />
     <meta
       property="og:description"
       content="Resolvemos tus dudas sobre programas personalizados, seguimiento, pagos y cómo empezar a trabajar con Fitness Sin Filtros."
     />
-    <meta property="og:url" content="https://jordan3327.github.io/fitnesssinfiltros-website/preguntas-frecuentes.html" />
-    <meta property="og:image" content="https://jordan3327.github.io/fitnesssinfiltros-website/assets/og.jpg" />
+    <meta property="og:url" content="https://fitnesssinfiltros.com/preguntas-frecuentes.html" />
+    <meta property="og:image" content="https://fitnesssinfiltros.com/assets/og.jpg" />
     <meta property="og:locale" content="es_EC" />
     <meta name="twitter:card" content="summary_large_image" />
-
-    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -185,7 +183,10 @@
       <div class="container header-inner">
         <a class="brand" href="../index.html" aria-label="Fitness Sin Filtros, página de inicio">
           <img class="brand-logo" src="../assets/logo/SVG PART/FSF.svg" alt="Fitness Sin Filtros" />
-          <span><span class="brand-name">Fitness Sin Filtros</span><span class="brand-domain">fitnesssinfiltros.com</span></span>
+          <span>
+            <span class="brand-name">Fitness Sin Filtros</span>
+            <span class="brand-subtitle">Sin atajos. Sin extremos.</span>
+          </span>
         </a>
 
         <nav class="main-nav" aria-label="Navegación principal">
@@ -265,8 +266,9 @@
               </h3>
               <div class="faq-answer" id="faq-answer-2">
                 <p>
-                  Depende del servicio contratado. Puede incluir plan de alimentación, rutina
-                  personalizada, suplementación, recomendaciones y seguimiento.
+                  Depende del servicio contratado. Puede incluir rutina personalizada, guía de
+                  alimentación, porciones sugeridas, lista de compras, recomendaciones y
+                  seguimiento.
                 </p>
               </div>
             </div>
@@ -281,7 +283,8 @@
               <div class="faq-answer" id="faq-answer-3">
                 <p>
                   Durante el seguimiento se evalúa tu progreso, se realizan ajustes cuando sean
-                  necesarios y se mantiene comunicación según el servicio contratado.
+                  necesarios y se mantiene comunicación según el servicio contratado durante el
+                  período de 8 semanas.
                 </p>
               </div>
             </div>
@@ -389,6 +392,21 @@
                 </p>
               </div>
             </div>
+
+            <div class="faq-item">
+              <h3>
+                <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-11">
+                  ¿Cuánto duran los planes?
+                  <svg class="chevron" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
+                </button>
+              </h3>
+              <div class="faq-answer" id="faq-answer-11">
+                <p>
+                  Todos los planes están organizados en bloques de 8 semanas para que el proceso
+                  tenga una estructura clara y medible.
+                </p>
+              </div>
+            </div>
           </div>
           <p class="faq-note">
             ¿Tienes otra pregunta? <a class="fs-text-link" data-whatsapp href="#">Escríbeme por WhatsApp</a> y te respondo con gusto.
@@ -460,15 +478,12 @@
             <ul class="footer-list" role="list">
               <li><a href="#" data-whatsapp data-whatsapp-msg="Hola, quiero orientación para elegir el servicio más adecuado para mi objetivo.">WhatsApp</a></li>
               <li data-email>
-                <!-- PENDIENTE_CLIENTE: correo oficial (desde js/config.js) -->
                 <a href="mailto:">Correo electrónico</a>
               </li>
               <li data-social="instagram">
-                <!-- PENDIENTE_CLIENTE: enlace oficial de Instagram (desde js/config.js) -->
                 <a href="#">Instagram</a>
               </li>
               <li data-social="facebook">
-                <!-- PENDIENTE_CLIENTE: enlace oficial de Facebook (desde js/config.js) -->
                 <a href="#">Facebook</a>
               </li>
             </ul>
@@ -564,3 +579,5 @@
     <script src="../js/main.js"></script>
   </body>
 </html>
+
+
