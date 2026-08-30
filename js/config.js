@@ -4,7 +4,7 @@
   whatsappUrl: "https://wa.me/message/IH4VI25P6KX7C1",
   trainerName: "",
   email: "",
-  instagramUrl: "https://www.instagram.com/ladyfitx3?igsh=aHRuam5ndjF2c2I2",
+  instagramUrl: "https://www.instagram.com/ladyfitx3?igsi=aHRuam5ndjF2c2I2",
   facebookUrl: "",
   tiktokUrl: "https://www.tiktok.com/@ladyvargasx3?_r=1&_t=ZP-99IqY4vHfYs",
   youtubeUrl: "",
