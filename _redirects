@@ -1,9 +1,6 @@
 # Cloudflare Pages Redirects Configuration (2026)
 # NOTE: This file is for Cloudflare Pages ONLY, not Workers
-# If using Workers, comment out this file or delete it
-
-# Redirect www to non-www
-https://www.fitnesssinfiltros.com/* https://fitnesssinfiltros.com/:splat 301
+# For Cloudflare Pages, remove the comment below and use this file
 
 # Redirect /servicios to /pages/servicios.html
 /servicios /pages/servicios.html 200
