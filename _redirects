@@ -1,0 +1,34 @@
+# Cloudflare Pages Redirects Configuration (2026)
+
+# Redirect www to non-www
+https://www.fitnesssinfiltros.com/* https://fitnesssinfiltros.com/:splat 301!
+
+# Ensure HTTPS
+http://fitnesssinfiltros.com/* https://fitnesssinfiltros.com/:splat 301!
+http://www.fitnesssinfiltros.com/* https://fitnesssinfiltros.com/:splat 301!
+
+# Redirect /servicios to /pages/servicios.html
+/servicios /pages/servicios.html 200
+/servicios.html /pages/servicios.html 200
+
+# Redirect /contacto to /pages/contacto.html
+/contacto /pages/contacto.html 200
+/contacto.html /pages/contacto.html 200
+
+# Redirect /sobre-mi to /pages/sobre-mi.html
+/sobre-mi /pages/sobre-mi.html 200
+/sobre-mi.html /pages/sobre-mi.html 200
+
+# Redirect /preguntas-frecuentes to /pages/preguntas-frecuentes.html
+/preguntas-frecuentes /pages/preguntas-frecuentes.html 200
+/faq /pages/preguntas-frecuentes.html 200
+/faq.html /pages/preguntas-frecuentes.html 200
+
+# Redirect /politicas to /pages/politicas.html
+/politicas /pages/politicas.html 200
+/politicas.html /pages/politicas.html 200
+/privacidad /pages/politicas.html 200
+/privacy /pages/politicas.html 200
+
+# Catch 404s and serve index.html (SPA fallback)
+/* /index.html 200

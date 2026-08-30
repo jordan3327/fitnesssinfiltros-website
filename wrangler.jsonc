@@ -2,10 +2,23 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "fitnesssinfiltros-website",
   "compatibility_date": "2026-08-28",
+  "compatibility_flags": [
+    "streams_enable_constructors",
+    "nodejs_compat"
+  ],
   "observability": {
     "enabled": true
   },
   "assets": {
     "directory": "."
+  },
+  "build": {
+    "cwd": ".",
+    "command": ""
+  },
+  "env": {
+    "production": {
+      "name": "fitnesssinfiltros-website"
+    }
   }
 }
