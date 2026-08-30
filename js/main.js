@@ -445,12 +445,23 @@
     function updateStory() {
       storyTicking = false;
       var progress = storyProgress();
-      setStoryChapter(Math.round(progress * (storyTotal - 1)));
+      // Cada foto ocupa 1/storyTotal del recorrido: la foto cambia solo
+      // cuando la barra del tramo anterior llega al final (100%).
+      var index = Math.floor(progress * storyTotal);
+      if (index > storyTotal - 1) { index = storyTotal - 1; }
+      setStoryChapter(index);
 
       for (var k = 0; k < storyTotal; k++) {
         if (!storySegments[k]) { continue; }
-        var fill = storyClamp(progress * (storyTotal - 1) - k + 1, 0, 1);
-        storySegments[k].style.transform = "scaleX(" + fill + ")";
+        var fill;
+        if (k < index) {
+          fill = 1; // tramo ya recorrido: barra llena
+        } else if (k === index) {
+          fill = progress * storyTotal - index; // 0..1 dentro del tramo actual
+        } else {
+          fill = 0; // tramos por recorrer
+        }
+        storySegments[k].style.transform = "scaleX(" + storyClamp(fill, 0, 1) + ")";
       }
     }
 
@@ -463,7 +474,7 @@
 
     function goToChapter(index) {
       var i = storyClamp(index, 0, storyTotal - 1);
-      var target = story.offsetTop + (i / (storyTotal - 1)) * storyScrollable() + 2;
+      var target = story.offsetTop + ((i + 0.5) / storyTotal) * storyScrollable() + 2;
       window.scrollTo({
         top: target,
         behavior: prefersReducedMotion() ? "auto" : "smooth"
