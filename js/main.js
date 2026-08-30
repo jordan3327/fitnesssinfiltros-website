@@ -1,13 +1,13 @@
 ﻿/* ==========================================================================
-   main.js â€” Funcionalidades globales
-   - Botones de WhatsApp dinÃ¡micos (usando window.CONFIG)
+   main.js — Funcionalidades globales
+   - Botones de WhatsApp dinámicos (usando window.CONFIG)
    - Datos de contacto (correo, redes, horarios, modalidad) desde CONFIG
-   - AÃ±o automÃ¡tico en el footer
+   - Año automático en el footer
    - Header con estado al hacer scroll
-   - BotÃ³n "volver arriba"
+   - Botón "volver arriba"
    - Scroll suave con respeto a prefers-reduced-motion
-   - Animaciones de apariciÃ³n (IntersectionObserver)
-   - Formulario de contacto: validaciÃ³n + confirmaciÃ³n + WhatsApp
+   - Animaciones de aparición (IntersectionObserver)
+   - Formulario de contacto: validación + confirmación + WhatsApp
    ========================================================================== */
 
 (function () {
@@ -26,8 +26,8 @@
     );
   }
 
-  // NÃºmero de WhatsApp validado: solo dÃ­gitos y con al menos 10 dÃ­gitos.
-  // Evita abrir wa.me con nÃºmeros incompletos o de ejemplo ("593XXXXXXXXX").
+  // Número de WhatsApp validado: solo dígitos y con al menos 10 dígitos.
+  // Evita abrir wa.me con números incompletos o de ejemplo ("593XXXXXXXXX").
   function getValidatedNumber() {
     var number = String(CONFIG.whatsappNumber || "").trim();
     if (!/^\d+$/.test(number)) {
@@ -51,7 +51,7 @@
   }
 
   // URL de WhatsApp en formato internacional (sin "+", sin espacios).
-  // Si no hay nÃºmero vÃ¡lido, usa el enlace directo configurado por la clienta.
+  // Si no hay número válido, usa el enlace directo configurado por la clienta.
   function buildWhatsAppUrl(message) {
     var number = getValidatedNumber();
     if (number) {
@@ -86,7 +86,7 @@
   }
 
   /* ------------------------------------------------------------------
-   * AÃ±o automÃ¡tico en el footer
+   * Año automático en el footer
    * ------------------------------------------------------------------ */
 
   function buildContactWhatsAppMessage(data) {
