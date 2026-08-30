@@ -398,7 +398,6 @@
     var storyChapters = story.querySelectorAll(".story__chapter");
     var storyGhosts = story.querySelectorAll(".story__ghost span");
     var storyDots = story.querySelectorAll("[data-story-goto]");
-    var storySegments = story.querySelectorAll(".story__segments i");
     var storyCounter = story.querySelector("[data-story-current]");
     var storyTotal = storyChapters.length;
     var storyIndex = -1;
@@ -446,23 +445,10 @@
       storyTicking = false;
       var progress = storyProgress();
       // Cada foto ocupa 1/storyTotal del recorrido: la foto cambia solo
-      // cuando la barra del tramo anterior llega al final (100%).
+      // cuando el tramo del capítulo anterior se completa.
       var index = Math.floor(progress * storyTotal);
       if (index > storyTotal - 1) { index = storyTotal - 1; }
       setStoryChapter(index);
-
-      for (var k = 0; k < storyTotal; k++) {
-        if (!storySegments[k]) { continue; }
-        var fill;
-        if (k < index) {
-          fill = 1; // tramo ya recorrido: barra llena
-        } else if (k === index) {
-          fill = progress * storyTotal - index; // 0..1 dentro del tramo actual
-        } else {
-          fill = 0; // tramos por recorrer
-        }
-        storySegments[k].style.transform = "scaleX(" + storyClamp(fill, 0, 1) + ")";
-      }
     }
 
     function requestStoryUpdate() {

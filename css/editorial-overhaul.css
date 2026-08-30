@@ -488,32 +488,6 @@ body::selection { background: var(--brand-rose); color: #fff; }
   pointer-events: none;
 }
 
-.story__segments {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  right: 1rem;
-  display: flex;
-  gap: 0.4rem;
-  z-index: 2;
-}
-
-.story__segments span {
-  flex: 1;
-  height: 3px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.25);
-  overflow: hidden;
-}
-
-.story__segments i {
-  display: block;
-  height: 100%;
-  background: #fff;
-  transform-origin: left;
-  transform: scaleX(0);
-}
-
 .story__counter {
   position: absolute;
   right: 1rem;
