@@ -139,7 +139,7 @@
   updateHeaderState();
 
   /* ------------------------------------------------------------------
-   * BotÃ³n "volver arriba"
+   * Botón "volver arriba"
    * ------------------------------------------------------------------ */
 
   var backToTop = document.querySelector(".back-to-top");
