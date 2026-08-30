@@ -85,9 +85,10 @@ window.LEGAL_DOCUMENTS = {
 
       <h3>Duraci&oacute;n y alcance</h3>
       <p>
-        Los programas principales est&aacute;n organizados alrededor de un periodo de 8 semanas. La
-        asesor&iacute;a personalizada se ofrece como una sesi&oacute;n puntual de 20 minutos. El alcance exacto
-        de cada servicio se define seg&uacute;n la opci&oacute;n seleccionada al momento de contratar.
+        Los dos programas principales est&aacute;n organizados alrededor de un periodo de 8 semanas.
+        La asesor&iacute;a personalizada se ofrece como una sesi&oacute;n puntual de 20 minutos. La membres&iacute;a
+        FSF VIP funciona de forma mensual. El alcance exacto de cada servicio se define seg&uacute;n la
+        opci&oacute;n seleccionada al momento de contratar.
       </p>
 
       <h3>Informaci&oacute;n necesaria para comenzar</h3>

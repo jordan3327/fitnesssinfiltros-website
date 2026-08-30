@@ -766,6 +766,8 @@ strong {
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
+  height: clamp(26rem, 30vw, 27.75rem);
+  overflow: hidden;
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -850,6 +852,8 @@ strong {
 .service-card__desc {
   flex: 1;
   font-size: var(--fs-small);
+  line-height: 1.48;
+  overflow: hidden;
 }
 
 .price-row {
@@ -1475,10 +1479,12 @@ select.form-control {
 .service-detail {
   display: flex;
   flex-direction: column;
+  height: clamp(26rem, 30vw, 27.75rem);
+  overflow: hidden;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background: var(--color-white);
-  padding: 1.6rem;
+  padding: 1.45rem;
   box-shadow: var(--shadow-sm);
 }
 
@@ -1486,7 +1492,7 @@ select.form-control {
   display: flex;
   gap: 1rem;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .service-detail h3 {
@@ -1496,10 +1502,12 @@ select.form-control {
 .service-detail p {
   flex: 1 1 auto;
   font-size: var(--fs-small);
+  line-height: 1.48;
+  overflow: hidden;
 }
 
 .service-detail .price-row {
-  margin: 1rem 0 0.75rem;
+  margin: 0.85rem 0 0.65rem;
 }
 
 .service-detail .btn {

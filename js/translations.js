@@ -264,9 +264,12 @@ window.FSFTranslations = {
       "Real results, without myths, extremes, or stress.",
     "Revisa el resumen antes de abrir WhatsApp. Ningún dato se envía ni se almacena en un servidor.":
       "Review the summary before opening WhatsApp. No data is sent or stored on a server.",
-    "Rutina PDF con seguimiento": "PDF routine with follow-up",
-    "Rutina PDF sin seguimiento": "PDF routine without follow-up",
-    "Rutinas PDF": "PDF routines",
+    "Alimentación + rutina 8 semanas con seguimiento personalizado":
+      "Nutrition + workout 8-week plan with personalized follow-up",
+    "Alimentación + rutina 8 semanas sin seguimiento personalizado":
+      "Nutrition + workout 8-week plan without personalized follow-up",
+    "Membresía FSF VIP": "FSF VIP membership",
+    "FSF VIP": "FSF VIP",
     "Sabes con quién cuentas y qué incluye tu servicio, sin letra pequeña.":
       "You know who you're working with and what your service includes, no fine print.",
     "Sabes desde el inicio qué incluye tu servicio y cómo se trabaja.":
@@ -326,40 +329,32 @@ window.FSFTranslations = {
     "Programas y planes a tu medida": "Programs and plans made for you",
     "Programas hechos para tu etapa actual": "Programs made for your current stage",
     "Programas pensados para tu realidad": "Programs designed for your reality",
-    "Todos los programas están diseñados para 8 semanas. Elige el que mejor se adapte a tu objetivo:":
-      "All programs are designed for 8 weeks. Choose the one that best fits your goal:",
-    "Rutina PDF sin seguimiento personalizado":
-      "Custom PDF workout routine without follow-up",
-    "Programa diseñado desde cero según tu nivel, objetivos, disponibilidad y acceso a equipos. Incluye estructura semanal, ejercicios, series, repeticiones, cardio y recomendaciones técnicas para ejecutar tu rutina con buena forma.":
-      "Built from scratch based on your level, goals, availability, and equipment access. Includes a weekly structure, exercises, sets, reps, cardio, and technique tips so you can perform your routine with good form.",
-    "Rutina PDF + seguimiento personalizado":
-      "PDF workout routine + personalized follow-up",
-    "Programa de 8 semanas en PDF con acompañamiento para revisar el proceso, hacer ajustes cuando sea necesario y sostener el avance.":
-      "An 8-week PDF program with support to review the process, make adjustments when needed, and keep progress moving.",
-    "Guía Personal de Alimentación Fitness + seguimiento personalizado":
-      "Personal Fitness Nutrition Guide + personalized follow-up",
-    "Guía diseñada según tus objetivos de fitness, preferencias alimentarias, horarios y estilo de vida. Incluye estructura diaria de comidas, distintas opciones para desayuno, almuerzo, cena y snacks, porciones sugeridas, lista de compras, recomendaciones generales de hábitos y una estructura general de entrenamiento para complementar tu proceso.":
-      "A guide designed around your fitness goals, food preferences, schedule, and lifestyle. It includes a daily meal structure, different options for breakfast, lunch, dinner, and snacks, suggested portions, a shopping list, general habit recommendations, and a general training structure to complement your process.",
-    "Guía Personal de Alimentación Fitness sin seguimiento":
-      "Personal Fitness Nutrition Guide without follow-up",
-    "Guía personalizada con estructura diaria de comidas, porciones sugeridas, lista de compras, recomendaciones generales y una estructura general de entrenamiento para ayudarte a mantener una alimentación más organizada y sostenible.":
-      "A personalized guide with a daily meal structure, suggested portions, a shopping list, general recommendations, and a general training structure to help you keep your nutrition more organized and sustainable.",
+    "Elige entre dos programas de 8 semanas, una asesoría puntual o la membresía FSF VIP para seguir avanzando con estructura y comunidad.":
+      "Choose between two 8-week programs, a one-off consultation, or FSF VIP membership to keep progressing with structure and community.",
+    "Programa completo en PDF con rutina y guía de alimentación. Incluye seguimiento para revisar tu avance, hacer ajustes cuando haga falta y acompañarte durante todo el proceso.":
+      "Full PDF program with workout and nutrition guide. Includes follow-up to review your progress, make adjustments when needed, and support you throughout the process.",
+    "Una opción más simple para recibir tu programa en PDF con rutina y guía de alimentación, sin seguimiento personalizado.":
+      "A simpler option to receive your PDF program with workout and nutrition guide, without personalized follow-up.",
+    "DEFINE — pérdida de grasa.": "DEFINE — fat loss.",
+    "BUILD — aumento de masa muscular.": "BUILD — muscle gain.",
+    "RESHAPE — recomposición corporal.": "RESHAPE — body recomposition.",
+    "Entras, progresas y continúas dentro de una comunidad con estructura y acompañamiento grupal.":
+      "You join, progress, and continue within a community with structure and group support.",
+    "Entras, progresas y continúas.":
+      "You join, progress, and keep going.",
+    "DEFINE — pérdida de grasa": "DEFINE — fat loss",
+    "BUILD — masa muscular": "BUILD — muscle gain",
+    "RESHAPE — recomposición corporal": "RESHAPE — body recomposition",
     "Asesoría personalizada (20 minutos)":
       "Personalized consultation (20 minutes)",
-    "Sesión breve para revisar tu objetivo, resolver dudas y definir el programa que mejor encaja contigo.":
-      "A short session to review your goal, answer questions, and define the program that best fits you.",
-    "Pack especial 8 semanas": "Special 8-week pack",
-    "Incluye rutina PDF, guía de alimentación y seguimiento personalizado para acompañarte durante 8 semanas en todo el proceso.":
-      "Includes a PDF routine, nutrition guide, and personalized follow-up to support you throughout the full 8-week process.",
+    "Sesión breve para revisar tu objetivo, resolver dudas y definir cuál de las opciones encaja mejor contigo.":
+      "A short session to review your goal, answer questions, and define which option fits you best.",
     "Consultar programa": "View program",
-    "Consultar pack": "View pack",
     "Consultar este programa": "View this program",
-    "Consultar este pack": "View this pack",
-    "Sin seguimiento · 8 semanas": "No follow-up · 8 weeks",
-    "Recomendado · 8 semanas": "Recommended · 8 weeks",
-    "Pack completo · 8 semanas": "Complete pack · 8 weeks",
+    "Con seguimiento · 8 semanas": "With follow-up · 8 weeks",
+    "PDF · 8 semanas": "PDF · 8 weeks",
+    "Membresía mensual · $49": "Monthly membership · $49",
     "Sesión de 20 minutos": "20-minute session",
-    "Rutina + guía + seguimiento": "Routine + guide + follow-up",
     "Ir a un programa": "Go to a program",
     "Lista de programas": "List of programs",
     "Este contenido tiene fines educativos y de bienestar general. No constituye asesoramiento médico, diagnóstico, tratamiento ni terapia nutricional. No sustituye la valoración, seguimiento ni tratamiento de un médico, nutricionista clínico o profesional de la salud autorizado.":
