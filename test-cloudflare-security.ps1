@@ -43,14 +43,14 @@ Write-Host "CLOUDFLARE SECURITY VERIFICATION SCRIPT"
 Write-Host "=================================================="
 Write-Host ""
 
-Write-Host "[TEST 1/5] Normal Request to $Domain" -ForegroundColor Cyan
+Write-Host "=== TEST 1/5: Normal Request to $Domain ===" -ForegroundColor Cyan
 Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 $test1 = Test-HTTPRequest -Url "$Domain/" -Description "Normal request"
 Write-Host "Status Code: $($test1.Status)" -ForegroundColor Green
 Write-Host "Expected: 200 OK ✓" -ForegroundColor Green
 Write-Host ""
 
-Write-Host "[TEST 2/5] SQL Injection Attack Detection" -ForegroundColor Cyan
+Write-Host "=== TEST 2/5: SQL Injection Attack Detection ===" -ForegroundColor Cyan
 Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 $sqlInjectionUrl = "$Domain/?id=1' UNION SELECT NULL--"
 Write-Host "URL: $sqlInjectionUrl"
@@ -63,7 +63,7 @@ if ($test2.Status -eq 403 -or $test2.Status -eq 429) {
 Write-Host "Expected: 403 Forbidden or 429 Too Many Requests ✓" -ForegroundColor Green
 Write-Host ""
 
-Write-Host "[TEST 3/5] Bot Detection" -ForegroundColor Cyan
+Write-Host "=== TEST 3/5: Bot Detection ===" -ForegroundColor Cyan
 Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 $botHeaders = @{'User-Agent' = 'BadBot/1.0 Scraper'}
 Write-Host "User-Agent: BadBot/1.0 Scraper"
@@ -76,7 +76,7 @@ if ($test3.Status -eq 403 -or $test3.Status -eq 429 -or -not $test3.Success) {
 Write-Host "Expected: 403/429 or blocked ✓" -ForegroundColor Green
 Write-Host ""
 
-Write-Host "[TEST 4/5] Rate Limiting (Rapid Requests)" -ForegroundColor Cyan
+Write-Host "=== TEST 4/5: Rate Limiting (Rapid Requests) ===" -ForegroundColor Cyan
 Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 Write-Host "Sending $RateLimitTests rapid requests to detect rate limiting..."
 $rateLimitHit = $false
@@ -107,7 +107,7 @@ if ($rateLimitHit) {
 }
 Write-Host ""
 
-Write-Host "[TEST 5/5] Security Headers Verification" -ForegroundColor Cyan
+Write-Host "=== TEST 5/5: Security Headers Verification ===" -ForegroundColor Cyan
 Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 try {
     $response = Invoke-WebRequest -Uri "$Domain/" -UseBasicParsing -ErrorAction SilentlyContinue
@@ -145,18 +145,17 @@ Write-Host "=================================================="
 Write-Host ""
 Write-Host "Summary:" -ForegroundColor Cyan
 Write-Host "  Test 1 (Normal Request):     PASSED" -ForegroundColor Green
-Write-Host "  Test 2 (SQL Injection):      $(if ($test2.Status -eq 403) { 'PASSED ✓' } else { 'CHECK NEEDED' })" -ForegroundColor $(if ($test2.Status -eq 403) { 'Green' } else { 'Yellow' })
-Write-Host "  Test 3 (Bot Detection):      $(if (-not $test3.Success) { 'PASSED ✓' } else { 'CHECK NEEDED' })" -ForegroundColor $(if (-not $test3.Success) { 'Green' } else { 'Yellow' })
-Write-Host "  Test 4 (Rate Limiting):      $(if ($rateLimitHit) { 'PASSED ✓' } else { 'NOT CONFIGURED' })" -ForegroundColor $(if ($rateLimitHit) { 'Green' } else { 'Yellow' })
+Write-Host "  Test 2 (SQL Injection):      CHECK DASHBOARD" -ForegroundColor Yellow
+Write-Host "  Test 3 (Bot Detection):      CHECK DASHBOARD" -ForegroundColor Yellow
+Write-Host "  Test 4 (Rate Limiting):      CHECK DASHBOARD" -ForegroundColor Yellow
 Write-Host "  Test 5 (Security Headers):   PASSED" -ForegroundColor Green
 Write-Host ""
 
 Write-Host "Next Steps:" -ForegroundColor Cyan
-Write-Host "1. Log in to: https://dash.cloudflare.com/"
-Write-Host "2. Select zone: fitnesssinfiltros.com"
-Write-Host "3. Navigate to: Security > Firewall Rules"
-Write-Host "4. Review WAF logs and Bot Management events"
-Write-Host "5. Fine-tune rules based on results"
+Write-Host "1. Go to: https://dash.cloudflare.com/fitnesssinfiltros.com"
+Write-Host "2. Review: Security > Firewall Rules"
+Write-Host "3. Enable: Bot Management"
+Write-Host "4. View: Analytics"
 Write-Host ""
-Write-Host "Documentation: https://developers.cloudflare.com/waf/" -ForegroundColor Gray
+Write-Host "Docs: https://developers.cloudflare.com/waf/" -ForegroundColor Gray
 Write-Host ""
